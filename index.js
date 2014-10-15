@@ -25,19 +25,29 @@ function runAsChild () {
   });
 
   chan.bind("init", function(trans, params) {
-    var events = {
+    var events, props, widget;
+
+    events = {
       'list-creation:success': reportList.bind(null, chan),
       'list-update:success': reportList.bind(null, chan)
     };
-    var props = merge({pageSize: 25}, (params.prop || {}));
+    props = merge({pageSize: 25}, (params.prop || {}));
     console.log(props);
-    container.imWidget({
+    widget = container.imWidget({
       type: 'table',
       url:   (params.url || (params.service && params.service.root)),
       token: (params.token || (params.service && params.service.token)),
       query: params.query,
       properties: props,
       events: events
+    });
+    // Only need to listen to forward history events - the
+    // hosting app can be in control of backwards ones.
+    widget.states.on('add', function () {
+      if (widget.states.length > 1) {
+        // Read the last model.
+        stateAdded(chan, widget.states.last().toJSON());
+      }
     });
 
     return 'ok';
@@ -46,6 +56,22 @@ function runAsChild () {
   // Activate all formatters.
   enableAll(intermine.results.formatsets.genomic);
 
+}
+
+function stateAdded (channel, state) {
+  if (state && state.query) {
+    console.log("New step added");
+    channel.notify({
+      method: 'silent-step',
+      params: {
+        title: state.title,
+        data: {
+          service: { root: state.query.service.root },
+          query: state.query.toJSON() // Must be serializable.
+        }
+      }
+    });
+  }
 }
 
 function reportList (channel, list) {

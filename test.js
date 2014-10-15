@@ -18,6 +18,10 @@ chan.bind('has-list', function (trans, data) {
   console.log('has-list', data);
 });
 
+chan.bind('silent-step', function (trans, data) {
+  console.log("Shhhh", data.title, data);
+});
+
 var sessionRequest = new XMLHttpRequest();
 sessionRequest.onload = withSession.bind(null, sessionRequest);
 sessionRequest.open('GET', "http://www.flymine.org/query/service/session", true);

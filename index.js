@@ -62,7 +62,7 @@ function stateAdded (channel, state) {
   if (state && state.query) {
     console.log("New step added");
     channel.notify({
-      method: 'silent-step',
+      method: 'change-state',
       params: {
         title: state.title,
         data: {

@@ -9,6 +9,30 @@ jQuery(document).ready(function($) {
           formatset[fsKey] = true;
       }
     }
+    var testmodelPreviewConfig = {
+      Department: [ 'employees' ],
+      Company: [
+        'departments',
+        {
+          label: 'employees',
+          query: {
+            select: 'Employee.*',
+            where: {'department.company.id': '{{ID}}'}
+          }
+        }
+      ]
+    };
+    var previewOptionSets = intermine.options.preview.count;
+    previewOptionSets['http://localhost:8080/intermine-demo/service/'] = testmodelPreviewConfig;
+    previewOptionSets['http://localhost/intermine-test/service/'] = testmodelPreviewConfig;
+    previewOptionSets['http://preview.flymine.org/preview/service'] = {
+      Organism: [
+        {label: 'Genes', query: {select: '*', from: 'Gene', where: {'organism.id': '{{ID}}'}} }
+      ],
+      Gene: [
+        'pathways', 'proteins', 'publications', 'transcripts', 'homologues'
+      ]
+    };
 
     $('#entry-dropdowns').click(function() {
       $('.entry-points').toggleClass('dropdown');
@@ -142,17 +166,17 @@ jQuery(document).ready(function($) {
           }
         },
         Production: {
-            // root: "www.flymine.org/query", 
-            // token: "21k3D5x5B8pdd8T9yeY24fG8th2",
-            // q: {
-            //    select: ["symbol", "organism.name", "chromosomeLocation.start"], 
-            //    from: "Gene", 
-            //    where: {
-            //    //    Gene: {IN: "an awesome list"}, 
-            //        length: {lt: 5000}
-            //    }
-            //}
-            root: "localhost/squirrelmine",
+            root: "www.flymine.org/query", 
+            q: {
+                select: ["symbol", "organism.name", "chromosomeLocation.start"], 
+                from: "Gene", 
+                where: {
+                    length: {lt: 5000}
+                }
+            }
+        },
+        ProductionNoRef: {
+            root: "www.flymine.org/query", 
             q: {
               select: ["symbol"],
               from: "Gene",
@@ -273,6 +297,20 @@ jQuery(document).ready(function($) {
               {"path":"GXDExpression.feature.organism.taxonId","op":"=","code":"B","value":"10090"},
               {"path":"GXDExpression.feature","op":"LOOKUP","code":"A","value":"Pax6"}
             ]
+          }
+        },
+        DemoMine: {
+          help: 'alex@intermine.org',
+          root: "http://localhost:8080/intermine-demo",
+          token: "test-user-token",
+          q: {
+              select: ["*", "age"],
+              from: "Employee",
+              joins: ['address'],
+              where: [
+                  ["age", "lt", 50 ],
+                  ["age", "gt", 40 ]
+              ]
           }
         },
         TestModel: {

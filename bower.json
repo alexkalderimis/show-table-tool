@@ -19,7 +19,7 @@
     "tests"
   ],
   "dependencies": {
-    "im-tables": "~1.7.0",
+    "im-tables": "~1.8.0",
     "jschannel": "mozilla/jschannel"
   }
 }

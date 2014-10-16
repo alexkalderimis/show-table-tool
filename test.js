@@ -22,8 +22,10 @@ chan.bind('silent-step', function (trans, data) {
   console.log("Shhhh", data.title, data);
 });
 
-chan.bind('has-query', function (trans, data) {
-  document.getElementById('stdout').innerHTML = JSON.stringify(data);
+chan.bind('has', function (trans, params) {
+  if (params.what === 'query') {
+    document.getElementById('stdout').innerHTML = JSON.stringify(params.data.query, 2);
+  }
 });
 
 var sessionRequest = new XMLHttpRequest();

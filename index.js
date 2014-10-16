@@ -77,10 +77,13 @@ function stateAdded (channel, state) {
 
 function reportQuery (channel, state) {
   channel.notify({
-    method: 'has-query',
+    method: 'has',
     params: {
-      service: {root: state.query.service.root},
-      query: state.query.toJSON()
+      what: 'query',
+      data: {
+        service: {root: state.query.service.root},
+        query: state.query.toJSON()
+      }
     }
   });
 }

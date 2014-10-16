@@ -22,6 +22,10 @@ chan.bind('silent-step', function (trans, data) {
   console.log("Shhhh", data.title, data);
 });
 
+chan.bind('has-query', function (trans, data) {
+  document.getElementById('stdout').innerHTML = JSON.stringify(data);
+});
+
 var sessionRequest = new XMLHttpRequest();
 sessionRequest.onload = withSession.bind(null, sessionRequest);
 sessionRequest.open('GET', "http://www.flymine.org/query/service/session", true);

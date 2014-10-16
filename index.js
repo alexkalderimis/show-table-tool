@@ -48,6 +48,7 @@ function runAsChild () {
         // Read the last model.
         stateAdded(chan, widget.states.last().toJSON());
       }
+      reportQuery(chan, widget.states.last().toJSON());
     });
 
     return 'ok';
@@ -72,6 +73,16 @@ function stateAdded (channel, state) {
       }
     });
   }
+}
+
+function reportQuery (channel, state) {
+  channel.notify({
+    method: 'has-query',
+    params: {
+      service: {root: state.query.service.root},
+      query: state.query.toJSON()
+    }
+  });
 }
 
 function reportList (channel, list) {

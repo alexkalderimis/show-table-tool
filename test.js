@@ -22,9 +22,16 @@ chan.bind('silent-step', function (trans, data) {
   console.log("Shhhh", data.title, data);
 });
 
+chan.bind('wants', function (trans, params) {
+  if (params.what === 'item') {
+    document.getElementById('objview').innerHTML = 'WANTS ' + params.service.root + '/' + params.item.type + '#' + params.item.id;
+  }
+});
 chan.bind('has', function (trans, params) {
   if (params.what === 'query') {
     document.getElementById('stdout').innerHTML = JSON.stringify(params.data.query, 2);
+  } else if (params.what === 'item') {
+    document.getElementById('objview').innerHTML = 'HAS ' + params.service + '/' + params.item.type + '#' + params.item.id;
   }
 });
 

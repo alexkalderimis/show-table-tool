@@ -19,7 +19,8 @@
     "tests"
   ],
   "dependencies": {
-    "im-tables": "~1.8.0",
+    "underscore": "~1.6.0",
+    "im-tables": "~1.9.0",
     "jschannel": "mozilla/jschannel"
   }
 }

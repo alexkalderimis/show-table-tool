@@ -25,17 +25,20 @@ function runAsChild () {
   });
 
   chan.bind("init", function(trans, params) {
-    var events, props, widget;
+    var events, props, widget, url;
 
+    url = (params.url || (params.service && params.service.root));
     events = {
       'list-creation:success': reportList.bind(null, chan),
-      'list-update:success': reportList.bind(null, chan)
+      'list-update:success': reportList.bind(null, chan),
+      'imo:click': reportObjectFocus.bind(null, chan, {root: url}),
+      'object:view': reportObjectView.bind(null, chan)
     };
     props = merge({pageSize: 25}, (params.prop || {}));
     console.log(props);
     widget = container.imWidget({
       type: 'table',
-      url:   (params.url || (params.service && params.service.root)),
+      url: url,
       token: (params.token || (params.service && params.service.token)),
       query: params.query,
       properties: props,
@@ -57,6 +60,30 @@ function runAsChild () {
   // Activate all formatters.
   enableAll(intermine.results.formatsets.genomic);
 
+}
+
+function reportObjectFocus (channel, service, type, id) {
+  channel.notify({
+    method: 'has',
+    params: {
+      what: 'item',
+      item: { type: type, id: id },
+      service: service
+    }
+  });
+}
+
+function reportObjectView (channel, event) {
+  event.preventDefault();
+  var object = event.object.toJSON();
+  channel.notify({
+    method: 'wants',
+    params: {
+      what: 'item',
+      item: { type: object['obj:type'], id: object.id},
+      service: { root: object['service:base'] }
+    }
+  });
 }
 
 function stateAdded (channel, state) {

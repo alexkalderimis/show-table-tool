@@ -67,8 +67,10 @@ function reportObjectFocus (channel, service, type, id) {
     method: 'has',
     params: {
       what: 'item',
-      item: { type: type, id: id },
-      service: service
+      data: {
+        item: { type: type, id: id },
+        service: service
+      }
     }
   });
 }
@@ -80,8 +82,10 @@ function reportObjectView (channel, event) {
     method: 'wants',
     params: {
       what: 'item',
-      item: { type: object['obj:type'], id: object.id},
-      service: { root: object['service:base'] }
+      data: {
+        item: { type: object['obj:type'], id: object.id},
+        service: { root: object['service:base'] }
+      }
     }
   });
 }

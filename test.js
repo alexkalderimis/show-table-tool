@@ -23,15 +23,17 @@ chan.bind('silent-step', function (trans, data) {
 });
 
 chan.bind('wants', function (trans, params) {
+  var d = params.data;
   if (params.what === 'item') {
-    document.getElementById('objview').innerHTML = 'WANTS ' + params.service.root + '/' + params.item.type + '#' + params.item.id;
+    document.getElementById('objview').innerHTML = 'WANTS ' + d.service.root + '/' + d.item.type + '#' + d.item.id;
   }
 });
 chan.bind('has', function (trans, params) {
+  var d = params.data;
   if (params.what === 'query') {
-    document.getElementById('stdout').innerHTML = JSON.stringify(params.data.query, 2);
+    document.getElementById('stdout').innerHTML = JSON.stringify(d.query, 2);
   } else if (params.what === 'item') {
-    document.getElementById('objview').innerHTML = 'HAS ' + params.service + '/' + params.item.type + '#' + params.item.id;
+    document.getElementById('objview').innerHTML = 'HAS ' + d.service + '/' + d.item.type + '#' + d.item.id;
   }
 });
 

@@ -81,7 +81,8 @@ function reportObjectView (channel, event) {
   channel.notify({
     method: 'wants',
     params: {
-      what: 'item',
+      what: 'report',
+      for: 'item',
       data: {
         item: { type: object['obj:type'], id: object.id},
         service: { root: object['service:base'] }
@@ -120,7 +121,7 @@ function reportQuery (channel, state) {
 }
 
 function reportList (channel, list) {
-  channel.notify({
+  channel.notify({ // TODO: Should change to wants report for list.
     method: 'next-step',
     params: {
       title: 'Created list ' + list.name,

@@ -24,7 +24,7 @@ chan.bind('silent-step', function (trans, data) {
 
 chan.bind('wants', function (trans, params) {
   var d = params.data;
-  if (params.what === 'item') {
+  if (params.what === 'report') {
     document.getElementById('objview').innerHTML = 'WANTS ' + d.service.root + '/' + d.item.type + '#' + d.item.id;
   }
 });

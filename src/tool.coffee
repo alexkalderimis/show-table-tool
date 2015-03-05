@@ -1,7 +1,6 @@
 Channel = require 'jschannel'
 imtables = require 'imtables'
-QueryManagement = require 'imtables/build/views/query-management-tools'
-
+pluralize = require 'pluralize'
 
 runAsChild = ->
 
@@ -12,10 +11,12 @@ runAsChild = ->
 
   stateAdded = (state, service) ->
     console.debug state
+    {verb, number, label} = state.title
+    title = "#{ verb } #{ number or '' } #{ pluralize label, number }"
     chan.notify
       method: 'change-state'
-      params:
-        title: state.title
+      params: # ideally we could handle title objects: TODO.
+        title: (title.replace /\s+/g, ' ')
         data:
           service: {root: service.root}
           query: state.query

@@ -1,6 +1,6 @@
 {
   "name": "show-table-tool",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "homepage": "https://github.com/alexkalderimis/show-table-tool",
   "authors": [
     "Alex Kalderimis <alexkalderimis@gmail.com>"
@@ -19,8 +19,5 @@
     "tests"
   ],
   "dependencies": {
-    "underscore": "~1.6.0",
-    "im-tables": "~1.9.0",
-    "jschannel": "mozilla/jschannel"
   }
 }

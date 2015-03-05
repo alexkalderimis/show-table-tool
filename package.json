@@ -12,7 +12,8 @@
   },
   "scripts": {
     "postinstall": "./node_modules/bower/bin/bower --allow-root install",
-    "test": "npm test"
+    "test": "npm test",
+    "start": "gulp"
   },
   "repository": {
     "type": "git",
@@ -29,10 +30,26 @@
     "url": "https://github.com/alexkalderimis/show-table-tool/issues"
   },
   "homepage": "https://github.com/alexkalderimis/show-table-tool",
-  "devDependencies": {
+  "devDependencies": {},
+  "browserify": {
+    "transform": [
+      "coffeeify"
+    ]
   },
   "dependencies": {
+    "bower": "~1.2.8",
+    "browserify": "^8.0.2",
+    "browserify-shim": "^3.8.2",
+    "coffee-script": "^1.9.1",
+    "coffeeify": "~0.7.0",
     "express": ">=3.4.8",
-    "bower": "~1.2.8"
+    "gulp": "^3.8.7",
+    "gulp-rename": "^1.2.0",
+    "gulp-watch": "^4.1.1",
+    "imtables": "2.0.0-beta-11",
+    "jschannel": "alexkalderimis/jschannel",
+    "vinyl-source-stream": "^1.0.0",
+    "vinyl-transform": "^1.0.0",
+    "watchify": "^2.4.0"
   }
 }

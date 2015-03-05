@@ -1,11 +1,11 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-var Channel, QueryManagement, imtables, loadTable, runAsChild, showDemo;
+var Channel, imtables, loadTable, pluralize, runAsChild, showDemo;
 
 Channel = require('jschannel');
 
 imtables = require('imtables');
 
-QueryManagement = require('imtables/build/views/query-management-tools');
+pluralize = require('pluralize');
 
 runAsChild = function() {
   var chan, stateAdded;
@@ -15,11 +15,14 @@ runAsChild = function() {
     scope: 'CurrentStep'
   });
   stateAdded = function(state, service) {
+    var label, number, ref, title, verb;
     console.debug(state);
+    ref = state.title, verb = ref.verb, number = ref.number, label = ref.label;
+    title = verb + " " + (number || '') + " " + (pluralize(label, number));
     return chan.notify({
       method: 'change-state',
       params: {
-        title: state.title,
+        title: title.replace(/\s+/g, ' '),
         data: {
           service: {
             root: service.root
@@ -167,7 +170,7 @@ window.onload = function() {
 
 
 
-},{"imtables":49,"imtables/build/views/query-management-tools":239,"jschannel":311}],2:[function(require,module,exports){
+},{"imtables":49,"jschannel":311,"pluralize":312}],2:[function(require,module,exports){
 
 },{}],3:[function(require,module,exports){
 /*!
@@ -69084,4 +69087,6 @@ return jQuery;
   return Channel;
 }));
 
-},{}]},{},[1]);
+},{}],312:[function(require,module,exports){
+arguments[4][308][0].apply(exports,arguments)
+},{"dup":308}]},{},[1]);

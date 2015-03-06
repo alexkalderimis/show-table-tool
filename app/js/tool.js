@@ -170,7 +170,7 @@ window.onload = function() {
 
 
 
-},{"imtables":49,"jschannel":311,"pluralize":312}],2:[function(require,module,exports){
+},{"imtables":49,"jschannel":310,"pluralize":311}],2:[function(require,module,exports){
 
 },{}],3:[function(require,module,exports){
 /*!
@@ -2642,6 +2642,7 @@ process.browser = true;
 process.env = {};
 process.argv = [];
 process.version = ''; // empty string to avoid regexp issues
+process.versions = {};
 
 function noop() {}
 
@@ -6966,7 +6967,7 @@ function hasOwnProperty(obj, prop) {
 
 }).call(this);
 
-},{"./options":96,"es6-promise":279,"jquery":307,"underscore":310}],36:[function(require,module,exports){
+},{"./options":96,"es6-promise":279,"jquery":307,"underscore":309}],36:[function(require,module,exports){
 (function() {
   var Backbone, CoreModel, invert,
     __hasProp = {}.hasOwnProperty,
@@ -7050,7 +7051,7 @@ function hasOwnProperty(obj, prop) {
 
 },{"backbone":264}],37:[function(require,module,exports){
 (function() {
-  var $, Backbone, CoreModel, CoreView, Icons, IndeterminateProgressBar, Messages, Templates, getKid, helpers, kid, listenToCollection, listenToModel, listenToState, listenToThing, onChange, _,
+  var $, Backbone, CoreModel, CoreView, Event, Icons, IndeterminateProgressBar, Messages, Templates, getKid, helpers, kid, listenToCollection, listenToModel, listenToState, listenToThing, onChange, _,
     __hasProp = {}.hasOwnProperty,
     __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
     __slice = [].slice;
@@ -7070,6 +7071,8 @@ function hasOwnProperty(obj, prop) {
   Templates = require('./templates');
 
   Icons = require('./icons');
+
+  Event = require('./event');
 
   helpers = require('./templates/helpers');
 
@@ -7452,7 +7455,7 @@ function hasOwnProperty(obj, prop) {
 
 }).call(this);
 
-},{"./core-model":36,"./icons":48,"./messages":50,"./shim":99,"./templates":100,"./templates/helpers":101,"./utils/on-change":126,"backbone":264,"jquery":307,"underscore":310}],38:[function(require,module,exports){
+},{"./core-model":36,"./event":45,"./icons":48,"./messages":50,"./shim":99,"./templates":100,"./templates/helpers":101,"./utils/on-change":126,"backbone":264,"jquery":307,"underscore":309}],38:[function(require,module,exports){
 (function() {
   var Checkbox, CoreView, Messages, Templates,
     __hasProp = {}.hasOwnProperty,
@@ -7642,7 +7645,7 @@ function hasOwnProperty(obj, prop) {
 
 }).call(this);
 
-},{"../core-view":37,"../templates":100,"underscore":310}],41:[function(require,module,exports){
+},{"../core-view":37,"../templates":100,"underscore":309}],41:[function(require,module,exports){
 (function() {
   var CoreView, InputWithLabel, Templates, _,
     __hasProp = {}.hasOwnProperty,
@@ -7766,7 +7769,7 @@ function hasOwnProperty(obj, prop) {
 
 }).call(this);
 
-},{"../core-view":37,"../templates":100,"underscore":310}],42:[function(require,module,exports){
+},{"../core-view":37,"../templates":100,"underscore":309}],42:[function(require,module,exports){
 (function() {
   var Model, NestedModel, isPlainObject, mergeOldAndNew, setSection, _,
     __hasProp = {}.hasOwnProperty,
@@ -7919,7 +7922,7 @@ function hasOwnProperty(obj, prop) {
 
 }).call(this);
 
-},{"../core-model":36,"underscore":310}],43:[function(require,module,exports){
+},{"../core-model":36,"underscore":309}],43:[function(require,module,exports){
 (function() {
   var InputWithLabel, SelectWithLabel, Templates, _,
     __hasProp = {}.hasOwnProperty,
@@ -7985,7 +7988,7 @@ function hasOwnProperty(obj, prop) {
 
 }).call(this);
 
-},{"../templates":100,"./input-with-label":41,"underscore":310}],44:[function(require,module,exports){
+},{"../templates":100,"./input-with-label":41,"underscore":309}],44:[function(require,module,exports){
 (function() {
   var ArrayOf, Backbone, Callable, CoreCollection, CoreModel, DataModel, InstanceOfAssertion, InterMineService, IsArray, StringType, StructuralTypeAssertion, _,
     __slice = [].slice;
@@ -8216,7 +8219,7 @@ function hasOwnProperty(obj, prop) {
 
 }).call(this);
 
-},{"../core-model":36,"./collection":39,"backbone":264,"underscore":310}],45:[function(require,module,exports){
+},{"../core-model":36,"./collection":39,"backbone":264,"underscore":309}],45:[function(require,module,exports){
 (function() {
   var Event;
 
@@ -8384,7 +8387,7 @@ function hasOwnProperty(obj, prop) {
 
 }).call(this);
 
-},{"./core/nested-model":42,"./templates":100,"underscore":310}],48:[function(require,module,exports){
+},{"./core/nested-model":42,"./templates":100,"underscore":309}],48:[function(require,module,exports){
 (function() {
   var ICONS, Icons, Model, Options, registerIconSet, _,
     __hasProp = {}.hasOwnProperty,
@@ -8654,7 +8657,7 @@ function hasOwnProperty(obj, prop) {
 
 }).call(this);
 
-},{"./core-model":36,"./options":96,"underscore":310}],49:[function(require,module,exports){
+},{"./core-model":36,"./options":96,"underscore":309}],49:[function(require,module,exports){
 (function() {
   var Dashboard, Formatting, Messages, Options, Promise, Table, Types, asElement, connect, createView, load, simpleFormatter, _;
 
@@ -8747,7 +8750,7 @@ function hasOwnProperty(obj, prop) {
 
 }).call(this);
 
-},{"./core/type-assertions":44,"./formatting":47,"./messages":50,"./options":96,"./shim":99,"./utils/simple-formatter":136,"./views/dashboard":168,"./views/table":241,"es6-promise":279,"imjs":288,"underscore":310}],50:[function(require,module,exports){
+},{"./core/type-assertions":44,"./formatting":47,"./messages":50,"./options":96,"./shim":99,"./utils/simple-formatter":136,"./views/dashboard":168,"./views/table":241,"es6-promise":279,"imjs":288,"underscore":309}],50:[function(require,module,exports){
 (function() {
   var Backbone, DEFAULTS, HELPERS, Messages, actionMessages, common, numToString, pluralise, _, _ref,
     __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; },
@@ -8842,7 +8845,7 @@ function hasOwnProperty(obj, prop) {
 
 }).call(this);
 
-},{"./messages/actions":51,"./messages/common":54,"./templates/helpers":101,"backbone":264,"underscore":310}],51:[function(require,module,exports){
+},{"./messages/actions":51,"./messages/common":54,"./templates/helpers":101,"backbone":264,"underscore":309}],51:[function(require,module,exports){
 (function() {
   module.exports = {
     'export.Export': 'Export',
@@ -9439,7 +9442,7 @@ function hasOwnProperty(obj, prop) {
 
 }).call(this);
 
-},{"underscore":310}],65:[function(require,module,exports){
+},{"underscore":309}],65:[function(require,module,exports){
 (function() {
   var _;
 
@@ -9482,7 +9485,7 @@ function hasOwnProperty(obj, prop) {
 
 }).call(this);
 
-},{"underscore":310}],66:[function(require,module,exports){
+},{"underscore":309}],66:[function(require,module,exports){
 (function() {
   var CACHE, _;
 
@@ -9555,7 +9558,7 @@ function hasOwnProperty(obj, prop) {
 
 }).call(this);
 
-},{"underscore":310}],67:[function(require,module,exports){
+},{"underscore":309}],67:[function(require,module,exports){
 (function() {
   exports.setPathNames = function() {
     var end, q, s, service, set, setError, type, v, _ref, _ref1;
@@ -9612,7 +9615,7 @@ function hasOwnProperty(obj, prop) {
 
 }).call(this);
 
-},{"../core-model":36,"underscore":310}],69:[function(require,module,exports){
+},{"../core-model":36,"underscore":309}],69:[function(require,module,exports){
 (function() {
   var AvailableColumns, Collection, PathModel, cmp, displayName, partsLen,
     __hasProp = {}.hasOwnProperty,
@@ -9764,7 +9767,7 @@ function hasOwnProperty(obj, prop) {
 
 }).call(this);
 
-},{"../core-model":36,"../options":96,"es6-promise":279,"underscore":310}],71:[function(require,module,exports){
+},{"../core-model":36,"../options":96,"es6-promise":279,"underscore":309}],71:[function(require,module,exports){
 (function() {
   var CodeGenModel, CoreModel, Options,
     __hasProp = {}.hasOwnProperty,
@@ -9932,7 +9935,7 @@ function hasOwnProperty(obj, prop) {
 
 }).call(this);
 
-},{"./path":89,"imjs":288,"underscore":310}],74:[function(require,module,exports){
+},{"./path":89,"imjs":288,"underscore":309}],74:[function(require,module,exports){
 (function() {
   var CoreCollection, CoreModel, CreateListModel, ON_COMMA, trim, _,
     __hasProp = {}.hasOwnProperty,
@@ -10035,7 +10038,7 @@ function hasOwnProperty(obj, prop) {
 
 }).call(this);
 
-},{"../core-model":36,"../core/collection":39,"underscore":310}],75:[function(require,module,exports){
+},{"../core-model":36,"../core/collection":39,"underscore":309}],75:[function(require,module,exports){
 (function() {
   var Format, formats, _;
 
@@ -10159,7 +10162,7 @@ function hasOwnProperty(obj, prop) {
 
 }).call(this);
 
-},{"underscore":310}],76:[function(require,module,exports){
+},{"underscore":309}],76:[function(require,module,exports){
 (function() {
   var CoreModel, FPObject,
     __hasProp = {}.hasOwnProperty,
@@ -10333,7 +10336,7 @@ function hasOwnProperty(obj, prop) {
 
 }).call(this);
 
-},{"../options":96,"./path":89,"underscore":310}],78:[function(require,module,exports){
+},{"../options":96,"./path":89,"underscore":309}],78:[function(require,module,exports){
 (function() {
   var Collection, History, StepModel, _,
     __hasProp = {}.hasOwnProperty,
@@ -10511,7 +10514,7 @@ function hasOwnProperty(obj, prop) {
 
 }).call(this);
 
-},{"../core/collection":39,"./step":92,"underscore":310}],79:[function(require,module,exports){
+},{"../core/collection":39,"./step":92,"underscore":309}],79:[function(require,module,exports){
 (function() {
   var CoreModel, IMObject, _,
     __hasProp = {}.hasOwnProperty,
@@ -10557,7 +10560,7 @@ function hasOwnProperty(obj, prop) {
 
 }).call(this);
 
-},{"../core-model":36,"underscore":310}],80:[function(require,module,exports){
+},{"../core-model":36,"underscore":309}],80:[function(require,module,exports){
 (function() {
   var Collection, Join, Joins, PathModel, _,
     __hasProp = {}.hasOwnProperty,
@@ -10648,7 +10651,7 @@ function hasOwnProperty(obj, prop) {
 
 }).call(this);
 
-},{"../core/collection":39,"./path":89,"underscore":310}],81:[function(require,module,exports){
+},{"../core/collection":39,"./path":89,"underscore":309}],81:[function(require,module,exports){
 (function() {
   var CoreModel, NestedTableModel, _,
     __hasProp = {}.hasOwnProperty,
@@ -10740,7 +10743,7 @@ function hasOwnProperty(obj, prop) {
 
 }).call(this);
 
-},{"../core-model":36,"underscore":310}],82:[function(require,module,exports){
+},{"../core-model":36,"underscore":309}],82:[function(require,module,exports){
 (function() {
   var CoreModel, NullObject,
     __hasProp = {}.hasOwnProperty,
@@ -10860,7 +10863,7 @@ function hasOwnProperty(obj, prop) {
 
 }).call(this);
 
-},{"backbone":264,"underscore":310}],84:[function(require,module,exports){
+},{"backbone":264,"underscore":309}],84:[function(require,module,exports){
 (function() {
   var IMObject, ObjectStore, _;
 
@@ -10920,7 +10923,7 @@ function hasOwnProperty(obj, prop) {
 
 }).call(this);
 
-},{"./intermine-object":79,"underscore":310}],85:[function(require,module,exports){
+},{"./intermine-object":79,"underscore":309}],85:[function(require,module,exports){
 (function() {
   var Backbone, OpenNodes, UniqItems, descendsFrom,
     __hasProp = {}.hasOwnProperty,
@@ -11298,7 +11301,7 @@ function hasOwnProperty(obj, prop) {
 
 }).call(this);
 
-},{"../core-model":36,"../core/collection":39,"underscore":310}],91:[function(require,module,exports){
+},{"../core-model":36,"../core/collection":39,"underscore":309}],91:[function(require,module,exports){
 (function() {
   var Collection, CoreModel, SelectedObjects, SelectionModel, types,
     __hasProp = {}.hasOwnProperty,
@@ -11483,7 +11486,7 @@ function hasOwnProperty(obj, prop) {
 
 }).call(this);
 
-},{"../core-model":36,"../utils/count-executor":110,"underscore":310}],93:[function(require,module,exports){
+},{"../core-model":36,"../utils/count-executor":110,"underscore":309}],93:[function(require,module,exports){
 (function() {
   var Collection, CoreModel, Options, SummaryHistogram, SummaryItemModel, SummaryItems, SummaryModel, getColumnSummary, inty, _,
     __hasProp = {}.hasOwnProperty,
@@ -11838,7 +11841,7 @@ function hasOwnProperty(obj, prop) {
 
 }).call(this);
 
-},{"../core-model":36,"../core/collection":39,"../options":96,"../services/column-summary":98,"underscore":310}],94:[function(require,module,exports){
+},{"../core-model":36,"../core/collection":39,"../options":96,"../services/column-summary":98,"underscore":309}],94:[function(require,module,exports){
 (function() {
   var CoreModel, Options, PathSet, TableModel,
     __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; },
@@ -12024,7 +12027,7 @@ function hasOwnProperty(obj, prop) {
 
 }).call(this);
 
-},{"../core-model":36,"../core/collection":39,"backbone":264,"underscore":310}],96:[function(require,module,exports){
+},{"../core-model":36,"../core/collection":39,"backbone":264,"underscore":309}],96:[function(require,module,exports){
 (function() {
   var NestedModel, Options,
     __hasProp = {}.hasOwnProperty,
@@ -12073,6 +12076,10 @@ function hasOwnProperty(obj, prop) {
           ExternalLinkIcons: {
             "http://some.host.somewhere": "http://some.host.somewhere/logo.png"
           }
+        },
+        ItemDetails: {
+          Fields: {},
+          Count: {}
         },
         StylePrefix: 'imtables',
         SuggestionDepth: 4,
@@ -12150,9 +12157,6 @@ function hasOwnProperty(obj, prop) {
           "http://www_mousemine_org/mousemine/service/": {
             name: "MouseMine (MGI)"
           }
-        },
-        preview: {
-          count: {}
         },
         Formatters: {
           testmodel: {},
@@ -12240,139 +12244,10 @@ function hasOwnProperty(obj, prop) {
 }).call(this);
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"backbone":264,"bootstrap":265,"jquery":307,"jquery-ui/draggable":301,"jquery-ui/droppable":302,"jquery-ui/slider":304,"jquery-ui/sortable":305,"typeahead.js":309}],100:[function(require,module,exports){
-var _ = require('underscore');
+},{"backbone":264,"bootstrap":265,"jquery":307,"jquery-ui/draggable":301,"jquery-ui/droppable":302,"jquery-ui/slider":304,"jquery-ui/sortable":305,"typeahead.js":308}],100:[function(require,module,exports){
 
-var TEMPLATES = exports;
-exports.template = function (name, opts) {
-  return _.template(getTemplate(name), opts);
-};
-exports.templateFromParts = function (names, opts) {
-  var src = names.map(getTemplate).join("\n");
-  return _.template(src, opts);
-};
-function getTemplate (name) {
-  if (!name) throw new Error('Name is required.');
-  name = name.replace(/-/g, '_');
-  templ = TEMPLATES[name];
-  if (templ) {
-    return templ;
-  } else {
-    throw new Error('No template registered as "' + name + '"');
-  }
-}
-// Simple templates we can define inline.
-TEMPLATES.clear = '<div style="clear:both"></div>';
-exports.list_dialogue_button_node = "<a href=\"#\">\n    <strong>\n        <%- displayName || path %>\n    </strong>\n    <% if (state.count) { %>\n        (<%- numToString(state.count) %>\n        <%- pluralise((typeName || type), state.count) %>)\n    <% } %>\n</a>\n";
-exports.code_gen_body = "<div class=\"row\">\n  <div class=\"col-sm-2\">\n    <% /* requires lang :: string, options.Langs :: [string] */ %>\n    <div class=\"btn-group language-selector\">\n      <button type=\"button\"\n              data-toggle=\"dropdown\"\n              aria-expanded=\"false\"\n              class=\"btn btn-default dropdown-toggle\">\n        <span class=\"im-current-lang\">\n          <%- Messages.getText('codegen.Lang', {lang: lang}) %>\n        </span>\n        <span class=\"caret\"></span>\n      </button>\n      <ul class=\"dropdown-menu im-code-gen-langs\" role=\"menu\">\n        <% _.each(options.Langs, function (l) { %>\n            <li data-lang=\"<%- l %>\"\n                class=\"<%= (l === lang) ? 'active' : void 0 %>\">\n              <a href=\"#\"><%- Messages.getText('codegen.Lang', {lang: l}) %></a>\n            </li>\n        <% }); %>\n      </ul>\n    </div>\n    <div class=\"im-show-boilerplate\"></div>\n    <div class=\"im-highlight-syntax\"></div>\n  </div>\n  <div class=\"col-sm-10\">\n    <pre class=\"im-generated-code\"><%- generatedCode %></pre>\n  </div>\n</div>\n";
-exports.column_manager_tabs = "<ul class=\"nav nav-tabs\">\n    <li role=\"presentation\" class=\"<%- classes.view %>\">\n      <a href=\"#\">\n        <%- Messages.getText('columns.ViewTabTitle') %>\n      </a>\n    </li>\n    <li role=\"presentation\" class=\"<%- classes.sortorder %>\">\n      <a href=\"#\">\n        <%- Messages.getText('columns.SortOrderTabTitle') %>\n      </a>\n    </li>\n</ul>\n";
-exports.export_column_control = "<span class=\"badge\"><%- item.getType() %></span>\n<span class=\"im-active-state\">\n    <% if (active) { %>\n        <%= Icons.icon('Check') %>\n    <% } else { %>\n        <%= Icons.icon('UnCheck') %>\n    <% } %>\n</span>\n<%- name %>\n";
-exports.modal_error = "<% /* Renders an alert box at various levels, with appropriate icons and messages */ %>\n<% if (error) { %>\n    <div class=\"pull-left alert <%- errorAlert(error) %>\">\n        <% if (!error.cannotDismiss) { %>\n            <button type=\"button\" class=\"dismiss\">\n                <span aria-hidden=\"true\">&times;</span>\n                <span class=\"sr-only\">Close</span>\n            </button>\n        <% } %>\n        <%= Icons.icon(errorIcon(error)) %>\n        <strong><%- Messages.getText('ErrorTitle', error) %></strong>\n        <% if (error.key != null) { %>\n            <%- Messages.getText(error.key) %>\n        <% } else { %>\n            <%- error.message || error %>\n        <% } %>\n    </div>\n<% } %>\n";
-exports.export_compression_controls = "<h4><%- Messages.getText('export.category.Compression', state) %></h4>\n\n<div class=\"checkbox im-compress\">\n    <label>\n        <input type=\"checkbox\" <%= compress ? 'checked' : void 0 %>>\n        <%- Messages.getText('export.UseCompression') %>\n    </label>\n</div>\n\n<fieldset <%= compress ? void 0 : 'disabled' %>>\n    <div class=\"radio\">\n        <label>\n            <input type=\"radio\"\n                name=\"gzip\"\n                <%= (compression === 'gzip') ? 'checked' : void 0 %>>\n            <%- Messages.getText('export.UseGZIP') %>\n        </label>\n    </div>\n\n    <div class=\"radio\">\n        <label>\n            <input type=\"radio\"\n                name=\"zip\"\n                <%= (compression === 'zip') ? 'checked' : void 0 %>>\n            <%- Messages.getText('export.UseZIP') %>\n        </label>\n    </div>\n</fieldset>\n\n";
-exports.list_value_controls = "<% if (suitableLists.length) { %>\n    <%= select(suitableLists, isSelected, 'span7 im-value-options im-con-value im-con-value-list form-control', formatList, getOptionValue) %>\n<% } else { %>\n    <%- messages.getText('conbuilder.NoSuitableLists') %>\n<% } %>\n";
-exports.column_manager_position_controls = "<div class=\"im-position-controls\">\n    <% if (index > 0) { %>\n        <%= Icons.iconWithProps('ASC', {\n            className: 'im-move-up',\n            title: Messages.getText('columns.MoveUp')\n        }) %>\n    <% } %>\n    <% if (!isLast) { %>\n        <%= Icons.iconWithProps('DESC', {\n            className: 'im-move-down',\n            title: Messages.getText('columns.MoveDown')\n        }) %>\n    <% } %>\n</div>\n\n";
-exports.column_manager_path_chooser = "<div class=\"btn-group pull-right\">\n</div>\n<h4>\n  <%- Messages.getText('columns.ChooseAPathFrom', {root: state.rootName}) %>\n</h4>\n\n";
-exports.add_value_control = "<div class=\"im-table-height-wrapper\">\n    <table class=\"table table-condensed\"></table>\n</div>\n<div class=\"input-group\">\n    <input type=\"text\" class=\"im-new-multi-value form-control\">\n    <span class=\"input-group-btn\">\n        <button class=\"btn btn-primary im-add\" type=\"button\">\n            <span class=\"im-long\"><%- messages.getText('multivalue.AddValue') %></span>\n            <span class=\"im-short\"><%- messages.getText('multivalue.AddValueShort') %></span>\n        </button>\n    </span>\n</div>\n";
-exports.facet_row = "<% /* requires: selected, symbol, item, count, percent, opacity, share */ %>\n<td class=\"im-selector-col\">\n  <span><%- symbol %></span>\n  <div class=\"checkbox\"></div>\n</td>\n\n<td class=\"im-item-col\">\n  <% if (item != null) { %>\n    <%- item %>\n  <% } else { %>\n    <span class=null-value>&nbsp;</span>\n  <% } %>\n</td>\n\n<td class=\"im-count-col\">\n  <% if (max > 1) { %>\n    <div class=\"im-facet-bar\"\n        style=\"width:<%- percent %>%;background:<%- Messages.getText('summary.FacetBar', {opacity: opacity}) %>\">\n        <span class=\"im-count\"><%- numToString(count) %></span>\n    </div>\n  <% } else { %>\n    <span class=\"im-count\"><%- numToString(count) %></span>\n  <% } %>\n</td>\n\n<% if (share != null) { %>\n    <td class=\"im-percent-col\"><i><%- share.toFixed() %>%</i></td>\n<% } %>\n";
-exports.new_filter_dialogue = "<div class=\"modal-body\">\n</div>\n<div class=\"modal-footer\">\n    <button class=\"disabled btn btn-primary pull-right im-add-constraint\">\n        <%- Messages.getText('constraints.AddFilter') %>\n    </button>\n    <button class=\"btn im-close pull-left\">\n        <%- Messages.getText('Cancel') %>\n        Cancel\n    </button>\n</div>\n";
-exports.input_with_button = "<input type=\"text\" class=\"form-control\"\n       value=\"<%- value %>\"\n       placeholder=\"<%- Messages.getText(placeholder) %>\">\n<span class=\"input-group-btn\">\n  <button class=\"btn btn-default\" type=\"button\">\n    <%- Messages.getText(button) %>\n  </button>\n</span>\n\n";
-exports.undo_history_step = "<% if (!state.current) { %>\n  <button class=\"btn btn-default btn-small im-state-revert\"\n      title=\"<%- Messages.getText('undo.RevertToState') %>\">\n      <%= Icons.icon('Undo') %>\n  </button>\n<% } %>\n\n<h4>\n    <%- Messages.getText('undo.StepTitle', title) %>\n</h4>\n\n<% if (state.current) { %>\n  <span class=\"help-block\"><%- Messages.getText('undo.IsCurrentState') %></span>\n<% } %>\n<div style=\"clear:both\"></div>\n\n<span class=\"im-revision\" title=\"<%- Messages.getText('undo.RevisionTitle', {v: revision}) %>\">\n  <%- Messages.getText('undo.Revision', {v: revision}) %>\n</span>\n\n<div class=\"im-step-count\">\n  <span><%- Messages.getText('undo.StepCount', {count: count}) %></span>\n  <% if (diff) { %>\n    <span class=\"label im-label-<%= (diff > 0 ) ? 'pos' : 'neg' %>\">\n      <% if (diff > 0) { %>+<% } %><%- numToString(diff) %>\n    </span>\n  <% } %>\n</div>\n\n<div class=\"im-step-details\"></div>\n\n<div style=\"clear:both\"></div>\n";
-exports.active_constraint = "<div class=\"im-con-overview\">\n  <% if (data.con.editable != null && data.con.editable === false) { %>\n    <a title=\"<%- data.messages.getText('conbuilder.NotEditable') %>\">\n        <%= data.icons.icon('Lock') %>\n    </a>\n  <% } else { %>\n    <a class=\"im-remove-constraint\"\n        title=\"<%- data.messages.getText('conbuilder.Remove') %>\"\n        >\n        <%= data.icons.icon('RemoveConstraint') %>\n    </a>\n    <a class=\"im-edit\" title=\"<%- data.messages.getText('conbuilder.EditCon') %>\">\n        <%= data.icons.icon('Edit') %>\n    </a>\n  <% } %>\n</div>\n\n<% /* We use the :empty selector on this element - hence it must be on one line */ %>\n<div class=\"im-constraint-editor\"></div>\n";
-exports.facet_frequency = "<% /* requires: error, initialized */ %>\n<% if (error) { %>\n    <% /* Oh noes - something went wrong. */ %>\n    <div class=\"alert alert-warning\">\n        <%= Icons.icon('Error') %>\n        <strong><%- Messages.getText('Error') %></strong>\n        <% if (error.key) { %>\n            <%- Messages.getText(error.key) %>\n        <% } else { %>\n            <%- error.message || error %>\n        <% } %>\n    </div>\n<% } else if (initialized) { %>\n    <% /* Huzzah - there is data, which will be added here as child views */ %>\n<% } else { %>\n    <% /* Boo - no data. Show an indeterminate progress bar while we wait. */ %>\n    <div class=\"progress\">\n      <div class=\"progress-bar progress-bar-info progress-bar-striped active\"\n           role=\"progressbar\"\n           style=\"width:100%\">\n        <span class=\"sr-only\"><%- Messages.getText('Loading') %>.</span>\n      </div>\n    </div>\n<% } %>\n";
-exports.column_manager_path_name = "<% /* requires parts */ %>\n<span class=\"im-path-name\">\n    <% _.each(parts, function (part) { %>\n        <span class=\"im-name-part\"><%- part %></span>\n    <% }); %>\n</span>\n\n";
-exports.list_dialogue_expander = "<button class=\"btn btn-default im-expand-dialogue <%= minimised ? 'active' : void 0 %>\">\n  <%- Messages.getText('lists.picker.Collapse') %>\n</button>\n";
-exports.export_destination_options = "<div class=\"form-group im-param-name\">\n    <label><%- Messages.getText('export.param.Name') %></label>\n    <div class=\"input-group\">\n      <input type=\"text\"\n             value=\"<%- filename %>\"\n             class=\"form-control\"\n             placeholder=\"<%- Messages.getText('export.param.Name') %>\"\n             aria-label=\"<%- Messages.getText('export.param.Name') %>\">\n      <div class=\"input-group-btn\">\n        <button type=\"button\"\n                class=\"btn btn-default dropdown-toggle\"\n                data-toggle=\"dropdown\"\n                aria-expanded=\"false\">\n          .<%- format %>\n          <span class=\"caret\"></span>\n        </button>\n        <ul class=\"dropdown-menu dropdown-menu-right\" role=\"menu\">\n          <% _.chain(formats).groupBy('group').each(function (fmts, grp) { %>\n            <% if (this.i++) { %><li class=\"divider\"></li><% } %>\n            <% _.each(fmts, function (fmt) { %>\n                <li>\n                    <a href=\"#\"\n                       class=\"im-fmt-<%- fmt.id %>\">\n                      <%= Icons.icon(fmt.icon) %>\n                      <%- Messages.getText(fmt.name) %>\n                    </a>\n                </li>\n            <% }); %>\n          <% }, {i: 0}); %>\n        </ul>\n      </div>\n    </div>\n</div>\n\n<% if (format && format.desc) { %>\n  <div class=\"alert alert-info\">\n    <%- Messages.getText(format.desc) %>\n  </div>\n<% } %>\n\n<div class=\"row\">\n    <div class=\"col-sm-6 im-param-dest\">\n    </div>\n    <div class=\"col-sm-6 im-dest-opts\">\n    </div>\n</div>\n";
-exports.constraint_adder_options = "<% if (showTree) { %>\n    <div class=\"col-sm-5\">\n        <div class=\"input-group\">\n            <span class=\"input-group-addon\">find</span>\n            <input type=\"text\"\n                value=\"<%- filter %>\"\n                class=\"im-tree-filter form-control\" placeholder=\"path\">\n            <span class=\"input-group-btn\">\n                <button class=\"btn btn-default im-clear-filter\" type=\"button\">\n                    <%- Messages.getText('Clear') %>\n                </button>\n            </span>\n        </div>\n    </div>\n<% } %>\n<div class=\"col-sm-7\">\n    <div class=\"btn-group\">\n        <% if (!showTree) { %>\n            <button type=\"button\" class=\"btn btn-default btn-chooser im-choose\">\n                <%= Icons.icon('Tree') %>\n                <span><%- Messages.getText('constraints.BrowseForColumn') %></span>\n            </button>\n        <% } else { %>\n            <button <%= anyNodeChosen ? void 0 : 'disabled' %>\n                    class=\"btn btn-primary im-approve\"\n                    type=\"button\" >\n                <%- Messages.getText('constraints.Choose') %>\n                <% _.each(chosen, function (path, i) { %>\n                    <%- path %>\n                    <% if (i + 2 === chosen.length) { %>\n                        <%- Messages.get('and') %>\n                    <% } else if (i + 2 < chosen.length) { %>\n                        <%- Messages.get('comma') %>\n                    <% } %>\n                <% }); %>\n            </button>\n        <% } %>\n    </div>\n    <div class=\"form-group\">\n        <label class=\"im-tree-option\">\n            <%- Messages.getText('columns.AllowRevRef') %>\n            <input type=\"checkbox\"\n                    class=\"im-allow-rev-ref\"\n                    <%= allowRevRefs ? 'checked' : void 0 %> >\n        </label>\n    </div>\n</div>\n";
-exports.error_message = "<% if (error) { %>\n    <div class=\"alert alert-<%= error.level || 'danger' %>\">\n        <%= icons.icon('Error') %>\n        <span class=\"im-conbuilder-error\">\n            <%- error.message || error %>\n        </span>\n    </div>\n<% } %>\n\n";
-exports.code_gen_button_main = "<%= Icons.icon('CodeFile') %>\n<span class=\"hidden-sm hidden-xs\">\n  <%- Messages.getText('codegen.GenerateCodeIn', {lang: lang}) %>\n</span>\n<span class=\"visible-sm-inline im-current-lang\">\n    <%- Messages.getText('codegen.Lang', {lang: lang}) %>\n</span>\n\n";
-exports.export_dialogue = "<div class=\"row\">\n    <nav class=\"col-sm-3 menu\">\n    </nav>\n    <div class=\"col-sm-9 main\">\n    </div>\n</div>\n";
-exports.column_manager_select_list = "<div class=\"im-removal-and-rearrangement\">\n  <button class=\"pull-right btn btn-success im-add-view-path\">\n      <%= Icons.icon('Add') %>\n      <%- Messages.getText('columns.FindColumnToAdd') %>\n  </button>\n\n  <h4>\n    <%- Messages.getText('columns.ColumnsSelected', {columns: collection, removed: hasRubbish}) %>\n  </h4>\n\n  <span class=\"help-block\"><%- Messages.getText('columns.CurrentViewHelp') %></span>\n\n  <div class=\"well im-current-view\">\n\n    <div class=\"row\">\n\n      <div class=\"col-md-6\">\n        <ul class=\"list-group im-active-view im-connected-list\">\n        </ul>\n      </div>\n\n      <div class=\"col-md-6\">\n        <div class=\"im-rubbish-bin\">\n            <%= Icons.icon((hasRubbish ? 'RubbishFull' : 'Rubbish'), 'lg') %>\n            <% if (hasRubbish) { %>\n                <ul class=\"list-group im-removed im-removed-view im-connected-list\">\n                </ul>\n            <% } %>\n        </div>\n      </div>\n\n    </div>\n  </div>\n</div>\n\n<div class=\"im-addition\">\n</div>\n\n";
-exports.table_subtables_header = "<a title=\"<%- Messages.getText('subtables.RemoveColumn') %>\">\n  <%= Icons.icon('Remove') %>\n</a>\n<% if (displayName && columnName) { %>\n  <%- displayName.replace(columnName, '').replace(/^ > /, '') %>\n<% } %>\n";
-exports.code_gen_js = "/* Install from npm: npm install imtables\n * This snippet assumes the presence on the page of an element like:\n * <div id=\"some-elem\"></div>\n */\nvar imtables = require('imtables');\n\nvar selector = '#some-elem';\nvar service  = {root: '<%= service.root %>'};\nvar query    = <%= JSON.stringify(query, null, 2) %>;\n\nimtables.loadQuery(\n  selector, // Can also be an element, or a jQuery object.\n  <%= JSON.stringify(page) %>, // May be null\n  {service: service, query: query} // May be an imjs.Query\n).then(\n  function (table) { console.log('Table loaded', table); },\n  function (error) { console.error('Could not load table', error); }\n);\n";
-exports.active_constraints = "<% /* requires: constraints.length */ %>\n<div class=\"well im-current-constraints\">\n    <p class=\"well-help\">\n      <% if (constraints.length) { %>\n        <%- Messages.getText('constraints.EditOrRemove') %>\n      <% } else { %>\n        <%- Messages.getText('constraints.None') %>\n      <% } %>\n    </p>\n\n    <ul class=\"im-active-constraints\">\n    </ul>\n</div>\n";
-exports.export_preview = "<div class=\"form-group im-export-formats\">\n  <label><%- Messages.getText('export.param.Format') %></label>\n  <select class=\"form-control\">\n    <% _.each(formats, function (fmt) { %>\n      <option value=\"<%- fmt.id %>\"\n              <%= (fmt.id === format.id) ? 'selected' : void 0 %>>\n        <%- Messages.getText(fmt.name) %>\n      </option>\n    <% }); %>\n  </select>\n</div>\n\n<pre class=\"im-export-preview\">\n<%- state.preview %>\n</pre>\n\n<div class=\"alert alert-info\">\n    <strong class=\"nb\">nb</strong>\n    <%- Messages.getText('export.preview.Limit') %>\n</div>\n";
-exports.active_progress_bar = "<div class=\"progress progress-info progress-striped active\">\n  <div class=\"bar\" style=\"width: 100%\"></div>\n</div>\n";
-exports.too_many_suggestions = "<span class=\"alert alert-info\">\n  {{{ icons.icon('Info') }}}\n  {{ messages.getText('conbuilder.TooManySuggestions') }}\n  There are {{ extra }} values we could not include.\n</span>\n";
-exports.summary_items = "<% if (!(/boolean/i).test(type)) { %>\n    <div class=\"input-group im-filter-group\">\n    <span class=\"input-group-btn\">\n        <button class=\"btn btn-default im-clear-value-filter\">\n        <%= Icons.icon('Refresh') %>\n        </button>\n    </span>\n    <input type=\"search\" class=\"form-control im-filter-values\"\n        value=\"<%- filterTerm %>\"\n        placeholder=\"<%- Messages.getText('summary.FilterValuesPlaceholder') %>\">\n    </div>\n<% } %>\n\n<div class=\"im-item-table\">\n  <table class=\"table table-condensed table-striped\">\n    <colgroup>\n      <% _.each(colClasses, function (cls) { %>\n        <col class=\"<%- cls %>\">\n      <% }); %>\n    </colgroup>\n    <thead>\n      <tr>\n        <% _.each(colHeaders, function (hdr) { %>\n          <th><%- hdr %></th>\n        <% }); %>\n      </tr>\n    </thead>\n    <tbody class=\"scrollable\">\n    </tbody>\n  </table>\n\n  <% if (hasMore) { %>\n    <div class=\"im-load-more\">\n      <%- Messages.getText('summary.MoreItems') %>\n    </div>\n  <% } %>\n</div>\n\n<div class=\"im-summary-controls\">\n</div>\n";
-exports.page_sizer = "<% if (sizes.length) { %>\n    <label>\n        <span class=\"hidden-tablet\">Rows per page:</span>\n    </label>\n    <select class=\"form-control\" title=\"Rows per page\">\n        <% sizes.forEach(function (s) { %>\n            <option value=\"<%= s[0] %>\" <%= (s[0] === size) && 'selected' %>>\n            <%= s[1] || s[0] %>\n            </option>\n        <% }); %>\n    </select>\n<% } %>\n";
-exports.select_with_label = "<label><%- Messages.getText(label) %></label>\n\n<% if (options.length) { %>\n    <select class=\"form-control\">\n        <% _.each(options, function (option) { %>\n            <option selected=\"<%= selected(option) ? 'selected' : void 0 %>\"\n                    value=\"<%- option.name %>\">\n                <%- Messages.getText(optionLabel, option) %>\n            </option>\n        <% }) %>\n    </select>\n    <% if (helpMessage) { %>\n        <span style=\"display:<%= hasProblem ? 'block' : 'none' %>\"\n              class=\"help-block\">\n                <%- Messages.getText(helpMessage) %>\n        </span>\n    <% } %>\n<% } else { %>\n    <span class=\"help-block\">\n        <%- Messages.getText(noOptionsMessage, {model: model}) %>\n    </span>\n<% } %>\n\n";
-exports.cell_preview_reference_relation = "<% _.each(collection, function (relation) { %>\n  <li class=\"im-relation\">\n    <span class=\"im-name\"><%- _.last(relation.parts) %></span>\n    <span class=\"im-count\"><%- numToString(relation.count) %></span>\n  </li>\n<% }); %>\n";
-exports.constraints_heading = "<% /* requires constraints.length */ %>\n<h3>\n  <%- Messages.getText('constraints.Heading', {n: constraints.length}) %>\n</h3>\n";
-exports.export_tab_menu = "<% _.each(data.tabs, function (tabDef) { %>\n  <li role=\"presentation\" class=\"im-tab-<%= tabDef.ident %> <%= data.tab === tabDef.ident ? 'active' : void 0 %>\">\n    <a><%- data.Messages.getText(tabDef.key, data) %></a>\n  </li>\n<% }); %>\n";
-exports.constraint_adder = "<div class=\"im-constraint-adder-options\"></div>\n<div class=\"im-path-finder\"><div>\n<div class=\"im-new-constraint\"></div>\n";
-exports.undo_history = "<button class=\"btn btn-default im-undo\">\n  <%= Icons.icon('Undo') %>\n  <span class=\"visible-lg-inline\">\n    <%- Messages.getText('Undo') %>\n  </span>\n</button>\n\n<button class=\"btn btn-default dropdown-toggle\"\n        data-toggle=\"dropdown\">\n  <span class=\"caret\"></span>\n</button>\n\n<ul class=\"dropdown-menu im-state-list\">\n    <li>\n      <button\n          title=\"<%- Messages.getText('undo.ToggleTrivialTitle', state) %>\"\n          class=\"btn btn-xs btn-default im-toggle-trivial <%= state.hideTrivial ? 'active' : void 0 %>\">\n        <%- Messages.getText('undo.ToggleTrivial', state) %>\n      </button>\n    </li>\n</ul>\n";
-exports.modal_footer = "<button type=\"button\" class=\"btn btn-cancel\">\n    <%- dismissAction %>\n</button>\n<% if (exportLink != null) { %>\n    <a class=\"btn btn-primary\"\n        <%= (error) ? 'disabled' : void 0 %>\n        href=\"<%- exportLink %>\">\n        <%= Icons.icon(primaryIcon) %>\n        <%- primaryAction %>\n    </a>\n<% } else { %>\n    <% /* We need the wrapper to deal with the fact that tooltips do not\n        * work on disabled buttons. */ %>\n    <div class=\"im-tooltip-wrapper\"\n        <% if (disabled && disabledReason) { %>\n          title=\"<%- Messages.getText(disabledReason)  %>\"\n        <% } %>>\n        <button type=\"button\"\n                <%= (error || disabled) ? 'disabled' : void 0 %>\n                class=\"btn btn-primary\">\n            <%= Icons.icon(primaryIcon) %>\n            <%- primaryAction %>\n        </button>\n    </div>\n<% } %>\n";
-exports.constraint_editor = "<fieldset class=\"im-constraint-options form-group row\">\n  <label class=\"col-sm-3 path-label\"><%- data.con.displayName %></label>\n  <% if (data.con.op) { %>\n    <div class=\"im-operator col-sm-3\">\n        <select class=\"form-control im-ops\">\n        <option selected><%- data.con.op %></option>\n        <% data.otherOperators.forEach(function (op) { %>\n            <option><%- op %></option>\n        <% }); %>\n        </select>\n    </div>\n  <% } %>\n  <div class=\"col-sm-6 im-value-options im-value-section\">\n  </div>\n</fieldset>\n\n<div class=\"btn-group im-con-buttons\">\n  <% data.buttons.forEach(function (b, i) { %>\n  <button class=\"btn btn-<%= (i === 0) ? 'primary' : 'default' %> <%- b.classes %>\">\n    <%- data.messages.getText(b.key) %>\n  </button>\n  <% }); %>\n</div>\n";
-exports.attribute_value_select = "<select class=\"form-control im-con-value-attr\">\n    <% _.each(items, function (item) { %>\n    <option <%= (item.item === value) ? 'selected' : void 0 %> value=\"<%- item.item %>\">\n            <%- item.item %>\n        </option>\n    <% }); %>\n</select>\n";
-exports.null_value = "<span class=\"im-null-value\">&nbsp;</span>\n";
-exports.summary_items_controls = "<button class=\"btn btn-default pull-right im-download\">\n  <%= Icons.icon('Download') %>\n  <%- Messages.getText('summary.DownloadData') %>\n</button>\n\n<div class=\"btn-group im-filter-group\">\n  <button type=\"submit\"\n        class=\"btn btn-primary im-filter-in\"\n        <%= (anyItemSelected) ? void 0 : 'disabled' %>>\n    <%- Messages.getText('Filter') %>\n  </button>\n  <button class=\"btn btn-primary dropdown-toggle\" \n          title=\"<%- Messages.getText('summary.SelectFilter') %>\"\n          <%= (anyItemSelected) ? void 0 : 'disabled' %>>\n    <span class=\"caret\"></span>\n  </button>\n  <ul class=\"dropdown-menu\">\n    <li>\n      <a href=\"#\" class=\"im-filter-in\">\n        <%- Messages.getText('summary.Include') %>\n      </a>\n    </li>\n    <li>\n      <a href=\"#\" class=\"im-filter-out\">\n        <%- Messages.getText('summary.Exclude') %>\n      </a>\n    </li>\n  </ul>\n</div>\n\n<div class=\"btn-group\">\n  <button class=\"btn btn-default btn-cancel\"\n          <%= (anyItemSelected) ? void 0 : 'disabled' %>\n          title=\"<%- Messages.getText('summary.Reset') %>\">\n    <%= Icons.icon('Undo') %>\n  </button>\n  <% if (!(/boolean/i).test(type)) { %>\n    <button class=\"btn btn-default btn-toggle-selection\"\n            title=\"<%- Messages.getText('summary.Toggle') %>\">\n        <%= Icons.icon('Toggle') %>\n    </button>\n  <% } %>\n</div>\n\n";
-exports.column_manager_restore_path = "<% /* requires: restoreTitle */ %>\n<span class=\"pull-right im-restore-view\"\n    title=\"<%- Messages.getText(restoreTitle) %>\">\n    <%= Icons.icon('Add') %>\n</span>\n\n";
-exports.loop_value_controls = "<% if (candidateLoops.length) { %>\n    <%= select(candidateLoops, isSelected, 'form-control im-value-options im-con-value') %>\n<% } else { %>\n    <%- messages.getText('conbuilder.NoSuitableLoops') %>\n<% } %>\n";
-exports.attribute_value_controls = "<input class=\"form-control im-constraint-value im-value-options im-con-value im-con-value-attr\"\n    type=\"text\"\n    placeholder=\"<%- messages.getText('conbuilder.ValuePlaceholder') %>\"\n    value=\"<%- con.value %>\">\n";
-exports.download_popover = "<% /* requires: formats, query, path */ %>\n<ul role=\"menu\" class=\"im-export-summary\">\n    <% _.each(formats, function (icon, param) { %>\n      <li role=\"presentation\">\n        <a role=\"menuitem\"\n            href=\"<%= query.getExportURI(param) %>&summaryPath=<%= path %>\">\n            <%= Icons.icon(icon) %>\n            <%- icon.toUpperCase() %>\n        </a>\n      </li>\n    <% }); %>\n</ul>\n";
-exports.input_with_label = "<label><%- Messages.getText(label) %></label>\n<input class=\"form-control\"\n       placeholder=\"<%- Messages.getText(placeholder) %>\"\n       value=\"<%- value %>\">\n<% if (helpMessage) { %>\n  <span style=\"display:<%= hasProblem ? 'block' : 'none' %>\"\n        class=\"help-block\">\n        <%- Messages.getText(helpMessage) %>\n  </span>\n<% } %>\n";
-exports.join_style = "<% /* requires innerJoinBtn, outerJoinBtn */ %>\n<div class=\"btn-group pull-right\">\n  <button class=\"<%- innerJoinBtn %>\">\n    <%- Messages.getText('joins.Inner') %>\n  </button>\n  <button class=\"<%- outerJoinBtn %>\">\n    <%- Messages.getText('joins.Outer') %>\n  </button>\n</div>\n";
-exports.summary_no_results = "<div class=\"alert alert-warning\">\n    <%= Icons.icon('Warning') %>\n    <%- Messages.getText('summary.NoResults', {path: pathName}) %>\n</div>\n\n";
-exports.export_add_column_control = "<div class=\"row\">\n    <div class=\"col-sm-1 im-help\"\n         title=\"<%- Messages.getText('export.help.AdditionalCols') %>\">\n        <%= Icons.icon('Help', 'lg') %>\n    </div>\n    <div class=\"col-sm-11 form-group\">\n        <input type=\"text\" class=\"form-control\">\n    </div>\n</div>\n";
-exports.export_dialogue_footer = "<% if (linkToFile) { %>\n    <div class=\"pull-left alert alert-info\">\n        <%- Messages.getText('export.cloud.FileLocation', {cloud: dest}) %>\n        <a href=\"<%= linkToFile %>\" target=\"_blank\"><%- linkToFile %></a>\n    </div>\n<% } %>\n\n<button type=\"button\" class=\"btn btn-cancel\">\n    <%- dismissAction %>\n</button>\n\n<% if (dest === 'download') { %>\n    <a class=\"btn btn-primary\"\n        href=\"<%- exportURI %>\">\n        <%= Icons.icon(primaryIcon) %>\n        <%- primaryAction %>\n    </a>\n<% } else { %>\n    <button type=\"button\"\n            <%= (error || doneness != null) ? 'disabled' : void 0 %>\n            class=\"btn btn-primary\">\n        <%= Icons.icon(primaryIcon) %>\n        <%- primaryAction %>\n    </button>\n<% } %>\n\n";
-exports.column_manager_path_remover = "<% /* requires: removeTitle */ %>\n<span class=\"pull-right im-remove-view\"\n      title=\"<%- Messages.getText(removeTitle) %>\">\n    <%= Icons.icon('Remove') %>\n</span>\n\n";
-exports.export_flat_file_options = "<h4><%- Messages.getText('export.category.ColumnHeaders', state) %></h4>\n\n<div class=\"checkbox im-headers\">\n    <label>\n        <input type=\"checkbox\" <%= headers ? 'checked' : void 0 %>>\n        <%- Messages.getText('export.AddHeaders') %>\n    </label>\n</div>\n\n<fieldset <%= headers ? void 0 : 'disabled' %>>\n    <div class=\"radio\">\n        <label>\n            <input type=\"radio\"\n                name=\"hdrs-friendly\"\n                <%= (headerType === 'friendly') ? 'checked' : void 0 %>>\n            <%- Messages.getText('export.ff.FriendlyHeaders') %>\n        </label>\n    </div>\n\n    <div class=\"radio\">\n        <label>\n            <input type=\"radio\"\n                name=\"hdrs-path\"\n                <%= (headerType === 'path') ? 'checked' : void 0 %>>\n            <%- Messages.getText('export.ff.PathHeaders') %>\n        </label>\n    </div>\n</fieldset>\n\n";
-exports.constraint_summary = "<% _.each(labels, function (label) { %>\n  <li>        \n    <span class=\"label label-<%- label.type %>\">\n      <% if (_.include(['error', 'warning'], label.type)) { %>\n        <%= Icons.icon('Error') %>\n        <%- Messages.getText('consummary.' + label.content) %>\n      <% } else if (label.type === 'path') { %>\n        <% _.each(label.content.split(' > '), function (part) { %>\n          <span class=\"im-name-part\"><%- part %></span>\n        <% }); %>\n      <% } else { %>\n        <% if (label.icon) { %><%= Icons.icon(label.icon) %><% } %>\n        <%- label.content %>\n      <% } %>\n    </span>\n  </li>\n<% }); %>\n";
-exports.classy_popover = "<div class=\"popover <%- classes %>\" role=\"tooltip\">\n  <div class=\"arrow\"></div>\n  <h3 class=\"popover-title\"></h3>\n  <div class=\"popover-content\"></div>\n</div>\n";
-exports.join_manager_body = "<ul class=\"list-group\"></ul>\n\n<div class=\"alert alert-info\">\n  <%= Icons.icon('Info') %>\n  <strong class=\"im-clickable\">\n    <%- Messages.getText('joins.ExplanationTitle') %>\n  </strong>\n  <p class=\"<%= (!state.explaining) ? 'im-latent' : void 0 %>\">\n    <%- Messages.getText('joins.Explanation') %>\n  </p>\n</div>\n";
-exports.summary_selected_count = "<% if (state.selectedCount) { %>\n    <div class=\"alert alert-info im-selected-count\">\n        <strong>\n            <%- Messages.getText('summary.SelectedCount', state) %>\n        </strong>\n    </div>\n<% } %>\n";
-exports.list_dialogue_body = "<div class=\"im-list-name\"></div>\n\n<div class=\"row\">\n  <div class=\"col-sm-12 im-more-options\">\n    <h4>\n      <%= Icons.icon('Options') %>\n      <span class=\"msg\"><%- Messages.getText('lists.ShowExtraOptions', state) %></span>\n    </h4>\n  </div>\n</div>\n\n<div class=\"im-optional-attributes\" style=\"<%- state.minimised ? 'display:none' : void 0 %>\">\n  <div class=\"im-list-desc\"></div>\n\n  <div class=\"well im-tags\">\n    <div class=\"row im-active-tags\">\n    </div>\n    <div class=\"row\">\n      <div class=\"col-sm-6 im-apology\">\n      </div>\n      <div class=\"col-sm-6\">\n        <div class=\"im-next-tag\">\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n";
-exports.export_json_options = "<h3><%- Messages.getText('export.category.Options') %></h3>\n\n<div class=\"radio\">\n    <label>\n        <input type=\"radio\"\n               name=\"rows\"\n               <%= (jsonFormat === 'rows') ? 'checked' : void 0 %>>\n        <%- Messages.getText('export.json.Rows') %>\n        <pre><%- Messages.getText('export.json.RowsExample') %></pre>\n    </label>\n</div>\n\n<div class=\"radio\">\n    <label>\n        <input type=\"radio\"\n               name=\"objects\"\n               <%= (jsonFormat === 'objects') ? 'checked' : void 0 %>>\n        <%- Messages.getText('export.json.Objects') %>\n        <pre><%- Messages.getText('export.json.ObjExample') %></pre>\n    </label>\n</div>\n\n<% if ((size || start) && jsonFormat === 'objects') { %>\n    <div class=\"alert alert-warning\">\n        <h4><%- Messages.get('Warning') %></h4>\n        <p><%- Messages.get('export.json.ObjWarning') %></p>\n    </div>\n<% } %>\n\n";
-exports.count_summary = "<% if (size && count) { %>\n  <% var msg = (size == 0 ? '.ShowingAll' : '.ShowingRange'); %>\n  <% ['xs', 'sm', 'md', 'lg'].forEach(function (pageSize) { %>\n    <span class=\"visible-<%= pageSize %>-inline\">\n      <%- Messages.getText('table.' + pageSize + msg, page) %>\n    </span>\n  <% }); %>\n<% } %>\n";
-exports.list_tag = "<%- id %>\n<span class=\"im-remove\" title=\"<%- Messages.getText('lists.RemoveTag') %>\">\n    <%= Icons.icon('Remove') %>\n</span>\n";
-exports.table_cell = "<% if (state.minimised) { %>\n  &hellip;\n<% } else if (entity.id == null) { %>\n  <% if (value != null && formattedValue != null) { %>\n    <span class=\"im-displayed-value\"><%= value %></span>\n  <% } else if (entity.isNULL) { %>\n    <span class=\"im-null-entity\">\n      <%- Messages.getText('table.cell.NullEntity', {type: entity['class']}) %>\n    </span>\n  <% } else { %>\n    <%= NULL_VALUE %>\n  <% } %>\n<% } else { %>\n  <input\n    class=\"im-list-chooser\"\n    type=\"checkbox\"\n    <% if (input.checked) { %>checked<% } %>\n    <% if (input.disabled) { %>disabled<% } %>\n    style=\"display:<%- input.display %>\">\n\n  <a class=\"im-cell-link\" target=\"<%- target %>\" href=\"<%= url %>\">\n\n    <% if (isForeign) { %>\n      <% if (icon) { %>\n        <img src=\"<%= icon %>\" class=\"im-external-link\"></img>\n      <% } else { %>\n        <%= Icons.icon('ExternalLink') %>\n      <% } %>\n    <% } %>\n\n    <% if (value != null && formattedValue != null) { %>\n      <span class=\"im-displayed-value\"><%= formattedValue %></span>\n    <% } else { %>\n      <%= NULL_VALUE %>\n    <% } %>\n\n  </a>\n\n  <% if (value != null && field === 'url' && rawValue != url) { %>\n    <a class=\"im-cell-link external\" href=\"<%= rawValue %>\">\n      <%= Icons.icon('ExternalLink') %>\n      <%- Messages.getText('table.cell.Link') %>\n    </a>\n  <% } %>\n<% } %>\n";
-exports.modal_dialogue_opener = "<button class=\"btn btn-default im-open-dialogue\">\n  <%= Icons.icon(labels.ICON) %>\n  <span class=\"im-hidden-sm hidden-sm hidden-xs\">\n    <%- Messages.getText(labels.LONG, state) %>\n  </span>\n  <span class=\"im-visible-sm-inline visible-sm-inline\">\n    <%- Messages.getText(labels.SHORT, state) %>\n  <span>\n</button>\n";
-exports.progress_bar = "<% /* requires: doneness (float: 0 <= i <= 1) */ %>\n<% if (doneness != null && doneness >= 0) { %>\n    <div class=\"progress\">\n        <div class=\"progress-bar progress-bar-striped active\"\n             role=\"progressbar\"\n             aria-valuenow=\"<%- doneness %>\"\n             aria-valuemin=\"0\"\n             aria-valuemax=\"1\"\n             style=\"width: <%- 100 * doneness %>%;\">\n            <% if (doneness < 1) { %>\n              <span class=\"sr-only\">\n                <%- Math.round(100 * doneness) %>% <%- Messages.getText('Complete') %>\n              </span>\n            <% } %>\n        </div>\n    </div>\n<% } %>\n";
-exports.cell_preview_items = "<colgroup>\n  <col class=\"im-item-field\"/>\n  <col class=\"im-item-value\"/>\n</colgroup>\n<tbody></tbody>\n";
-exports.list_tags_apology = "<% if (!hasTags) { %>\n  <span>\n    <%- Messages.getText('lists.NoTags') %>\n  </span>\n<% } %>\n";
-exports.table_throbber = "<tr class=\"im-table-throbber\">\n  <td colspan=\"<%= colcount %>\">\n    <h2><%- Messages.getText('table.RequestingData') %></h2>\n    <div class=\"progress progress-info progress-striped active\">\n      <div class=\"bar\" style=\"width: 100%\"></div>\n    </div>\n  </td>\n</tr>\n";
-exports.export_column_controls = "<h4><%- Messages.getText('export.heading.Columns') %></h4>\n\n<ul class=\"list-group\">\n</ul>\n\n<div class=\"row controls\"></div>\n";
-exports.pagination = "<ul class=\"pagination\">\n    <li class=\"hidden-xs <%= gotoStart || 'im-goto-start' %>\" title=\"Go to start\">\n        <a class=\"im-pagination-button\">&#x21e4;</a>\n    </li>\n    <li class=\"hidden-xs hidden-sm <%= goFiveBack || 'im-go-back-5' %>\"\n        title=\"Go back five pages\"\n        class=\"visible-desktop\">\n        <a class=\"im-pagination-button\">&#x219e;</a>\n    </li>\n    <li class=\"<%= goOneBack || 'im-go-back-1' %>\"\n        title=\"Go to previous page\">\n        <a class=\"im-pagination-button\">&larr;</a>\n    </li>\n    <li class=\"im-current-page\">\n        <% if (useSelect) { %>\n          <form class=\"im-page-form form form-inline\">\n            <select class=\"form-control\">\n              <% for (i = 0; i < max; i++) { %>\n                <option\n                  <%= selected(i) ? 'selected' : void 0 %>\n                  value=\"<%= i * size %>\">\n                  page <%= i + 1 %>\n                </option>\n              <% } %>\n            </select>\n          </form>\n        <% } else { %>\n          <a href=\"#\">&hellip;</a>\n          <form class=\"im-page-form form form-inline\"\n                style=\"display:none;\">\n            <div class=\"control-group\">\n                <input type=\"number\"\n                       value=\"<%= currentPage %>\"\n                       max=\"<%= max %>\"\n                       min=\"<%= min %>\"\n                       class=\"form-control im-page-number\">\n            </div>\n          </form>\n        <% } %>\n    </li>\n    <li class=\"<%= goOneForward || 'im-go-fwd-1' %>\"\n        title=\"Go to next page\">\n        <a class=\"im-pagination-button\">&rarr;</a>\n    </li>\n    <li class=\"hidden-xs hidden-sm <%= goFiveForward || 'im-go-fwd-5' %>\"\n        title=\"Go forward five pages\"\n        class=\"visible-desktop\">\n        <a class=\"im-pagination-button\">&#x21a0;</a>\n    </li>\n    <li class=\"hidden-xs <%= gotoEnd || 'im-goto-end' %>\"\n        title=\"Go to last page\">\n        <a class=\"im-pagination-button\">&#x21e5;</a>\n    </li>\n</ul>\n";
-exports.reset_button = "<button type=\"button\"\n        <%= (isAll) ? 'disabled' : void 0 %>\n        class=\"btn btn-default btn-reset\">\n    <%- Messages.getText('Reset') %>\n</button>\n";
-exports.table_building = "<h2><%- Messages.getText('table.Building') %></h2>\n<%= IndeterminateProgressBar %>\n";
-exports.summary_heading = "<% /* requires:\n    *  numeric, available, got, uniqueValues\n    *  state.typeName, state.endName\n    *  filtered \n    */ %>\n<h3>\n  <% if (numeric) { %>\n    <%- Messages.getText('summary.NumericDistribution', {n: available}) %>\n    <span class=\"im-type-name\"><%- state.typeName %></span>\n    <span class=\"im-attr-name\"><%- pluralise(state.endName, got) %></span>\n  <% } else { %> \n    <span class=\"im-item-got\">\n      <%- Messages.getText('summary.Got', {available: available, got: got}) %>\n    </span>\n    <span class=\"im-item-available\">\n      <%- Messages.getText('Number', {n: available}) %>\n    </span>\n    <span class=\"im-type-name\"><%- state.typeName %></span>\n    <span class=\"im-attr-name\"><%- pluralise(state.endName, got) %></span>\n    <span class=\"im-item-total\">\n      <%- Messages.getText('summary.Total', {\n            filtered: filtered,\n            total: uniqueValues\n          }) %>\n    </span>\n  <% } %> \n</h3>\n";
-exports.facet_item = "<dd>\n    <a href=#>\n        <b class=\"im-facet-count pull-right\">\n            (<%- count %>)\n        </b>\n        <%- item %>\n    </a>\n</dd>\n";
-exports.type_value_controls = "<label class=\"span4\">\n    <%- messages.getText('conbuilder.IsA') %>\n</label>\n<% if (subclasses.length == 1) { %>\n  <select disabled class=\"form-control\">\n      <option><%- subclasses[0].text %></option>\n  </select>\n<% } else { %>\n  <%= select(subclasses, isSelected, 'form-control im-value-type') %>\n<% } %>\n  \n";
-exports.select = "<select class=\"<%- data.classes %>\">\n  <% _.each(data.options, function (opt) { %>\n    <option value=\"<%- data.key(opt) %>\"\n      <%- data.selectedTest(opt) ? 'selected' : void 0 %> >\n      <% if (data.contentHandler) { %>\n        <%- data.contentHandler(opt) %>\n      <% } else { %>\n        <%- opt.text %>\n      <% } %>\n    </option>\n  <% }); %>\n</select>\n";
-exports.export_rows_reset_button = "<button type=\"button\"\n        <%= (isAll) ? 'disabled' : void 0 %>\n        class=\"btn btn-default btn-reset\">\n        <%- Messages.getText('export.ResetRowSelection') %>\n</button>\n\n<% if (tablePage) { %>\n    <button type=\"button\"\n            <%= (tablePage.start === start && tablePage.size === size) ? 'disabled' : void 0 %>\n            class=\"btn btn-default im-set-table-page\">\n            <%- Messages.getText('export.SetTablePage') %>\n    </button>\n<% } %>\n        \n";
-exports.undo_history_step_section = "<div class=\"im-section-summary\">\n  <% if (collection.length) { %>\n    <%= Icons.icon(state.open ? 'ExpandedSection' : 'CollapsedSection') %>\n  <% } %>\n  <%- Messages.getText(summaryLabel, {n: count}) %>\n</div>\n<% if (collection.length) { %>\n  <div class=\"<%- collectionClasses %>\">\n    <% _.each(collection, function (e) { %>\n      <span class=\"label label-<%= e.added ? 'success' : (e.removed ? 'danger' : 'default') %>\">\n        <%- labelContent(e) %>\n      </span>\n    <% }); %>\n  </div>\n<% } %>\n";
-exports.table_subtable = "<span class=\"im-subtable-summary\">\n</span>\n<div class=\"im-table-wrapper\">\n</div>\n";
-exports.export_destination_galaxy_options = "<div class=\"form-group\">\n    <label><%- Messages.getText('GalaxyURILabel') %></label>\n    <input type=\"url\"\n           class=\"form-control im-galaxy-uri-param\"\n           value=\"<%- Galaxy.Current || Galaxy.Main %>\">\n</div>\n<div class=\"checkbox im-save-galaxy\">\n    <label>\n        <input type=\"checkbox\" <%= (Galaxy.Save) ? 'checked' : void 0 %>>\n        <%- Messages.getText('SaveGalaxyURL') %></label>\n    </label>\n</div>\n";
-exports.summary_stats = "<table class=\"table\">\n    <thead>\n        <tr>\n            <th><%- Messages.getText('summary.Max') %></th>\n            <th><%- Messages.getText('summary.Min') %></th>\n            <th><%- Messages.getText('summary.Average') %></th>\n            <th><%- Messages.getText('summary.StdDev') %></th>\n        </tr>\n        <tr>\n            <td><%- Messages.getText('Number', {n: max}) %></td>\n            <td><%- Messages.getText('Number', {n: min}) %></td>\n            <td><%- Messages.getText('Number', {n: average}) %></td>\n            <td><%- Messages.getText('Number', {n: stdev}) %></td>\n        </tr>\n    </thead>\n</table>\n\n<div class=\"row im-range-controls\">\n    <div class=\"col-sm-4 im-range-from\">\n        <input type=\"text\"\n               class=\"form-control im-range-min input im-range-val\"\n               value=\"<%- min %>\">\n    </div>\n    <div class=\"col-sm-1 im-ellipsis\">\n        <span>...</span>\n    </div>\n    <div class=\"col-sm-4 im-range-to\">\n        <input type=\"text\"\n               class=\"form-control im-range-max input im-range-val\"\n               value=\"<%- max %>\">\n    </div>\n    <div class=\"col-sm-3 im-range-buttons\">\n        <div class=\"btn-group pull-right\">\n            <button class=\"btn btn-primary disabled\">Apply</button>\n            <button class=\"btn btn-cancel disabled\">Reset</button>\n        </div>\n    </div>\n</div>\n\n<div class=\"slider\"></div>\n\n";
-exports.export_destination_radios = "<label><%- Messages.getText('export.param.Destination') %></label>\n<% _.each(destinations, function (d) { %>\n    <div class=\"radio im-dest-<%- d %>\">\n        <label>\n            <input type=\"radio\"\n                    name=\"dest\"\n                    <%= (d === dest) ? 'checked' : void 0 %>>\n            <%- Messages.getText(d) %>\n        </label>\n    </div>\n<% }); %>\n\n";
-exports.code_gen_button = "<% /* requires lang :: string, options.Langs :: [string] */ %>\n<div class=\"btn-group language-selector\">\n    <button type=\"button\"\n            class=\"btn btn-default im-show-code-gen-dialogue\">\n    </button>\n    <button type=\"button\"\n            data-toggle=\"dropdown\"\n            aria-expanded=\"false\"\n            class=\"btn btn-default dropdown-toggle\">\n        <span class=\"caret\"></span>\n    </button>\n    <ul class=\"dropdown-menu im-code-gen-langs\" role=\"menu\">\n        <% _.each(options.Langs, function (l) { %>\n            <li data-lang=\"<%- l %>\" class=\"<%= (l === lang) ? 'active' : void 0 %>\">\n                <a href=\"#\"><%- Messages.getText('codegen.Lang', {lang: l}) %></a>\n            </li>\n        <% }); %>\n    </ul>\n</div>\n";
-exports.modal_base = "<div class=\"modal-dialog <%- modalSize %>\">\n    <div class=\"modal-content\">\n        <div class=\"modal-header\">\n            <button type=\"button\" class=\"close\">\n                <span aria-hidden=\"true\">&times;</span>\n                <span class=\"sr-only\">Close</span>\n            </button>\n            <h4 class=\"modal-title\"><%- title %></h4>\n        </div>\n        <div class=\"modal-body\">\n            <%= body %>\n        </div>\n    </div>\n</div>\n";
-exports.value_control_row = "<td>\n  <input type=\"checkbox\" {{ (selected) ? 'checked' : void 0 }}>\n</td>\n<td class=\"im-multi-value\">\n  {{# if (editing) { }}\n    <div class=\"input-group\">\n      <input type=\"text\" value=\"{{ value }}\" class=\"form-control\">\n      <span class=\"input-group-btn\">\n        <button class=\"btn btn-success im-save\"\n                title=\"{{ messages.getText('multivalue.SaveValue') }}\"\n                type=\"button\">\n            {{{ icons.icon('OK') }}}\n            <span class=\"im-long\">{{ messages.getText('multivalue.SaveValue') }}</span>\n        </button>\n        <button class=\"btn btn-danger im-cancel\"\n                title=\"{{ messages.getText('Cancel') }}\"\n                type=\"button\">\n            {{{ icons.icon('Cancel') }}}\n            <span class=\"im-long\">{{ messages.getText('Cancel') }}</span>\n        </button>\n      </span>\n    </div>\n  {{# } else { }}\n    <a class=\"im-edit pull-right\">{{{ icons.icon('Edit') }}}</a>\n    {{ value }}\n  {{# } }}\n</td>\n";
-exports.formatted_sorting = "<a> <% /* requires Icons, direction and name */ %>\n    <%= Icons.icon(direction || 'unsorted') %>\n    <span class=\"im-sort-path\"><%- name %></span>\n</a>\n";
-exports.column_header = "<% /* requires the properties of HeaderModel +\n    *  penult, last, headerClasses, colTitleClasses, penultClasses\n    *  and the usual Icons, Messages\n    */ %>\n<div class=\"<%- headerClasses %>\">\n\n<div class=\"im-th-buttons\">\n    \n    <% if (outerJoined && isReference) { %>\n      <a href=\"#\" \n          class=\"im-subtable-expander im-th-button\"\n          title=\"<%- Messages.getText('table.header.ToggleTables') %>\">\n        <%= Icons.icon('Table') %>\n      </a>\n    <% } %>\n\n    <% if (sortable) { %>\n        <span class=\"im-th-dropdown im-col-sort dropdown\">\n            <a class=\"im-th-button im-col-sort-indicator\"\n                title=\"<%- Messages.getText('table.header.SortColumn', {dir: sortDirection}) %>\">\n                <%= Icons.icon(sortDirection || 'unsorted') %>\n            </a>\n            <div class=\"dropdown-menu\">\n                <div><%- Messages.getText('table.header.FailedToInitSortMenu') %></div>\n            </div>\n        </span>\n    <% } %>\n\n    <a class=\"im-th-button im-col-remover\"\n        title=\"<%- Messages.getText('table.header.RemoveColumn') %>\">\n        <%= Icons.icon('headerIconRemove') %>\n    </a>\n\n    <a class=\"im-th-button im-col-minumaximiser\"\n        title=\"<%- Messages.getText('table.header.ToggleColumn') %>\">\n        <%= Icons.icon(minimised ? 'headerIconReveal' : 'headerIconHide') %>\n    </a>\n\n    <span class=\"dropdown im-filter-summary im-th-dropdown\">\n        <a class=\"im-th-button im-col-filters dropdown-toggle\"\n            title=\"<%- Messages.getText('table.header.FilterTitle', {count: numOfCons}) %>\"\n            data-toggle=\"dropdown\" >\n            <%= Icons.icon('Filter') %>\n        </a>\n        <div class=\"dropdown-menu\">\n            <div><%- Messages.getText('table.header.FailedToInitFilter') %></div>\n        </div>\n    </span>\n\n    <span class=\"dropdown im-summary im-th-dropdown\">\n        <a class=\"im-th-button summary-img dropdown-toggle\"\n            title=\"<%- Messages.getText('table.header.ViewSummary') %>\"\n            data-toggle=\"dropdown\" >\n            <%= Icons.icon('Summary') %>\n        </a>\n        <div class=\"dropdown-menu\">\n            <div><%- Messages.getText('table.header.FailedToInitSummary') %></div>\n        </div>\n    </span>\n\n    <% if (isComposed) { %>\n        <a class=\"im-th-button im-col-composed\"\n            title=\"<%- Messages.getText('table.header.Composed', {replaces: replaces}) %>\">\n            <%= Icons.icon('Composed') %>\n        </a>\n    <% } %>\n</div>\n\n<div class=\"<%- colTitleClasses %>\">\n  <div class=\"<%- penultClasses %>\">\n      <%- penult %>\n  </div>\n  <% if (last) { %>\n    <div class=\"im-title-part im-last\">\n        <%- last %>\n    </div>\n  <% } %>\n</div>\n\n</div>\n\n";
-exports.row_surrogate = "<%= Icons.icon(above ? 'ASC' : 'DESC') %>\n<%- item %>: <%- count %>\n";
-exports.table_subtable_summary = "<% if (rows.length) { %>\n  <%= Icons.icon('Table') %>\n<% } else { %>\n  <%= Icons.icon('EmptyTable') %>\n<% } %>\n<%- rows.length %>\n<%- pluralise(contentName, rows.length) %>\n";
-exports.column_manager_path_chooser_buttons = "<button class=\"btn btn-default im-rearrange-columns\">\n  <%- Messages.getText('Cancel') %>\n</button>\n<button class=\"btn btn-success im-add-column\"\n  <%= collection.length ? (void 0) : 'disabled' %> >\n  <%- Messages.getText('columns.AddColumn', {num: collection.length}) %>\n</button>\n\n";
-exports.column_manager_order_direction = "<% /* requires: direction, isNumeric */ %>\n<span class=\"im-change-direction\"\n  title=\"<%- Messages.getText('columns.ChangeDirection') %>\">\n  <span class=\"sr-only\">\n    <%- Messages.getText('columns.CurrentDirection', {\n      dir: direction, numeric: isNumeric\n    }) %>\n  </span>\n  <%= Icons.icon('Sort' + (isNumeric ? 'Numeric' : 'String') + direction) %>\n</span>\n";
-exports.cell_preview_error = "<div class=\"alert alert-error\">\n    <h4>Error</h4>\n    <p>Sorry. We could not fetch the preview due to an error:</p>\n    <code><%- message %></code>\n</div>\n";
-exports.cell_preview_attribute = "<tr>\n  <td class=\"im-field-name\"><%- _.last(parts) %></td>\n  <td class=\"im-field-value <%- field.toLowerCase() %> <%- type %>\">\n    <% if (isNumeric) { %>\n      <%- numToString(+value) %>\n    <% } else { %>\n      <%- value %>\n    <% } %>\n    <% if (tooLong) { %>\n      <span class=\"im-overspill\"><%- valueOverspill %></span>\n      <a class=\"im-too-long\">\n        <span class=\"im-ellipsis\">...</span>\n        <%= Icons.icon('More') %>\n      </a>\n    <% } %>\n  </td>\n</tr>\n";
-exports.boolean_value_controls = "<button class=\"btn btn-default im-true {{ (value === true) ? ' active' : void 0 }}\">\n  True\n</button>\n<button class=\"btn btn-default im-false {{ (value === false) ? ' active' : void 0 }}\">\n  False\n</button>\n";
-exports.export_row_controls = "<h4 class=\"im-title\"></h4>\n\n<div class=\"form-group\">\n    <label class=\"size-label\"></label>\n    <input name=\"size\"\n           step=\"1\"\n           type=\"range\"\n           min=\"1\"\n           max=\"<%= max %>\"\n           value=\"<%= size || max %>\">\n</div>\n\n<div class=\"form-group\">\n    <label class=\"start-label\"></label>\n    <input name=\"start\"\n           step=\"1\"\n           type=\"range\"\n           min=\"0\"\n           max=\"<%= max - 1 %>\"\n           value=\"<%= start %>\">\n</div>\n\n<div class=\"form-group im-reset\">\n</div>\n";
-exports.only_one_item = "<div class=\"alert alert-info\">\n    <%= Icons.icon('Info') %>\n    <%= Messages.getText('summary.OnlyOne', {names: state, item: items[0]}) %>\n</div>\n\n";
-exports.checkbox = "<label>\n    <input type=\"checkbox\" \n           <%= checked ? 'checked' : void 0 %>\n           >\n    <%- label %>\n</label>\n";
-exports.facet_title = "<%= Icons.icon(state.open ? 'Expanded' : 'Collapsed') %>\n<span class=\"im-facet-title\"><%- pathName %></span>\n&nbsp;\n<span class=\"im-facet-count\"><%- Messages.getText('Number', {n: got} %></span>\n";
-exports.large_table_disuader = "<div class=\"modal-dialog\">\n    <div class=\"modal-content\">\n        <div class=\"modal-header\">\n            <h3>\n            <%= size %> rows - are you sure?\n            </h3>\n        </div>\n\n        <div class=\"modal-body\">\n\n            <p><%= Messages.getText('largetable.appeal', {size: size}) %></p>\n\n            <ul>\n                <li>\n                    <p>\n                        If you want to see all the data, you can page \n                        <span class=\"label label-info\">\n                            <%= Icons.icon('GoBack') %>\n                            backwards\n                        </span>\n                        and \n                        <span class=\"label label-info\">\n                            forwards\n                            <%= Icons.icon('GoForward') %>\n                        </span>\n                        through the results.\n                    </p>\n                    <div class=\"btn-group\">\n                        <a class=\"btn btn-default im-alternative-action page-backwards\" href=\"#\">\n                            <%= Icons.icon('GoBack') %>\n                            go one page back\n                        </a>\n                        <a class=\"btn btn-default im-alternative-action page-forwards\" href=\"#\">\n                            go one page forward\n                            <%= Icons.icon('GoForward') %>\n                        </a>\n                    </div>\n                </li>\n\n                <li>\n                    <p>\n                        If you are looking for something specific, you can use the\n                        <span class=\"label label-info\">filtering tools</span>\n                        to narrow down the result set. Then you \n                        might be able to fit the items you are interested in in a\n                        single page.\n                    </p>\n                    <button class=\"btn btn-default im-alternative-action add-filter-dialogue\">\n                        <%= Icons.icon('Filter') %>\n                        Add a new filter.\n                    </button>\n                </li>\n\n                <li>\n                    <p>\n                        If you want to get and save the results, we suggest\n                        <span class=\"label label-info\">downloading</span>\n                        the results in a format that suits you. \n                    <p>\n                    <button class=\"btn btn-default im-alternative-action download-menu\">\n                        <%= Icons.icon('Export') %>\n                        Open the download menu.\n                    </buttn>\n                </li>\n\n            </ul>\n        </div>\n\n        <div class=\"modal-footer\">\n            <button class=\"btn btn-primary pull-right\">\n                <%- Messages.getText('largetable.ok', {size: size}) %>\n            </button>\n            <button class=\"btn pull-left close\">\n                <%- Messages.getText('largetable.abort') %>\n            </button>\n        </div>\n    </div>\n</div>\n";
-exports.list_dialogue_button = "<button class=\"btn btn-default dropdown-toggle\" data-toggle=\"dropdown\">\n  <%= Icons.icon('Lists') %>\n  <span class=\"hidden-xxs\">\n    <%- Messages.getText('lists.SaveAsList') %>\n  </span>\n  <span class=\"caret\"></span>\n</button>\n\n<ul class=\"dropdown-menu dropdown-menu-right\" role=\"menu\">\n    <li class=\"divider\"></li>\n    <li>\n        <a class=\"im-pick-items\" href=\"#\">\n            <%- Messages.getText('lists.StartPicking') %>\n        </a>\n    </li>\n    <li class=\"divider\"></li>\n    <li>\n        <div class=\"btn-group btn-group-justified\" role=\"group\">\n            <a role=\"button\" class=\"<%- createBtnClasses %>\">\n                <%- Messages.getText('lists.Create') %>\n            </a>\n            <a role=\"button\" class=\"<%- appendBtnClasses %>\">\n                <%- Messages.getText('lists.Append') %>\n            </a>\n        </div>\n    </li>\n</ul>\n";
-exports.export_format_controls = "<h4 class=\"im-title\"></h4>\n\n<% _.each(formats, function (formatDef) { %>\n    <div class=\"radio\">\n        <label>\n            <input type=\"radio\"\n                   name=\"format\"\n                   value=\"<%= formatDef.id %>\"\n                   <%= (formatDef.id === format) ? 'checked' : void 0 %>>\n            <%= Icons.icon(formatDef.icon) %>\n            <%= Messages.getText(formatDef.desc) %>\n        </label>\n    </div>\n<% }); %>\n";
-exports.slider = "<div class=\"im-slider\">\n    <% _.each(markers, function(marker) { %>\n        <span class=\"im-slider-marker <%- (marker.percent > 50) ? 'high' : 'low' %>\"\n              style=\"left:<%- marker.percent %>%\">\n            <%- marker.value %>\n        </span>\n    <% }); %>\n</div>\n";
-exports.column_manager_sort_order_editor = "<% /* requires: collection, available */ %>\n<h4>\n  <%- Messages.getText('columns.CurrentSortOrder', {\n    oes: collection\n  }) %>\n</h4>\n\n<span class=\"help-block\">\n  <%- Messages.getText('columns.CurrentSortOrderHelp') %>\n</span>\n\n<div class=\"well im-current-sort-order\">\n\n  <div class=\"row\">\n    <div class=\"col-md-6\">\n        <% if (collection.length) { %>\n          <ul class=\"list-group im-active-oes im-connected-list\"></ul>\n        <% } else { %>\n          <div class=\"im-empty-collection\">\n            <%- Messages.getText('columns.NoSortOrder') %>\n          </div>\n        <% } %>\n    </div>\n\n    <div class=\"col-md-6\">\n        <% if (available) { %>\n          <div class=\"im-rubbish-bin\">\n            <ul class=\"list-group im-removed im-available-oes im-connected-list\">\n            </ul>\n          </div>\n        <% } %>\n    </div>\n  </div>\n</div>\n";
-exports.cell_preview_reference = "<tr>\n    <td class=\"im-field-name\"><%- _.rest(parts).join(' ') %></td>\n    <td class=\"im-field-value <%- field.toLowerCase() %>\">\n        <%- values.join(', ') %>\n    </td>\n</tr>\n";
-exports.table_error = "<div class=\"alert alert-error alert-warning\">\n\n  <h2><%= Icons.icon('Bug') %><%- Messages.getText('error.Oops') %></h2>\n\n  <p>\n    <i><%- Messages.getText(error.key || 'error.' + domain + '.Heading') %></i>\n  </p>\n\n  <p><%- Messages.getText('error.' + domain + '.Body') %></p>\n\n  <a class=\"btn btn-primary pull-right\" href=\"mailto:<%= mailto %>\">\n    <%= Icons.icon('Mail') %>\n    <%- Messages.getText('error.EmailHelp') %>\n  </a>\n\n  <button class=\"btn btn-default im-show-query\">\n    <%= Icons.icon('xml') %>\n    <%- Messages.getText('error.ShowQuery') %>\n  </button>\n  <% if (error.message) { %>\n    <button class=\"btn btn-default im-show-error\">\n      <%= Icons.icon('Bug') %>\n      <%- Messages.getText('error.ShowError') %>\n    </button>\n  <% } %>\n\n  <pre class=\"query-xml well im-latent\"><%- indent(query) %></pre>\n\n  <% if (error.message) { %>\n    <pre class=\"error-message well im-latent\"><%- error.message %></pre>\n  <% } %>\n\n</div>\n";
-exports.no_results = "<% /* requires: selectList :: [], canUndo :: bool */ %>\n<td colspan=\"<%- selectList.length %>\">\n  <div class=\"alert alert-warning\">\n    <% if (canUndo) { %>\n      <button class=\"pull-right btn btn-large btn-default btn-undo\">\n        <%= Icons.icon('Undo') %>\n        <%- Messages.getText('Undo') %>\n      </button>\n    <% } %>\n    <strong><%- Messages.getText('table.Empty') %></strong>\n    <p><%- Messages.getText('table.EmptyWhy') %></p>\n  </div>\n</td>\n";
-exports.extra_value_controls = "<label class=\"im-value-options\">\n    <%- messages.getText('conbuilder.ExtraLabel') %>\n    <input type=\"text\" class=\"im-extra-value form-control\"\n            placeholder=\"<%- messages.getText('conbuilder.ExtraPlaceholder') %>\"\n            value=\"<%- con.extraValue %>\">\n</label>\n\n";
-exports.column_name_popover = "<% _.each(parts, function (part) { %>\n  <span class=\"im-name-part\"><%- part %></span>\n<% }); %>\n";
 
-},{"underscore":310}],101:[function(require,module,exports){
+},{}],101:[function(require,module,exports){
 (function() {
   var Options, fs, pluralize, select_html, select_templ, _;
 
@@ -12474,7 +12349,7 @@ exports.column_name_popover = "<% _.each(parts, function (part) { %>\n  <span cl
 
 }).call(this);
 
-},{"../options":96,"pluralize":308,"underscore":310}],102:[function(require,module,exports){
+},{"../options":96,"pluralize":311,"underscore":309}],102:[function(require,module,exports){
 (function() {
   module.exports = {
     interpolate: /\{\{\{ (.+?) \}\}\}/g,
@@ -12859,7 +12734,7 @@ exports.column_name_popover = "<% _.each(parts, function (part) { %>\n  <span cl
 
 }).call(this);
 
-},{"../models/cell":70,"../models/fast-path-object":76,"../models/nested-table":81,"../models/null-object":82,"../models/object-store":84,"underscore":310}],109:[function(require,module,exports){
+},{"../models/cell":70,"../models/fast-path-object":76,"../models/nested-table":81,"../models/null-object":82,"../models/object-store":84,"underscore":309}],109:[function(require,module,exports){
 (function() {
   var _;
 
@@ -12877,7 +12752,7 @@ exports.column_name_popover = "<% _.each(parts, function (part) { %>\n  <span cl
 
 }).call(this);
 
-},{"underscore":310}],110:[function(require,module,exports){
+},{"underscore":309}],110:[function(require,module,exports){
 (function() {
   var CACHE, key;
 
@@ -12981,7 +12856,7 @@ exports.column_name_popover = "<% _.each(parts, function (part) { %>\n  <span cl
 
 }).call(this);
 
-},{"underscore":310}],113:[function(require,module,exports){
+},{"underscore":309}],113:[function(require,module,exports){
 (function() {
   var getMissingData, hasData, thenSet;
 
@@ -13043,7 +12918,7 @@ exports.column_name_popover = "<% _.each(parts, function (part) { %>\n  <span cl
 
 }).call(this);
 
-},{"backbone":264,"underscore":310}],115:[function(require,module,exports){
+},{"backbone":264,"underscore":309}],115:[function(require,module,exports){
 (function() {
   var buildProps, refs, refsIn, _;
 
@@ -13106,7 +12981,7 @@ exports.column_name_popover = "<% _.each(parts, function (part) { %>\n  <span cl
 
 }).call(this);
 
-},{"underscore":310}],116:[function(require,module,exports){
+},{"underscore":309}],116:[function(require,module,exports){
 (function() {
   var getLeaves,
     __indexOf = [].indexOf || function(item) { for (var i = 0, l = this.length; i < l; i++) { if (i in this && this[i] === item) return i; } return -1; };
@@ -13244,7 +13119,7 @@ exports.column_name_popover = "<% _.each(parts, function (part) { %>\n  <span cl
 
 }).call(this);
 
-},{"es6-promise":279,"underscore":310}],118:[function(require,module,exports){
+},{"es6-promise":279,"underscore":309}],118:[function(require,module,exports){
 (function() {
   var getReplacedTest, isIDPath, shouldFormat;
 
@@ -13435,7 +13310,7 @@ exports.column_name_popover = "<% _.each(parts, function (part) { %>\n  <span cl
 
 }).call(this);
 
-},{"underscore":310}],125:[function(require,module,exports){
+},{"underscore":309}],125:[function(require,module,exports){
 (function() {
   exports.href = function(address, subject, body) {
     var pairs, params;
@@ -13522,7 +13397,7 @@ exports.column_name_popover = "<% _.each(parts, function (part) { %>\n  <span cl
 
 }).call(this);
 
-},{"underscore":310}],129:[function(require,module,exports){
+},{"underscore":309}],129:[function(require,module,exports){
 (function() {
   var contains_i, _;
 
@@ -13568,7 +13443,7 @@ exports.column_name_popover = "<% _.each(parts, function (part) { %>\n  <span cl
 
 }).call(this);
 
-},{"underscore":310}],130:[function(require,module,exports){
+},{"underscore":309}],130:[function(require,module,exports){
 (function() {
   var PopoverFactory, PreviewCachingService;
 
@@ -13584,9 +13459,9 @@ exports.column_name_popover = "<% _.each(parts, function (part) { %>\n  <span cl
       return this.wrapped.fetchModel();
     };
 
-    PreviewCachingService.prototype.findById = function(type, id) {
+    PreviewCachingService.prototype.findById = function(type, id, flds) {
       var _base, _name;
-      return (_base = this._foundById)[_name = "" + type + ":" + id] != null ? _base[_name] : _base[_name] = this.wrapped.findById(type, id);
+      return (_base = this._foundById)[_name = "" + type + ":" + id + ":" + flds] != null ? _base[_name] : _base[_name] = this.wrapped.findById(type, id, flds);
     };
 
     PreviewCachingService.prototype.count = function(query) {
@@ -13787,7 +13662,7 @@ exports.column_name_popover = "<% _.each(parts, function (part) { %>\n  <span cl
 
 }).call(this);
 
-},{"../messages":50,"../options":96,"./branding":103,"./get-organisms":117,"./get-result-class":119,"./open-window-with-post":127,"./parse-url":128,"es6-promise":279,"underscore":310}],134:[function(require,module,exports){
+},{"../messages":50,"../options":96,"./branding":103,"./get-organisms":117,"./get-result-class":119,"./open-window-with-post":127,"./parse-url":128,"es6-promise":279,"underscore":309}],134:[function(require,module,exports){
 (function() {
   var Options, Promise, fromPairs, getGenomeSpaceUrl, save, _;
 
@@ -13829,7 +13704,7 @@ exports.column_name_popover = "<% _.each(parts, function (part) { %>\n  <span cl
 
 }).call(this);
 
-},{"../options":96,"./query-string":131,"es6-promise":279,"underscore":310}],135:[function(require,module,exports){
+},{"../options":96,"./query-string":131,"es6-promise":279,"underscore":309}],135:[function(require,module,exports){
 (function() {
   var $, BOUNDARY, CLOSE_DELIM, DELIMITER, DRIVE_METHOD, DRIVE_PATH, ERR, FILE_CT, GoogleExporter, LIB, METADATA_CT, MetaData, Options, Promise, REQ_CT, REQ_PARAMS, SCOPE, VERSION, loadResource, sendToGoogleDrive, withExporter, _, __GOOGLE;
 
@@ -14008,7 +13883,7 @@ exports.column_name_popover = "<% _.each(parts, function (part) { %>\n  <span cl
 
 }).call(this);
 
-},{"../options":96,"./load-resource":123,"es6-promise":279,"jquery":307,"underscore":310}],136:[function(require,module,exports){
+},{"../options":96,"./load-resource":123,"es6-promise":279,"jquery":307,"underscore":309}],136:[function(require,module,exports){
 (function() {
   var callable, compose, escape, getData, _ref,
     __slice = [].slice;
@@ -14036,7 +13911,7 @@ exports.column_name_popover = "<% _.each(parts, function (part) { %>\n  <span cl
 
 }).call(this);
 
-},{"./ensure-required-data":113,"underscore":310}],137:[function(require,module,exports){
+},{"./ensure-required-data":113,"underscore":309}],137:[function(require,module,exports){
 (function() {
   var NEXT_DIRECTION_OF, sortQueryByPath;
 
@@ -14146,7 +14021,7 @@ exports.column_name_popover = "<% _.each(parts, function (part) { %>\n  <span cl
 
 }).call(this);
 
-},{"../icons":48,"../messages":50,"../options":96,"../templates/mustache-settings":102,"underscore":310}],140:[function(require,module,exports){
+},{"../icons":48,"../messages":50,"../options":96,"../templates/mustache-settings":102,"underscore":309}],140:[function(require,module,exports){
 (function() {
   var ALREADY_DONE, CACHES, Options, Page, Promise, ResultCache,
     __indexOf = [].indexOf || function(item) { for (var i = 0, l = this.length; i < l; i++) { if (i in this && this[i] === item) return i; } return -1; };
@@ -14734,7 +14609,7 @@ module.exports = '2.0.0-beta-11';
 
 }).call(this);
 
-},{"../core-view":37,"../icons":48,"../messages":50,"../options":96,"../templates":100,"./constraint-editor":161,"./constraint-summary":162,"es6-promise":279,"imjs":288,"jquery":307,"underscore":310}],145:[function(require,module,exports){
+},{"../core-view":37,"../icons":48,"../messages":50,"../options":96,"../templates":100,"./constraint-editor":161,"./constraint-summary":162,"es6-promise":279,"imjs":288,"jquery":307,"underscore":309}],145:[function(require,module,exports){
 (function() {
   var $, AttributeValueControls, CoreView, HasTypeaheads, INTEGRAL_TYPES, IS_BLANK, Messages, NUMERIC_TYPES, Options, Promise, Query, SuggestionSource, Templates, numToString, numify, selectTemplate, trim, _, _ref, _ref1,
     __hasProp = {}.hasOwnProperty,
@@ -15095,7 +14970,7 @@ module.exports = '2.0.0-beta-11';
 
 }).call(this);
 
-},{"../core-view":37,"../messages":50,"../mixins/has-typeaheads":65,"../options":96,"../patterns":97,"../templates":100,"../templates/helpers":101,"../utils/suggestion-source":139,"es6-promise":279,"imjs":288,"jquery":307,"underscore":310}],146:[function(require,module,exports){
+},{"../core-view":37,"../messages":50,"../mixins/has-typeaheads":65,"../options":96,"../patterns":97,"../templates":100,"../templates/helpers":101,"../utils/suggestion-source":139,"es6-promise":279,"imjs":288,"jquery":307,"underscore":309}],146:[function(require,module,exports){
 (function() {
   var BooleanValueControls, Messages, Options, View, fs, html, mustacheSettings, _,
     __hasProp = {}.hasOwnProperty,
@@ -15163,7 +15038,7 @@ module.exports = '2.0.0-beta-11';
 
 }).call(this);
 
-},{"../core-view":37,"../messages":50,"../options":96,"../templates/mustache-settings":102,"underscore":310}],147:[function(require,module,exports){
+},{"../core-view":37,"../messages":50,"../options":96,"../templates/mustache-settings":102,"underscore":309}],147:[function(require,module,exports){
 (function() {
   var CodeGenButton, CodeGenModel, CoreView, Dialogue, MainButton, Messages, Options, Templates, _,
     __hasProp = {}.hasOwnProperty,
@@ -15262,7 +15137,7 @@ module.exports = '2.0.0-beta-11';
 
 }).call(this);
 
-},{"../core-view":37,"../messages":50,"../messages/code-gen":52,"../models/code-gen":71,"../options":96,"../templates":100,"./code-gen-dialogue":148,"underscore":310}],148:[function(require,module,exports){
+},{"../core-view":37,"../messages":50,"../messages/code-gen":52,"../models/code-gen":71,"../options":96,"../templates":100,"./code-gen-dialogue":148,"underscore":309}],148:[function(require,module,exports){
 (function (global){
 (function() {
   var CANNOT_SAVE, C_STYLE_COMMENTS, Checkbox, CodeGenDialogue, CodeGenModel, Messages, Modal, OCTOTHORPE_COMMENTS, Options, Promise, Templates, XML_MIMETYPE, alreadyRejected, canSaveFromMemory, indentXml, stripEmptyValues, stripExtraneousWhiteSpace, withFileSaver, withPrettyPrintOne, withResource, _,
@@ -15606,7 +15481,7 @@ module.exports = '2.0.0-beta-11';
 }).call(this);
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"../core/checkbox":38,"../messages":50,"../messages/code-gen":52,"../models/code-gen":71,"../options":96,"../templates":100,"../utils/indent-xml":121,"../utils/strip-extra-whitespace":138,"../utils/with-cdn-resource":142,"./modal":229,"es6-promise":279,"underscore":310}],149:[function(require,module,exports){
+},{"../core/checkbox":38,"../messages":50,"../messages/code-gen":52,"../models/code-gen":71,"../options":96,"../templates":100,"../utils/indent-xml":121,"../utils/strip-extra-whitespace":138,"../utils/with-cdn-resource":142,"./modal":229,"es6-promise":279,"underscore":309}],149:[function(require,module,exports){
 (function() {
   var AvailableColumns, Collection, ColumnManager, ColumnManagerTabs, IndexedCollection, Messages, Modal, OrderByList, OrderByModel, PathModel, SelectList, SelectListEditor, SortOrderEditor, Templates, _,
     __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; },
@@ -15898,7 +15773,7 @@ module.exports = '2.0.0-beta-11';
 
 }).call(this);
 
-},{"../core/collection":39,"../messages":50,"../messages/columns":53,"../models/available-columns":69,"../models/order-element":86,"../models/path":89,"../templates":100,"./column-manager/select-list":154,"./column-manager/sort-order":156,"./column-manager/tabs":157,"./modal":229,"underscore":310}],150:[function(require,module,exports){
+},{"../core/collection":39,"../messages":50,"../messages/columns":53,"../models/available-columns":69,"../models/order-element":86,"../models/path":89,"../templates":100,"./column-manager/select-list":154,"./column-manager/sort-order":156,"./column-manager/tabs":157,"./modal":229,"underscore":309}],150:[function(require,module,exports){
 (function() {
   var AvailablePath, CUTOFF, UnselectedColumn, _,
     __hasProp = {}.hasOwnProperty,
@@ -15978,7 +15853,7 @@ module.exports = '2.0.0-beta-11';
 
 }).call(this);
 
-},{"./unselected-column":158,"underscore":310}],151:[function(require,module,exports){
+},{"./unselected-column":158,"underscore":309}],151:[function(require,module,exports){
 (function() {
   var ColumnManger, ColumnMangerButton, QueryDialogueButton,
     __hasProp = {}.hasOwnProperty,
@@ -16068,7 +15943,7 @@ module.exports = '2.0.0-beta-11';
 
 }).call(this);
 
-},{"../../templates":100,"./selected-column":155,"underscore":310}],153:[function(require,module,exports){
+},{"../../templates":100,"./selected-column":155,"underscore":309}],153:[function(require,module,exports){
 (function() {
   var Buttons, ColumnChooser, CoreView, OpenNodes, Options, PathChooser, PathSet, Templates,
     __hasProp = {}.hasOwnProperty,
@@ -16503,7 +16378,7 @@ module.exports = '2.0.0-beta-11';
 
 }).call(this);
 
-},{"../../core-view":37,"../../mixins/handles-dom-resort":64,"../../templates":100,"./path-chooser":153,"./selected-column":155,"./unselected-column":158,"underscore":310}],155:[function(require,module,exports){
+},{"../../core-view":37,"../../mixins/handles-dom-resort":64,"../../templates":100,"./path-chooser":153,"./selected-column":155,"./unselected-column":158,"underscore":309}],155:[function(require,module,exports){
 (function() {
   var Collection, CoreView, PathModel, SelectedColumn, TEMPLATE_PARTS, Templates, decr, ignore, incr, _,
     __hasProp = {}.hasOwnProperty,
@@ -16654,7 +16529,7 @@ module.exports = '2.0.0-beta-11';
 
 }).call(this);
 
-},{"../../core-view":37,"../../core/collection":39,"../../models/path":89,"../../templates":100,"../../utils/events":114,"underscore":310}],156:[function(require,module,exports){
+},{"../../core-view":37,"../../core/collection":39,"../../models/path":89,"../../templates":100,"../../utils/events":114,"underscore":309}],156:[function(require,module,exports){
 (function (global){
 (function() {
   var AvailablePath, CoreModel, CoreView, HandlesDOMReSort, OrderElement, SortOrderEditor, Templates, activeId, inactiveId, _,
@@ -16898,7 +16773,7 @@ module.exports = '2.0.0-beta-11';
 }).call(this);
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"../../core-model":36,"../../core-view":37,"../../mixins/handles-dom-resort":64,"../../templates":100,"./available-path":150,"./order-element":152,"underscore":310}],157:[function(require,module,exports){
+},{"../../core-model":36,"../../core-view":37,"../../mixins/handles-dom-resort":64,"../../templates":100,"./available-path":150,"./order-element":152,"underscore":309}],157:[function(require,module,exports){
 (function() {
   var ClassSet, ColumnManagerTabs, CoreView, Templates, tabClassSet, _,
     __hasProp = {}.hasOwnProperty,
@@ -17000,7 +16875,7 @@ module.exports = '2.0.0-beta-11';
 
 }).call(this);
 
-},{"../../core-view":37,"../../templates":100,"../../utils/css-class-set":112,"underscore":310}],158:[function(require,module,exports){
+},{"../../core-view":37,"../../templates":100,"../../utils/css-class-set":112,"underscore":309}],158:[function(require,module,exports){
 (function() {
   var SelectedColumn, TEMPLATE_PARTS, Templates, UnselectedColumn, _,
     __hasProp = {}.hasOwnProperty,
@@ -17044,7 +16919,7 @@ module.exports = '2.0.0-beta-11';
 
 }).call(this);
 
-},{"../../templates":100,"./selected-column":155,"underscore":310}],159:[function(require,module,exports){
+},{"../../templates":100,"./selected-column":155,"underscore":309}],159:[function(require,module,exports){
 (function() {
   var ConstraintAdderOptions, HasTypeaheads, IS_BLANK, Options, Promise, Templates, View, pathSuggester, shortenLongName, _,
     __slice = [].slice,
@@ -17311,7 +17186,7 @@ module.exports = '2.0.0-beta-11';
 
 }).call(this);
 
-},{"../core-view":37,"../mixins/has-typeaheads":65,"../options":96,"../patterns":97,"../templates":100,"../utils/path-suggester":129,"es6-promise":279,"underscore":310}],160:[function(require,module,exports){
+},{"../core-view":37,"../mixins/has-typeaheads":65,"../options":96,"../patterns":97,"../templates":100,"../utils/path-suggester":129,"es6-promise":279,"underscore":309}],160:[function(require,module,exports){
 (function() {
   var ConstraintAdder, ConstraintAdderModel, ConstraintAdderOptions, CoreModel, Messages, NewConstraint, OPTIONS_SEL, OpenNodes, PathChooser, PathSet, Templates, View, _,
     __hasProp = {}.hasOwnProperty,
@@ -17522,7 +17397,7 @@ module.exports = '2.0.0-beta-11';
 
 }).call(this);
 
-},{"../core-model":36,"../core-view":37,"../messages":50,"../models/open-nodes":85,"../models/path-set":88,"../templates":100,"./constraint-adder-options":159,"./new-constraint":231,"./path-chooser":233,"underscore":310}],161:[function(require,module,exports){
+},{"../core-model":36,"../core-view":37,"../messages":50,"../models/open-nodes":85,"../models/path-set":88,"../templates":100,"./constraint-adder-options":159,"./new-constraint":231,"./path-chooser":233,"underscore":309}],161:[function(require,module,exports){
 (function() {
   var ATTRIBUTE_OPS, ATTRIBUTE_VALUE_OPS, AttributeValueControls, BASIC_OPS, BOOLEAN_TYPES, BooleanValueControls, ConstraintEditor, CoreView, ErrorMessage, Icons, LIST_OPS, ListValueControls, LookupValueControls, LoopValueControls, MULTIVALUE_OPS, Messages, Model, MultiValueControls, NO_OP, NULL_OPS, NUMERIC_TYPES, Query, REFERENCE_OPS, TEMPLATE, TypeValueControls, fs, html, operatorsFor, _, _ref,
     __indexOf = [].indexOf || function(item) { for (var i = 0, l = this.length; i < l; i++) { if (i in this && this[i] === item) return i; } return -1; },
@@ -17868,7 +17743,7 @@ module.exports = '2.0.0-beta-11';
 
 }).call(this);
 
-},{"../core-view":37,"../icons":48,"../messages":50,"./attribute-value-controls":145,"./boolean-value-controls":146,"./error-message":169,"./list-value-controls":225,"./lookup-value-controls":226,"./loop-value-controls":227,"./multi-value-controls":230,"./type-value-controls":260,"imjs":288,"underscore":310}],162:[function(require,module,exports){
+},{"../core-view":37,"../icons":48,"../messages":50,"./attribute-value-controls":145,"./boolean-value-controls":146,"./error-message":169,"./list-value-controls":225,"./lookup-value-controls":226,"./loop-value-controls":227,"./multi-value-controls":230,"./type-value-controls":260,"imjs":288,"underscore":309}],162:[function(require,module,exports){
 (function() {
   var ConstraintSummary, CoreView, IS_BLANK, Messages, Model, Query, Templates, _, _ref,
     __hasProp = {}.hasOwnProperty,
@@ -18025,7 +17900,7 @@ module.exports = '2.0.0-beta-11';
 
 }).call(this);
 
-},{"../core-view":37,"../messages":50,"../patterns":97,"../templates":100,"imjs":288,"underscore":310}],163:[function(require,module,exports){
+},{"../core-view":37,"../messages":50,"../patterns":97,"../templates":100,"imjs":288,"underscore":309}],163:[function(require,module,exports){
 (function() {
   var ActiveConstraint, ConstraintAdder, Constraints, CoreView, Templates, _,
     __hasProp = {}.hasOwnProperty,
@@ -18104,7 +17979,7 @@ module.exports = '2.0.0-beta-11';
 
 }).call(this);
 
-},{"../core-view":37,"../messages/constraints":55,"../templates":100,"./active-constraint":144,"./constraint-adder":160,"underscore":310}],164:[function(require,module,exports){
+},{"../core-view":37,"../messages/constraints":55,"../templates":100,"./active-constraint":144,"./constraint-adder":160,"underscore":309}],164:[function(require,module,exports){
 (function() {
   var AdderButton, CoreView, Messages, PathModel, _,
     __hasProp = {}.hasOwnProperty,
@@ -18167,7 +18042,7 @@ module.exports = '2.0.0-beta-11';
 
 }).call(this);
 
-},{"../../core-view":37,"../../messages":50,"../../messages/constraints":55,"../../models/path":89,"underscore":310}],165:[function(require,module,exports){
+},{"../../core-view":37,"../../messages":50,"../../messages/constraints":55,"../../models/path":89,"underscore":309}],165:[function(require,module,exports){
 (function() {
   var AdderButton, ComposedColumnConstraintAdder, ConstraintAdder, CoreView, DropdownButtonGrp, Messages, OPTS_SEL, Option, PathModel, Templates, Toggle, _,
     __hasProp = {}.hasOwnProperty,
@@ -18344,7 +18219,7 @@ module.exports = '2.0.0-beta-11';
 
 }).call(this);
 
-},{"../../core-view":37,"../../messages":50,"../../messages/constraints":55,"../../models/path":89,"../../templates":100,"../constraint-adder":160,"./column-adder-button":164,"underscore":310}],166:[function(require,module,exports){
+},{"../../core-view":37,"../../messages":50,"../../messages/constraints":55,"../../models/path":89,"../../templates":100,"../constraint-adder":160,"./column-adder-button":164,"underscore":309}],166:[function(require,module,exports){
 (function() {
   var AdderButton, ConstraintAdder, CoreView, Messages, OPTS_SEL, PathModel, SingleColumnConstraintAdder, Templates, _,
     __hasProp = {}.hasOwnProperty,
@@ -18418,7 +18293,7 @@ module.exports = '2.0.0-beta-11';
 
 }).call(this);
 
-},{"../../core-view":37,"../../messages":50,"../../messages/constraints":55,"../../models/path":89,"../../templates":100,"../constraint-adder":160,"./column-adder-button":164,"underscore":310}],167:[function(require,module,exports){
+},{"../../core-view":37,"../../messages":50,"../../messages/constraints":55,"../../models/path":89,"../../templates":100,"../constraint-adder":160,"./column-adder-button":164,"underscore":309}],167:[function(require,module,exports){
 (function() {
   var ComposedColumnConstraintAdder, Constraints, SingleColumnConstraintAdder, SingleColumnConstraints,
     __hasProp = {}.hasOwnProperty,
@@ -18584,7 +18459,7 @@ module.exports = '2.0.0-beta-11';
 
 }).call(this);
 
-},{"../core-view":37,"../core/type-assertions":44,"../models/history":78,"../models/selected-objects":91,"../models/table":94,"../utils/children":109,"../utils/events":114,"./query-tools":240,"./table":241,"underscore":310}],169:[function(require,module,exports){
+},{"../core-view":37,"../core/type-assertions":44,"../models/history":78,"../models/selected-objects":91,"../models/table":94,"../utils/children":109,"../utils/events":114,"./query-tools":240,"./table":241,"underscore":309}],169:[function(require,module,exports){
 (function() {
   var CoreView, ErrorMessage, Icons, Templates, fs, _,
     __hasProp = {}.hasOwnProperty,
@@ -18637,7 +18512,7 @@ module.exports = '2.0.0-beta-11';
 
 }).call(this);
 
-},{"../core-view":37,"../icons":48,"../templates":100,"fs":2,"underscore":310}],170:[function(require,module,exports){
+},{"../core-view":37,"../icons":48,"../templates":100,"fs":2,"underscore":309}],170:[function(require,module,exports){
 (function() {
   var $, ColumnControls, CompressionControls, ConstraintAdder, DestinationOptions, ExportDialogue, ExportModel, FOOTER, FlatFileOptions, FormatControls, Formats, INITIAL_STATE, JSONOptions, Menu, Messages, Modal, Model, Options, Preview, RowControls, RunsQuery, Templates, UndismissableError, isa, openWindowWithPost, sendToDropBox, sendToGalaxy, sendToGenomeSpace, sendToGoogleDrive, _,
     __hasProp = {}.hasOwnProperty,
@@ -19014,7 +18889,7 @@ module.exports = '2.0.0-beta-11';
 
 }).call(this);
 
-},{"../core-model":36,"../messages":50,"../mixins/runs-query":66,"../models/export-formats":75,"../options":96,"../templates":100,"../utils/open-window-with-post":127,"../utils/send-to-dropbox":132,"../utils/send-to-galaxy":133,"../utils/send-to-genomespace":134,"../utils/send-to-google-drive":135,"./constraint-adder":160,"./export-dialogue/column-controls":172,"./export-dialogue/compression-controls":173,"./export-dialogue/destination-options":174,"./export-dialogue/flat-file-options":175,"./export-dialogue/format-controls":176,"./export-dialogue/json-options":177,"./export-dialogue/preview":179,"./export-dialogue/row-controls":180,"./export-dialogue/tab-menu":181,"./modal":229,"jquery":307,"underscore":310}],171:[function(require,module,exports){
+},{"../core-model":36,"../messages":50,"../mixins/runs-query":66,"../models/export-formats":75,"../options":96,"../templates":100,"../utils/open-window-with-post":127,"../utils/send-to-dropbox":132,"../utils/send-to-galaxy":133,"../utils/send-to-genomespace":134,"../utils/send-to-google-drive":135,"./constraint-adder":160,"./export-dialogue/column-controls":172,"./export-dialogue/compression-controls":173,"./export-dialogue/destination-options":174,"./export-dialogue/flat-file-options":175,"./export-dialogue/format-controls":176,"./export-dialogue/json-options":177,"./export-dialogue/preview":179,"./export-dialogue/row-controls":180,"./export-dialogue/tab-menu":181,"./modal":229,"jquery":307,"underscore":309}],171:[function(require,module,exports){
 (function() {
   var Counter, ExportDialogue, ExportDialogueButton, QueryDialogueButton, _,
     __hasProp = {}.hasOwnProperty,
@@ -19088,7 +18963,7 @@ module.exports = '2.0.0-beta-11';
 
 }).call(this);
 
-},{"../../utils/count-executor":110,"../export-dialogue":170,"../query-dialogue-button":238,"underscore":310}],172:[function(require,module,exports){
+},{"../../utils/count-executor":110,"../export-dialogue":170,"../query-dialogue-button":238,"underscore":309}],172:[function(require,module,exports){
 (function() {
   var AddColumnControl, ColumnControls, ColumnView, HasTypeaheads, HeadingLabel, LabelView, Messages, PathSet, ResetButton, Templates, View, pathSuggester, _,
     __hasProp = {}.hasOwnProperty,
@@ -19411,7 +19286,7 @@ module.exports = '2.0.0-beta-11';
 
 }).call(this);
 
-},{"../../core-view":37,"../../messages":50,"../../mixins/has-typeaheads":65,"../../models/path-set":88,"../../templates":100,"../../utils/path-suggester":129,"../label-view":211,"underscore":310}],173:[function(require,module,exports){
+},{"../../core-view":37,"../../messages":50,"../../mixins/has-typeaheads":65,"../../models/path-set":88,"../../templates":100,"../../utils/path-suggester":129,"../label-view":211,"underscore":309}],173:[function(require,module,exports){
 (function() {
   var CompressionControls, ModalBody, Templates, _,
     __hasProp = {}.hasOwnProperty,
@@ -19464,7 +19339,7 @@ module.exports = '2.0.0-beta-11';
 
 }).call(this);
 
-},{"../../templates":100,"./main":178,"underscore":310}],174:[function(require,module,exports){
+},{"../../templates":100,"./main":178,"underscore":309}],174:[function(require,module,exports){
 (function() {
   var CoreView, DestinationOptions, DestinationSubOptions, Formats, Options, RadioButtons, Templates, _,
     __hasProp = {}.hasOwnProperty,
@@ -19660,7 +19535,7 @@ module.exports = '2.0.0-beta-11';
 
 }).call(this);
 
-},{"../../core-view":37,"../../models/export-formats":75,"../../options":96,"../../templates":100,"underscore":310}],175:[function(require,module,exports){
+},{"../../core-view":37,"../../models/export-formats":75,"../../options":96,"../../templates":100,"underscore":309}],175:[function(require,module,exports){
 (function() {
   var FlatFileOptions, Templates, View, _,
     __hasProp = {}.hasOwnProperty,
@@ -19713,7 +19588,7 @@ module.exports = '2.0.0-beta-11';
 
 }).call(this);
 
-},{"../../core-view":37,"../../templates":100,"underscore":310}],176:[function(require,module,exports){
+},{"../../core-view":37,"../../templates":100,"underscore":309}],176:[function(require,module,exports){
 (function() {
   var FormatControls, Formats, HeadingView, LabelView, Messages, Templates, View, _,
     __hasProp = {}.hasOwnProperty,
@@ -19788,7 +19663,7 @@ module.exports = '2.0.0-beta-11';
 
 }).call(this);
 
-},{"../../core-view":37,"../../messages":50,"../../models/export-formats":75,"../../templates":100,"../label-view":211,"underscore":310}],177:[function(require,module,exports){
+},{"../../core-view":37,"../../messages":50,"../../models/export-formats":75,"../../templates":100,"../label-view":211,"underscore":309}],177:[function(require,module,exports){
 (function() {
   var JSONOptions, LabelView, Messages, Templates, View, _,
     __hasProp = {}.hasOwnProperty,
@@ -19840,7 +19715,7 @@ module.exports = '2.0.0-beta-11';
 
 }).call(this);
 
-},{"../../core-view":37,"../../messages":50,"../../templates":100,"../label-view":211,"underscore":310}],178:[function(require,module,exports){
+},{"../../core-view":37,"../../messages":50,"../../templates":100,"../label-view":211,"underscore":309}],178:[function(require,module,exports){
 (function() {
   var ModalBody, View,
     __hasProp = {}.hasOwnProperty,
@@ -19954,7 +19829,7 @@ module.exports = '2.0.0-beta-11';
 
 }).call(this);
 
-},{"../../core-view":37,"../../messages":50,"../../mixins/runs-query":66,"../../models/export-formats":75,"../../templates":100,"underscore":310}],180:[function(require,module,exports){
+},{"../../core-view":37,"../../messages":50,"../../mixins/runs-query":66,"../../models/export-formats":75,"../../templates":100,"underscore":309}],180:[function(require,module,exports){
 (function() {
   var HeadingLabel, LabelView, Messages, OffsetLabel, ResetButton, RowControls, SizeLabel, Templates, View, _,
     __hasProp = {}.hasOwnProperty,
@@ -20133,7 +20008,7 @@ module.exports = '2.0.0-beta-11';
 
 }).call(this);
 
-},{"../../core-view":37,"../../messages":50,"../../templates":100,"../label-view":211,"underscore":310}],181:[function(require,module,exports){
+},{"../../core-view":37,"../../messages":50,"../../templates":100,"../label-view":211,"underscore":309}],181:[function(require,module,exports){
 (function() {
   var Options, TABS, Tab, TabMenu, Templates, View, _,
     __indexOf = [].indexOf || function(item) { for (var i = 0, l = this.length; i < l; i++) { if (i in this && this[i] === item) return i; } return -1; },
@@ -20307,7 +20182,7 @@ module.exports = '2.0.0-beta-11';
 
 }).call(this);
 
-},{"../../core-view":37,"../../options":96,"../../templates":100,"underscore":310}],182:[function(require,module,exports){
+},{"../../core-view":37,"../../options":96,"../../templates":100,"underscore":309}],182:[function(require,module,exports){
 (function() {
   var BooleanChart, PieChart,
     __hasProp = {}.hasOwnProperty,
@@ -20671,7 +20546,7 @@ module.exports = '2.0.0-beta-11';
 
 }).call(this);
 
-},{"../../messages":50,"../../messages/summary":60,"../../options":96,"../../utils/casts":107,"./visualisation-base":197,"d3-browserify":278,"underscore":310}],185:[function(require,module,exports){
+},{"../../messages":50,"../../messages/summary":60,"../../options":96,"../../utils/casts":107,"./visualisation-base":197,"d3-browserify":278,"underscore":309}],185:[function(require,module,exports){
 (function() {
   var CoreView, FacetItems, NoResults, OnlyOneItem, REQ_ATTRS, SummaryItems, SummaryStats, Templates, _,
     __hasProp = {}.hasOwnProperty,
@@ -20762,7 +20637,7 @@ module.exports = '2.0.0-beta-11';
 
 }).call(this);
 
-},{"../../core-view":37,"../../templates":100,"./no-results":186,"./only-one-item":188,"./summary-items":195,"./summary-stats":196,"underscore":310}],186:[function(require,module,exports){
+},{"../../core-view":37,"../../templates":100,"./no-results":186,"./only-one-item":188,"./summary-items":195,"./summary-stats":196,"underscore":309}],186:[function(require,module,exports){
 (function() {
   var CoreView, NoResults, Templates,
     __hasProp = {}.hasOwnProperty,
@@ -21104,7 +20979,7 @@ module.exports = '2.0.0-beta-11';
 
 }).call(this);
 
-},{"../../messages":50,"../../messages/summary":60,"../../options":96,"./visualisation-base":197,"d3-browserify":278,"jquery":307,"underscore":310}],188:[function(require,module,exports){
+},{"../../messages":50,"../../messages/summary":60,"../../options":96,"./visualisation-base":197,"d3-browserify":278,"jquery":307,"underscore":309}],188:[function(require,module,exports){
 (function() {
   var CoreView, OnlyOneItem, Templates,
     __hasProp = {}.hasOwnProperty,
@@ -21332,7 +21207,7 @@ module.exports = '2.0.0-beta-11';
 
 }).call(this);
 
-},{"../../options":96,"./visualisation-base":197,"d3-browserify":278,"jquery":307,"underscore":310}],190:[function(require,module,exports){
+},{"../../options":96,"./visualisation-base":197,"d3-browserify":278,"jquery":307,"underscore":309}],190:[function(require,module,exports){
 (function() {
   var CoreView, RowSurrogate, Templates, _,
     __hasProp = {}.hasOwnProperty,
@@ -21384,7 +21259,7 @@ module.exports = '2.0.0-beta-11';
 
 }).call(this);
 
-},{"../../core-view":37,"../../templates":100,"underscore":310}],191:[function(require,module,exports){
+},{"../../core-view":37,"../../templates":100,"underscore":309}],191:[function(require,module,exports){
 (function() {
   var Checkbox, CoreView, FacetRow, RowSurrogate, Templates, bool, _,
     __hasProp = {}.hasOwnProperty,
@@ -21551,7 +21426,7 @@ module.exports = '2.0.0-beta-11';
 
 }).call(this);
 
-},{"../../core-view":37,"../../core/checkbox":38,"../../messages/summary":60,"../../templates":100,"./row-surrogate":190,"underscore":310}],192:[function(require,module,exports){
+},{"../../core-view":37,"../../core/checkbox":38,"../../messages/summary":60,"../../templates":100,"./row-surrogate":190,"underscore":309}],192:[function(require,module,exports){
 (function() {
   var CoreView, SelectedCount, Templates, fracWithinRange, fullyContained, getPartialCount, partiallyOverlapping, sum, sumCounts, sumPartials, _,
     __hasProp = {}.hasOwnProperty,
@@ -21712,7 +21587,7 @@ module.exports = '2.0.0-beta-11';
 
 }).call(this);
 
-},{"../../core-view":37,"../../messages/summary":60,"../../templates":100,"underscore":310}],193:[function(require,module,exports){
+},{"../../core-view":37,"../../messages/summary":60,"../../templates":100,"underscore":309}],193:[function(require,module,exports){
 (function() {
   var CoreView, SummaryHeading, Templates, _,
     __hasProp = {}.hasOwnProperty,
@@ -21764,7 +21639,7 @@ module.exports = '2.0.0-beta-11';
 
 }).call(this);
 
-},{"../../core-view":37,"../../messages/summary":60,"../../templates":100,"underscore":310}],194:[function(require,module,exports){
+},{"../../core-view":37,"../../messages/summary":60,"../../templates":100,"underscore":309}],194:[function(require,module,exports){
 (function() {
   var BASIC_OPS, CoreView, IGNORE, MIN_VALS_OPTIMISATION, Messages, SUMMARY_FORMATS, SummaryItemsControls, Templates, bool, negateOps, _,
     __hasProp = {}.hasOwnProperty,
@@ -22030,7 +21905,7 @@ module.exports = '2.0.0-beta-11';
 
 }).call(this);
 
-},{"../../core-view":37,"../../messages":50,"../../messages/summary":60,"../../templates":100,"underscore":310}],195:[function(require,module,exports){
+},{"../../core-view":37,"../../messages":50,"../../messages/summary":60,"../../templates":100,"underscore":309}],195:[function(require,module,exports){
 (function() {
   var Backbone, CoreView, FacetRow, IGNORE, Messages, SetsPathNames, SummaryItems, SummaryItemsControls, Templates, rowId, _,
     __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; },
@@ -22220,7 +22095,7 @@ module.exports = '2.0.0-beta-11';
 
 }).call(this);
 
-},{"../../core-view":37,"../../messages":50,"../../messages/summary":60,"../../mixins/sets-path-names":67,"../../templates":100,"./row":191,"./summary-items-controls":194,"backbone":264,"underscore":310}],196:[function(require,module,exports){
+},{"../../core-view":37,"../../messages":50,"../../messages/summary":60,"../../mixins/sets-path-names":67,"../../templates":100,"./row":191,"./summary-items-controls":194,"backbone":264,"underscore":309}],196:[function(require,module,exports){
 (function() {
   var CoreView, DOWN, NULL_STATS, SummaryStats, Templates, UP, _,
     __hasProp = {}.hasOwnProperty,
@@ -22474,7 +22349,7 @@ module.exports = '2.0.0-beta-11';
 
 }).call(this);
 
-},{"../../core-view":37,"../../templates":100,"underscore":310}],197:[function(require,module,exports){
+},{"../../core-view":37,"../../templates":100,"underscore":309}],197:[function(require,module,exports){
 (function() {
   var CoreView, VisualisationBase, d3, _,
     __hasProp = {}.hasOwnProperty,
@@ -22598,7 +22473,7 @@ module.exports = '2.0.0-beta-11';
 
 }).call(this);
 
-},{"../../core-view":37,"d3-browserify":278,"underscore":310}],198:[function(require,module,exports){
+},{"../../core-view":37,"d3-browserify":278,"underscore":309}],198:[function(require,module,exports){
 (function() {
   var BOOLEAN_TYPES, BooleanPie, CoreView, FacetVisualisation, Histogram, NumericDistribution, Options, PieChart, SummaryItems,
     __hasProp = {}.hasOwnProperty,
@@ -22810,7 +22685,7 @@ module.exports = '2.0.0-beta-11';
 
 }).call(this);
 
-},{"../core-view":37,"../messages":50,"../messages/constraints":55,"../templates":100,"./constraints":163,"./modal":229,"underscore":310}],200:[function(require,module,exports){
+},{"../core-view":37,"../messages":50,"../messages/constraints":55,"../templates":100,"./constraints":163,"./modal":229,"underscore":309}],200:[function(require,module,exports){
 (function() {
   var FilterDialogue, FilterDialogueButton, QueryDialogueButton,
     __hasProp = {}.hasOwnProperty,
@@ -23311,9 +23186,10 @@ module.exports = '2.0.0-beta-11';
     };
 
     Preview.prototype.getDetails = function(type) {
-      var id;
+      var fields, id;
       id = this.model.get('id');
-      return this.service.findById(type, id).then(this.handleItem);
+      fields = Options.get(['ItemDetails', 'Fields', this.schema.name, type]);
+      return this.service.findById(type, id, fields).then(this.handleItem);
     };
 
     Preview.prototype.handleItem = function(item) {
@@ -23398,7 +23274,7 @@ module.exports = '2.0.0-beta-11';
       var c, cld, countSets, opts, root, settings, type, _ref;
       types = this.model.get('types');
       root = this.service.root;
-      opts = (_ref = Options.get(['Preview', 'Count', root])) != null ? _ref : {};
+      opts = (_ref = Options.get(['ItemDetails', 'Count', root])) != null ? _ref : {};
       countSets = (function() {
         var _i, _len, _results;
         _results = [];
@@ -23435,12 +23311,12 @@ module.exports = '2.0.0-beta-11';
         query = settings.query, label = settings.label;
         counter = query(id);
         details = function(c) {
-          return {
+          return new CoreModel({
             parts: [label],
             id: label,
             displayName: label,
             count: c
-          };
+          });
         };
       } else {
         path = this.schema.makePath("" + type + "." + settings);
@@ -23476,7 +23352,7 @@ module.exports = '2.0.0-beta-11';
 
 }).call(this);
 
-},{"../core-model":36,"../core-view":37,"../core/collection":39,"../core/type-assertions":44,"../models/path":89,"../options":96,"../templates":100,"../utils/get-leaves":116,"./item-preview/counts-title":205,"./item-preview/details":206,"./item-preview/reference-counts":207,"es6-promise":279,"underscore":310}],205:[function(require,module,exports){
+},{"../core-model":36,"../core-view":37,"../core/collection":39,"../core/type-assertions":44,"../models/path":89,"../options":96,"../templates":100,"../utils/get-leaves":116,"./item-preview/counts-title":205,"./item-preview/details":206,"./item-preview/reference-counts":207,"es6-promise":279,"underscore":309}],205:[function(require,module,exports){
 (function() {
   var CoreView, CountsTitle, Messages, _,
     __hasProp = {}.hasOwnProperty,
@@ -23525,7 +23401,7 @@ module.exports = '2.0.0-beta-11';
 
 }).call(this);
 
-},{"../../core-view":37,"../../messages":50,"underscore":310}],206:[function(require,module,exports){
+},{"../../core-view":37,"../../messages":50,"underscore":309}],206:[function(require,module,exports){
 (function() {
   var ATTR, CoreView, ITEMS, ItemDetails, REFERENCE, Templates, ignore, _,
     __hasProp = {}.hasOwnProperty,
@@ -23604,7 +23480,7 @@ module.exports = '2.0.0-beta-11';
 
 }).call(this);
 
-},{"../../core-view":37,"../../templates":100,"../../utils/events":114,"underscore":310}],207:[function(require,module,exports){
+},{"../../core-view":37,"../../templates":100,"../../utils/events":114,"underscore":309}],207:[function(require,module,exports){
 (function() {
   var CoreView, ReferenceCounts, Templates,
     __hasProp = {}.hasOwnProperty,
@@ -23749,7 +23625,7 @@ module.exports = '2.0.0-beta-11';
 
 }).call(this);
 
-},{"../core-view":37,"../messages":50,"../messages/joins":57,"../models/joins":80,"./join-manager/body":209,"./modal":229,"underscore":310}],209:[function(require,module,exports){
+},{"../core-view":37,"../messages":50,"../messages/joins":57,"../models/joins":80,"./join-manager/body":209,"./modal":229,"underscore":309}],209:[function(require,module,exports){
 (function() {
   var BtnClasses, ClassSet, CoreView, Join, JoinManagerBody, LINE_PARTS, Templates, otherStyle, _,
     __hasProp = {}.hasOwnProperty,
@@ -23915,7 +23791,7 @@ module.exports = '2.0.0-beta-11';
 
 }).call(this);
 
-},{"../../core-view":37,"../../messages/joins":57,"../../templates":100,"../../utils/css-class-set":112,"underscore":310}],210:[function(require,module,exports){
+},{"../../core-view":37,"../../messages/joins":57,"../../templates":100,"../../utils/css-class-set":112,"underscore":309}],210:[function(require,module,exports){
 (function() {
   var JoinManager, JoinManagerButton, QueryDialogueButton,
     __hasProp = {}.hasOwnProperty,
@@ -24088,7 +23964,7 @@ module.exports = '2.0.0-beta-11';
 
 }).call(this);
 
-},{"../../core-view":37,"../../core/select-with-label":43,"../../messages":50,"../../messages/lists":58,"../../templates":100,"underscore":310}],215:[function(require,module,exports){
+},{"../../core-view":37,"../../core/select-with-label":43,"../../messages":50,"../../messages/lists":58,"../../templates":100,"underscore":309}],215:[function(require,module,exports){
 (function() {
   var AppendToListBody, AppendToListModel, BaseAppendDialogue, BaseCreateListDialogue, CoreCollection, CoreModel, LIST_NOT_SUITABLE, Messages, NO_SUITABLE_LISTS, NO_TARGET_SELECTED, PossibleList, PossibleLists, Promise, TARGET_DOES_NOT_EXIST, onlyCurrent, theListIsSuitable, unpackLists, _,
     __hasProp = {}.hasOwnProperty,
@@ -24366,7 +24242,7 @@ module.exports = '2.0.0-beta-11';
 
 }).call(this);
 
-},{"../../core-model":36,"../../core/collection":39,"../../messages":50,"../../models/append-to-list":68,"./append-to-list-body":214,"./base-dialogue":216,"es6-promise":279,"underscore":310}],216:[function(require,module,exports){
+},{"../../core-model":36,"../../core/collection":39,"../../messages":50,"../../models/append-to-list":68,"./append-to-list-body":214,"./base-dialogue":216,"es6-promise":279,"underscore":309}],216:[function(require,module,exports){
 (function() {
   var ABSTRACT, BaseCreateListDialogue, CreateListModel, ListDialogueBody, Messages, Modal, _,
     __hasProp = {}.hasOwnProperty,
@@ -24562,7 +24438,7 @@ module.exports = '2.0.0-beta-11';
 
 }).call(this);
 
-},{"../../messages":50,"../../messages/lists":58,"../../models/create-list":74,"../modal":229,"./body":217,"underscore":310}],217:[function(require,module,exports){
+},{"../../messages":50,"../../messages/lists":58,"../../models/create-list":74,"../modal":229,"./body":217,"underscore":309}],217:[function(require,module,exports){
 (function() {
   var CoreView, CreateListModel, InputWithButton, InputWithLabel, ListDialogueBody, ListTag, Messages, TagsApology, Templates, _,
     __hasProp = {}.hasOwnProperty,
@@ -24736,7 +24612,7 @@ module.exports = '2.0.0-beta-11';
 
 }).call(this);
 
-},{"../../core-view":37,"../../core/input-with-button":40,"../../core/input-with-label":41,"../../messages":50,"../../messages/lists":58,"../../models/create-list":74,"../../templates":100,"./tag":223,"./tags-apology":224,"underscore":310}],218:[function(require,module,exports){
+},{"../../core-view":37,"../../core/input-with-button":40,"../../core/input-with-label":41,"../../messages":50,"../../messages/lists":58,"../../models/create-list":74,"../../templates":100,"./tag":223,"./tags-apology":224,"underscore":309}],218:[function(require,module,exports){
 (function() {
   var AppendFromPath, AppendPicker, ClassSet, Collection, CoreModel, CoreView, Counter, CreateFromPath, CreatePicker, ListDialogueButton, PathModel, Paths, SelectableNode, Templates, _,
     __hasProp = {}.hasOwnProperty,
@@ -25084,7 +24960,7 @@ module.exports = '2.0.0-beta-11';
 
 }).call(this);
 
-},{"../../core-model":36,"../../core-view":37,"../../core/collection":39,"../../messages/lists":58,"../../models/path":89,"../../templates":100,"../../utils/count-executor":110,"../../utils/css-class-set":112,"./append-from-path":212,"./append-from-selection":213,"./create-from-path":219,"./create-from-selection":220,"underscore":310}],219:[function(require,module,exports){
+},{"../../core-model":36,"../../core-view":37,"../../core/collection":39,"../../messages/lists":58,"../../models/path":89,"../../templates":100,"../../utils/count-executor":110,"../../utils/css-class-set":112,"./append-from-path":212,"./append-from-selection":213,"./create-from-path":219,"./create-from-selection":220,"underscore":309}],219:[function(require,module,exports){
 (function() {
   var BaseCreateListDialogue, CreateFromPath, FromPathMixin, Promise,
     __hasProp = {}.hasOwnProperty,
@@ -25144,7 +25020,7 @@ module.exports = '2.0.0-beta-11';
 
 }).call(this);
 
-},{"../../mixins/floating-dialogue":63,"./base-dialogue":216,"./from-selection-mixin":222,"es6-promise":279,"underscore":310}],221:[function(require,module,exports){
+},{"../../mixins/floating-dialogue":63,"./base-dialogue":216,"./from-selection-mixin":222,"es6-promise":279,"underscore":309}],221:[function(require,module,exports){
 (function() {
   var Promise;
 
@@ -25367,7 +25243,7 @@ module.exports = '2.0.0-beta-11';
 
 }).call(this);
 
-},{"../../core-view":37,"../../messages/lists":58,"../../templates":100,"underscore":310}],225:[function(require,module,exports){
+},{"../../core-view":37,"../../messages/lists":58,"../../templates":100,"underscore":309}],225:[function(require,module,exports){
 (function() {
   var ListValueControls, Messages, Promise, View, formatList, fs, getOptionValue, helpers, html, mustacheSettings, template, withDisplayNames, _,
     __hasProp = {}.hasOwnProperty,
@@ -25567,7 +25443,7 @@ module.exports = '2.0.0-beta-11';
 
 }).call(this);
 
-},{"../core-view":37,"../messages":50,"../templates/helpers":101,"../templates/mustache-settings":102,"es6-promise":279,"underscore":310}],226:[function(require,module,exports){
+},{"../core-view":37,"../messages":50,"../templates/helpers":101,"../templates/mustache-settings":102,"es6-promise":279,"underscore":309}],226:[function(require,module,exports){
 (function() {
   var AttributeValueControls, LoopValueControls, Promise, fs, html, template, _,
     __hasProp = {}.hasOwnProperty,
@@ -25627,7 +25503,7 @@ module.exports = '2.0.0-beta-11';
 
 }).call(this);
 
-},{"./attribute-value-controls":145,"es6-promise":279,"underscore":310}],227:[function(require,module,exports){
+},{"./attribute-value-controls":145,"es6-promise":279,"underscore":309}],227:[function(require,module,exports){
 (function() {
   var LoopValueControls, Messages, Promise, View, fs, helpers, html, mustacheSettings, template, toNamedPath, toOption, _,
     __hasProp = {}.hasOwnProperty,
@@ -25761,7 +25637,7 @@ module.exports = '2.0.0-beta-11';
 
 }).call(this);
 
-},{"../core-view":37,"../messages":50,"../templates/helpers":101,"../templates/mustache-settings":102,"../utils/to-named-path":141,"es6-promise":279,"underscore":310}],228:[function(require,module,exports){
+},{"../core-view":37,"../messages":50,"../templates/helpers":101,"../templates/mustache-settings":102,"../utils/to-named-path":141,"es6-promise":279,"underscore":309}],228:[function(require,module,exports){
 (function() {
   var CoreView, ModalFooter, Templates, defaultData, _,
     __hasProp = {}.hasOwnProperty,
@@ -25811,7 +25687,7 @@ module.exports = '2.0.0-beta-11';
 
 }).call(this);
 
-},{"../core-view":37,"../templates":100,"underscore":310}],229:[function(require,module,exports){
+},{"../core-view":37,"../templates":100,"underscore":309}],229:[function(require,module,exports){
 (function() {
   var Messages, Modal, ModalFooter, Promise, Templates, View, modalTemplate, _,
     __hasProp = {}.hasOwnProperty,
@@ -26016,7 +25892,7 @@ module.exports = '2.0.0-beta-11';
 
 }).call(this);
 
-},{"../core-view":37,"../messages":50,"../templates":100,"./modal-footer":228,"es6-promise":279,"underscore":310}],230:[function(require,module,exports){
+},{"../core-view":37,"../messages":50,"../templates":100,"./modal-footer":228,"es6-promise":279,"underscore":309}],230:[function(require,module,exports){
 (function() {
   var Collection, IS_BLANK, Icons, Messages, Model, MultiValueControls, Options, Templates, ValueControl, ValueModel, Values, View, ignore, mustacheSettings, _,
     __hasProp = {}.hasOwnProperty,
@@ -26332,7 +26208,7 @@ module.exports = '2.0.0-beta-11';
 
 }).call(this);
 
-},{"../core-model":36,"../core-view":37,"../core/collection":39,"../icons":48,"../messages":50,"../options":96,"../patterns":97,"../templates":100,"../templates/mustache-settings":102,"../utils/events":114,"backbone":264,"underscore":310}],231:[function(require,module,exports){
+},{"../core-model":36,"../core-view":37,"../core/collection":39,"../icons":48,"../messages":50,"../options":96,"../patterns":97,"../templates":100,"../templates/mustache-settings":102,"../utils/events":114,"backbone":264,"underscore":309}],231:[function(require,module,exports){
 (function() {
   var ActiveConstraint, Messages, NewConstraint,
     __hasProp = {}.hasOwnProperty,
@@ -26454,7 +26330,7 @@ module.exports = '2.0.0-beta-11';
 
 }).call(this);
 
-},{"../messages":50,"../templates":100,"./constraint-adder":160,"./modal":229,"underscore":310}],233:[function(require,module,exports){
+},{"../messages":50,"../templates":100,"./constraint-adder":160,"./modal":229,"underscore":309}],233:[function(require,module,exports){
 (function() {
   var Attribute, CoreView, Options, PathChooser, Reference, ReverseReference, RootClass, appendField, _,
     __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; },
@@ -26658,7 +26534,7 @@ module.exports = '2.0.0-beta-11';
 
 }).call(this);
 
-},{"../core-view":37,"../options":96,"./pathtree/attribute":234,"./pathtree/reference":235,"./pathtree/reverse-reference":236,"./pathtree/root":237,"underscore":310}],234:[function(require,module,exports){
+},{"../core-view":37,"../options":96,"./pathtree/attribute":234,"./pathtree/reference":235,"./pathtree/reverse-reference":236,"./pathtree/root":237,"underscore":309}],234:[function(require,module,exports){
 (function() {
   var Attribute, Icons, Options, View, highlightMatch, notBlank, stripLeadingSegments, _,
     __hasProp = {}.hasOwnProperty,
@@ -26852,7 +26728,7 @@ module.exports = '2.0.0-beta-11';
 
 }).call(this);
 
-},{"../../core-view":37,"../../icons":48,"../../options":96,"underscore":310}],235:[function(require,module,exports){
+},{"../../core-view":37,"../../icons":48,"../../options":96,"underscore":309}],235:[function(require,module,exports){
 (function() {
   var Attribute, Icons, Reference, ignore,
     __hasProp = {}.hasOwnProperty,
@@ -27045,7 +26921,7 @@ module.exports = '2.0.0-beta-11';
 
 }).call(this);
 
-},{"../../icons":48,"./attribute":234,"underscore":310}],238:[function(require,module,exports){
+},{"../../icons":48,"./attribute":234,"underscore":309}],238:[function(require,module,exports){
 (function() {
   var CoreView, QueryDialogueButton, Templates, _,
     __hasProp = {}.hasOwnProperty,
@@ -27151,7 +27027,7 @@ module.exports = '2.0.0-beta-11';
 
 }).call(this);
 
-},{"../core-view":37,"../templates":100,"underscore":310}],239:[function(require,module,exports){
+},{"../core-view":37,"../templates":100,"underscore":309}],239:[function(require,module,exports){
 (function() {
   var ColumnMangerButton, CoreView, FilterDialogueButton, HistoryType, JoinManagerButton, Listenable, QueryManagement, Structure, Types, UnionOf, _ref,
     __hasProp = {}.hasOwnProperty,
@@ -27360,7 +27236,7 @@ module.exports = '2.0.0-beta-11';
 
 }).call(this);
 
-},{"../core-view":37,"../options":96,"../templates":100,"../utils/events":114,"./code-gen-button":147,"./export-dialogue/button":171,"./list-dialogue/button":218,"./query-management-tools":239,"./undo-history":261,"jquery":307,"underscore":310}],241:[function(require,module,exports){
+},{"../core-view":37,"../options":96,"../templates":100,"../utils/events":114,"./code-gen-button":147,"./export-dialogue/button":171,"./list-dialogue/button":218,"./query-management-tools":239,"./undo-history":261,"jquery":307,"underscore":309}],241:[function(require,module,exports){
 (function() {
   var CellModelFactory, Collection, ColumnHeaders, CoreModel, CoreView, ErrorNotice, History, Messages, Options, PageSizer, Pagination, ResultsTable, RowsCollection, SelectedObjects, Table, TableModel, TableResults, TableSummary, Templates, Types, UNKNOWN_ERROR, UniqItems, _,
     __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; },
@@ -27806,7 +27682,7 @@ module.exports = '2.0.0-beta-11';
 
 }).call(this);
 
-},{"../core-model":36,"../core-view":37,"../core/collection":39,"../core/type-assertions":44,"../messages":50,"../messages/table":61,"../models/column-headers":72,"../models/history":78,"../models/rows":90,"../models/selected-objects":91,"../models/table":94,"../models/uniq-items":95,"../options":96,"../templates":100,"../utils/cell-model-factory":108,"../utils/table-results":140,"./table/error-notice":246,"./table/inner":249,"./table/page-sizer":252,"./table/pagination":253,"./table/summary":259,"underscore":310}],242:[function(require,module,exports){
+},{"../core-model":36,"../core-view":37,"../core/collection":39,"../core/type-assertions":44,"../messages":50,"../messages/table":61,"../models/column-headers":72,"../models/history":78,"../models/rows":90,"../models/selected-objects":91,"../models/table":94,"../models/uniq-items":95,"../options":96,"../templates":100,"../utils/cell-model-factory":108,"../utils/table-results":140,"./table/error-notice":246,"./table/inner":249,"./table/page-sizer":252,"./table/pagination":253,"./table/summary":259,"underscore":309}],242:[function(require,module,exports){
 (function() {
   var CoreView, EmptyApology, RowView, TableBody, Templates, buildSkipped, _,
     __hasProp = {}.hasOwnProperty,
@@ -27978,7 +27854,7 @@ module.exports = '2.0.0-beta-11';
 
 }).call(this);
 
-},{"../../core-view":37,"../../messages/table":61,"../../templates":100,"../../utils/build-skipset":105,"underscore":310}],243:[function(require,module,exports){
+},{"../../core-view":37,"../../messages/table":61,"../../templates":100,"../../utils/build-skipset":105,"underscore":309}],243:[function(require,module,exports){
 (function() {
   var Cell, NestedTableModel, SubTable;
 
@@ -28647,7 +28523,7 @@ module.exports = '2.0.0-beta-11';
 }).call(this);
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"../../core-view":37,"../../core/type-assertions":44,"../../formatting":47,"../../messages":50,"../../models/cell":70,"../../models/selected-objects":91,"../../options":96,"../../templates":100,"jquery":307,"underscore":310}],245:[function(require,module,exports){
+},{"../../core-view":37,"../../core/type-assertions":44,"../../formatting":47,"../../messages":50,"../../models/cell":70,"../../models/selected-objects":91,"../../options":96,"../../templates":100,"jquery":307,"underscore":309}],245:[function(require,module,exports){
 (function() {
   var BAD_MODEL, DropDownColumnSummary, FacetView, NO_QUERY, PathModel, ignore, _,
     __hasProp = {}.hasOwnProperty,
@@ -28704,7 +28580,7 @@ module.exports = '2.0.0-beta-11';
 
 }).call(this);
 
-},{"../../models/path":89,"../../utils/events":114,"../facets/facet-view":183,"underscore":310}],246:[function(require,module,exports){
+},{"../../models/path":89,"../../utils/events":114,"../facets/facet-view":183,"underscore":309}],246:[function(require,module,exports){
 (function (global){
 (function() {
   var CoreView, ErrorNotice, Messages, Options, Templates, VERSION, getDomain, imjs, indentXML, mailto, withPrettyPrintOne, withResource, _,
@@ -28807,7 +28683,7 @@ module.exports = '2.0.0-beta-11';
 }).call(this);
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"../../core-view":37,"../../messages":50,"../../messages/error":56,"../../options":96,"../../templates":100,"../../utils/indent-xml":121,"../../utils/mailto":125,"../../utils/with-cdn-resource":142,"../../version":143,"imjs":288,"underscore":310}],247:[function(require,module,exports){
+},{"../../core-view":37,"../../messages":50,"../../messages/error":56,"../../options":96,"../../templates":100,"../../utils/indent-xml":121,"../../utils/mailto":125,"../../utils/with-cdn-resource":142,"../../version":143,"imjs":288,"underscore":309}],247:[function(require,module,exports){
 (function() {
   var ColumnHeader, CoreView, TableHead, _,
     __hasProp = {}.hasOwnProperty,
@@ -28874,7 +28750,7 @@ module.exports = '2.0.0-beta-11';
 
 }).call(this);
 
-},{"../../core-view":37,"./header":248,"underscore":310}],248:[function(require,module,exports){
+},{"../../core-view":37,"./header":248,"underscore":309}],248:[function(require,module,exports){
 (function() {
   var ClassSet, Collection, ColumnHeader, CoreView, DropDownColumnSummary, FormattedSorting, HeaderModel, Messages, ModelReader, Options, OuterJoinDropDown, SingleColumnConstraints, Templates, getViewPortHeight, getViewPortWidth, ignore, onChange, sortQueryByPath, _,
     __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; },
@@ -29244,7 +29120,7 @@ module.exports = '2.0.0-beta-11';
 
 }).call(this);
 
-},{"../../core-view":37,"../../core/collection":39,"../../messages":50,"../../messages/table":61,"../../models/header":77,"../../options":96,"../../templates":100,"../../utils/css-class-set":112,"../../utils/events":114,"../../utils/on-change":126,"../../utils/sort-query-by-path":137,"../constraints/single-column":167,"../formatted-sorting":201,"./column-summary":245,"./outer-join-summary":251,"underscore":310}],249:[function(require,module,exports){
+},{"../../core-view":37,"../../core/collection":39,"../../messages":50,"../../messages/table":61,"../../models/header":77,"../../options":96,"../../templates":100,"../../utils/css-class-set":112,"../../utils/events":114,"../../utils/on-change":126,"../../utils/sort-query-by-path":137,"../constraints/single-column":167,"../formatted-sorting":201,"./column-summary":245,"./outer-join-summary":251,"underscore":309}],249:[function(require,module,exports){
 (function() {
   var CellFactory, ColumnHeaders, CoreView, Formatting, History, PathSet, PopoverFactory, Preview, ResultsTable, SelectedObjects, TableBody, TableHead, TableModel, Templates, Types, flip, _,
     __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; },
@@ -29367,7 +29243,7 @@ module.exports = '2.0.0-beta-11';
 
 }).call(this);
 
-},{"../../core-view":37,"../../core/type-assertions":44,"../../formatting":47,"../../models/column-headers":72,"../../models/history":78,"../../models/path-set":88,"../../models/selected-objects":91,"../../models/table":94,"../../templates":100,"../../utils/popover-factory":130,"../item-preview":204,"./body":242,"./cell-factory":243,"./head":247,"underscore":310}],250:[function(require,module,exports){
+},{"../../core-view":37,"../../core/type-assertions":44,"../../formatting":47,"../../models/column-headers":72,"../../models/history":78,"../../models/path-set":88,"../../models/selected-objects":91,"../../models/table":94,"../../templates":100,"../../utils/popover-factory":130,"../item-preview":204,"./body":242,"./cell-factory":243,"./head":247,"underscore":309}],250:[function(require,module,exports){
 (function() {
   var Actions, LargeTableDisuader, Modal, large_table_disuader, _,
     __hasProp = {}.hasOwnProperty,
@@ -29437,7 +29313,7 @@ module.exports = '2.0.0-beta-11';
 
 }).call(this);
 
-},{"../../templates":100,"../modal":229,"underscore":310}],251:[function(require,module,exports){
+},{"../../templates":100,"../modal":229,"underscore":309}],251:[function(require,module,exports){
 (function() {
   var Collection, CoreView, DropDownColumnSummary, OuterJoinDropDown, PathModel, SubColumn, SubColumns, Templates, _,
     __hasProp = {}.hasOwnProperty,
@@ -29574,7 +29450,7 @@ module.exports = '2.0.0-beta-11';
 
 }).call(this);
 
-},{"../../core-view":37,"../../core/collection":39,"../../models/path":89,"../../templates":100,"./column-summary":245,"underscore":310}],252:[function(require,module,exports){
+},{"../../core-view":37,"../../core/collection":39,"../../models/path":89,"../../templates":100,"./column-summary":245,"underscore":309}],252:[function(require,module,exports){
 (function() {
   var CoreView, Events, ExportDialogue, HasDialogues, LargeTableDisuader, NewFilterDialogue, PageSizer, Paging, Templates, _,
     __hasProp = {}.hasOwnProperty,
@@ -29750,7 +29626,7 @@ module.exports = '2.0.0-beta-11';
 
 }).call(this);
 
-},{"../../core-view":37,"../../events":46,"../../templates":100,"../export-dialogue":170,"../has-dialogues":203,"../new-filter-dialogue":232,"./large-table-disuader":250,"./paging":254,"underscore":310}],253:[function(require,module,exports){
+},{"../../core-view":37,"../../events":46,"../../templates":100,"../export-dialogue":170,"../has-dialogues":203,"../new-filter-dialogue":232,"./large-table-disuader":250,"./paging":254,"underscore":309}],253:[function(require,module,exports){
 (function() {
   var Pagination, Paging, SELECT_LIMIT, View, ensureNumber, fs, html, strip, _,
     __hasProp = {}.hasOwnProperty,
@@ -29924,7 +29800,7 @@ module.exports = '2.0.0-beta-11';
 
 }).call(this);
 
-},{"../../core-view":37,"./paging":254,"underscore":310}],254:[function(require,module,exports){
+},{"../../core-view":37,"./paging":254,"underscore":309}],254:[function(require,module,exports){
 (function() {
   exports.getCurrentPage = function() {
     var size, start, _ref;
@@ -30077,7 +29953,7 @@ module.exports = '2.0.0-beta-11';
 
 }).call(this);
 
-},{"../../core-view":37,"../../messages/subtables":59,"../../templates":100,"underscore":310}],256:[function(require,module,exports){
+},{"../../core-view":37,"../../messages/subtables":59,"../../templates":100,"underscore":309}],256:[function(require,module,exports){
 (function() {
   var CoreView, SubtableHeader, SubtableInner, buildSkipped,
     __hasProp = {}.hasOwnProperty,
@@ -30383,7 +30259,7 @@ module.exports = '2.0.0-beta-11';
 
 }).call(this);
 
-},{"../../core-view":37,"../../core/collection":39,"../../core/type-assertions":44,"../../models/nested-table":81,"../../models/path":89,"../../options":96,"../../templates":100,"../../utils/events":114,"./subtable-inner":256,"./subtable-summary":257,"underscore":310}],259:[function(require,module,exports){
+},{"../../core-view":37,"../../core/collection":39,"../../core/type-assertions":44,"../../models/nested-table":81,"../../models/path":89,"../../options":96,"../../templates":100,"../../utils/events":114,"./subtable-inner":256,"./subtable-summary":257,"underscore":309}],259:[function(require,module,exports){
 (function() {
   var CoreView, TableSummary, Templates, _,
     __hasProp = {}.hasOwnProperty,
@@ -30428,7 +30304,7 @@ module.exports = '2.0.0-beta-11';
 
 }).call(this);
 
-},{"../../core-view":37,"../../messages/table":61,"../../templates":100,"underscore":310}],260:[function(require,module,exports){
+},{"../../core-view":37,"../../messages/table":61,"../../templates":100,"underscore":309}],260:[function(require,module,exports){
 (function() {
   var Messages, Promise, TypeValueControls, View, asOption, fs, helpers, html, toNamedPath, _,
     __hasProp = {}.hasOwnProperty,
@@ -30591,7 +30467,7 @@ module.exports = '2.0.0-beta-11';
 
 }).call(this);
 
-},{"../core-view":37,"../messages":50,"../templates/helpers":101,"../utils/to-named-path":141,"es6-promise":279,"underscore":310}],261:[function(require,module,exports){
+},{"../core-view":37,"../messages":50,"../templates/helpers":101,"../utils/to-named-path":141,"es6-promise":279,"underscore":309}],261:[function(require,module,exports){
 (function() {
   var CoreView, ELLIPSIS, Ellipsis, Messages, Options, Step, Templates, UndoHistory, childId, notTrivial, _,
     __hasProp = {}.hasOwnProperty,
@@ -30789,7 +30665,7 @@ module.exports = '2.0.0-beta-11';
 
 }).call(this);
 
-},{"../core-view":37,"../messages":50,"../messages/undo":62,"../options":96,"../templates":100,"./undo-history/step":263,"underscore":310}],262:[function(require,module,exports){
+},{"../core-view":37,"../messages":50,"../messages/undo":62,"../options":96,"../templates":100,"./undo-history/step":263,"underscore":309}],262:[function(require,module,exports){
 (function() {
   var ClassSet, CoreView, QueryProperty, Templates, _,
     __hasProp = {}.hasOwnProperty,
@@ -30882,7 +30758,7 @@ module.exports = '2.0.0-beta-11';
 
 }).call(this);
 
-},{"../../core-view":37,"../../templates":100,"../../utils/css-class-set":112,"underscore":310}],263:[function(require,module,exports){
+},{"../../core-view":37,"../../templates":100,"../../utils/css-class-set":112,"underscore":309}],263:[function(require,module,exports){
 (function() {
   var Collection, ConstraintList, ConstraintModel, ConstraintsView, CoreView, M, ObjConstructorPM, OrderElementModel, PathModel, QueryProperty, SelectListView, SortOrder, SortOrderView, Templates, UndoStep, ViewList, idsLength, liftPathAndType, valuesLength, withAdded, _,
     __hasProp = {}.hasOwnProperty,
@@ -31305,7 +31181,7 @@ module.exports = '2.0.0-beta-11';
 
 }).call(this);
 
-},{"../../core-view":37,"../../core/collection":39,"../../messages":50,"../../messages/constraints":55,"../../messages/undo":62,"../../models/constraint":73,"../../models/order-element":86,"../../models/path":89,"../../templates":100,"./query-property-section":262,"underscore":310}],264:[function(require,module,exports){
+},{"../../core-view":37,"../../core/collection":39,"../../messages":50,"../../messages/constraints":55,"../../messages/undo":62,"../../models/constraint":73,"../../models/order-element":86,"../../models/path":89,"../../templates":100,"./query-property-section":262,"underscore":309}],264:[function(require,module,exports){
 //     Backbone.js 1.1.2
 
 //     (c) 2010-2014 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
@@ -32915,7 +32791,7 @@ module.exports = '2.0.0-beta-11';
 
 }));
 
-},{"underscore":310}],265:[function(require,module,exports){
+},{"underscore":309}],265:[function(require,module,exports){
 // This file is autogenerated via the `commonjs` Grunt task. You can require() this file in a CommonJS environment.
 require('../../js/transition.js')
 require('../../js/alert.js')
@@ -48814,11 +48690,20 @@ module.exports = function() {
       return withCB(cb, promise);
     };
 
-    Service.prototype.findById = function(type, id, cb) {
-      var promise;
+    Service.prototype.findById = function(type, id, fields, cb) {
+      var promise, _ref2;
+      if (fields == null) {
+        fields = ['**'];
+      }
+      if (cb == null) {
+        cb = (function() {});
+      }
+      if (utils.isFunction(fields)) {
+        _ref2 = [['**'], fields], fields = _ref2[0], cb = _ref2[1];
+      }
       promise = this.query({
         from: type,
-        select: ['**'],
+        select: fields,
         where: {
           id: id
         }
@@ -50085,7 +49970,7 @@ module.exports = function() {
 
 },{"./promise":286}],293:[function(require,module,exports){
 (function() {
-  exports.VERSION = '3.12.0';
+  exports.VERSION = '3.13.0';
 
 }).call(this);
 
@@ -64698,434 +64583,6 @@ return jQuery;
 }));
 
 },{}],308:[function(require,module,exports){
-(function (root, pluralize) {
-  /* istanbul ignore else */
-  if (typeof require === 'function' && typeof exports === 'object' && typeof module === 'object') {
-    // Node.
-    module.exports = pluralize();
-  } else if (typeof define === 'function' && define.amd) {
-    // AMD, registers as an anonymous module.
-    define(function () {
-      return pluralize();
-    });
-  } else {
-    // Browser global.
-    root.pluralize = pluralize();
-  }
-})(this, function () {
-  // Rule storage - pluralize and singularize need to be run sequentially,
-  // while other rules can be optimized using an object for instant lookups.
-  var pluralRules      = [];
-  var singularRules    = [];
-  var uncountables     = {};
-  var irregularPlurals = {};
-  var irregularSingles = {};
-
-  /**
-   * Title case a string.
-   *
-   * @param  {string} str
-   * @return {string}
-   */
-  function toTitleCase (str) {
-    return str.charAt(0).toUpperCase() + str.substr(1).toLowerCase();
-  }
-
-  /**
-   * Sanitize a pluralization rule to a usable regular expression.
-   *
-   * @param  {(RegExp|string)} rule
-   * @return {RegExp}
-   */
-  function sanitizeRule (rule) {
-    if (typeof rule === 'string') {
-      return new RegExp('^' + rule + '$', 'i');
-    }
-
-    return rule;
-  }
-
-  /**
-   * Pass in a word token to produce a function that can replicate the case on
-   * another word.
-   *
-   * @param  {string}   word
-   * @param  {string}   token
-   * @return {Function}
-   */
-  function restoreCase (word, token) {
-    // Upper cased words. E.g. "HELLO".
-    if (word === word.toUpperCase()) {
-      return token.toUpperCase();
-    }
-
-    // Title cased words. E.g. "Title".
-    if (word[0] === word[0].toUpperCase()) {
-      return toTitleCase(token);
-    }
-
-    // Lower cased words. E.g. "test".
-    return token.toLowerCase();
-  }
-
-  /**
-   * Interpolate a regexp string.
-   *
-   * @param  {[type]} str  [description]
-   * @param  {[type]} args [description]
-   * @return {[type]}      [description]
-   */
-  function interpolate (str, args) {
-    return str.replace(/\$(\d{1,2})/g, function (match, index) {
-      return args[index] || '';
-    });
-  }
-
-  /**
-   * Sanitize a word by passing in the word and sanitization rules.
-   *
-   * @param  {String}   word
-   * @param  {Array}    collection
-   * @return {String}
-   */
-  function sanitizeWord (word, collection) {
-    // Empty string or doesn't need fixing.
-    if (!word.length || uncountables.hasOwnProperty(word)) {
-      return word;
-    }
-
-    var len = collection.length;
-
-    // Iterate over the sanitization rules and use the first one to match.
-    while (len--) {
-      var rule = collection[len];
-
-      // If the rule passes, return the replacement.
-      if (rule[0].test(word)) {
-        return word.replace(rule[0], function (match, index, word) {
-          var result = interpolate(rule[1], arguments);
-
-          if (match === '') {
-            return restoreCase(word[index - 1], result);
-          }
-
-          return restoreCase(match, result);
-        });
-      }
-    }
-
-    return word;
-  }
-
-  /**
-   * Replace a word with the updated word.
-   *
-   * @param  {Object}   replaceMap
-   * @param  {Object}   keepMap
-   * @param  {Array}    rules
-   * @return {Function}
-   */
-  function replaceWord (replaceMap, keepMap, rules) {
-    return function (word) {
-      // Get the correct token and case restoration functions.
-      var token = word.toLowerCase();
-
-      // Check against the keep object map.
-      if (keepMap.hasOwnProperty(token)) {
-        return restoreCase(word, token);
-      }
-
-      // Check against the replacement map for a direct word replacement.
-      if (replaceMap.hasOwnProperty(token)) {
-        return restoreCase(word, replaceMap[token]);
-      }
-
-      // Run all the rules against the word.
-      return sanitizeWord(word, rules);
-    };
-  }
-
-  /**
-   * Pluralize or singularize a word based on the passed in count.
-   *
-   * @param  {String}  word
-   * @param  {Number}  count
-   * @param  {Boolean} inclusive
-   * @return {String}
-   */
-  function pluralize (word, count, inclusive) {
-    var pluralized = count === 1 ?
-      pluralize.singular(word) : pluralize.plural(word);
-
-    return (inclusive ? count + ' ' : '') + pluralized;
-  }
-
-  /**
-   * Pluralize a word.
-   *
-   * @type {Function}
-   */
-  pluralize.plural = replaceWord(
-    irregularSingles, irregularPlurals, pluralRules
-  );
-
-  /**
-   * Singularize a word.
-   *
-   * @type {Function}
-   */
-  pluralize.singular = replaceWord(
-    irregularPlurals, irregularSingles, singularRules
-  );
-
-  /**
-   * Add a pluralization rule to the collection.
-   *
-   * @param {(string|RegExp)} rule
-   * @param {string}          replacement
-   */
-  pluralize.addPluralRule = function (rule, replacement) {
-    pluralRules.push([sanitizeRule(rule), replacement]);
-  };
-
-  /**
-   * Add a singularization rule to the collection.
-   *
-   * @param {(string|RegExp)} rule
-   * @param {string}          replacement
-   */
-  pluralize.addSingularRule = function (rule, replacement) {
-    singularRules.push([sanitizeRule(rule), replacement]);
-  };
-
-  /**
-   * Add an uncountable word rule.
-   *
-   * @param {(string|RegExp)} word
-   */
-  pluralize.addUncountableRule = function (word) {
-    if (typeof word === 'string') {
-      return uncountables[word.toLowerCase()] = true;
-    }
-
-    // Set singular and plural references for the word.
-    pluralize.addPluralRule(word, '$0');
-    pluralize.addSingularRule(word, '$0');
-  };
-
-  /**
-   * Add an irregular word definition.
-   *
-   * @param {String} single
-   * @param {String} plural
-   */
-  pluralize.addIrregularRule = function (single, plural) {
-    plural = plural.toLowerCase();
-    single = single.toLowerCase();
-
-    irregularSingles[single] = plural;
-    irregularPlurals[plural] = single;
-  };
-
-  /**
-   * Irregular rules.
-   */
-  [
-    // Pronouns.
-    ['I',        'we'],
-    ['me',       'us'],
-    ['he',       'they'],
-    ['she',      'they'],
-    ['them',     'them'],
-    ['myself',   'ourselves'],
-    ['yourself', 'yourselves'],
-    ['itself',   'themselves'],
-    ['herself',  'themselves'],
-    ['himself',  'themselves'],
-    ['themself', 'themselves'],
-    ['this',     'these'],
-    ['that',     'those'],
-    // Words ending in with a consonant and `o`.
-    ['echo', 'echoes'],
-    ['dingo', 'dingoes'],
-    ['volcano', 'volcanoes'],
-    ['tornado', 'tornadoes'],
-    ['torpedo', 'torpedoes'],
-    // Ends with `us`.
-    ['genus',  'genera'],
-    ['viscus', 'viscera'],
-    // Ends with `ma`.
-    ['stigma',   'stigmata'],
-    ['stoma',    'stomata'],
-    ['dogma',    'dogmata'],
-    ['lemma',    'lemmata'],
-    ['schema',   'schemata'],
-    ['anathema', 'anathemata'],
-    // Other irregular rules.
-    ['ox',      'oxen'],
-    ['axe',     'axes'],
-    ['die',     'dice'],
-    ['yes',     'yeses'],
-    ['foot',    'feet'],
-    ['eave',    'eaves'],
-    ['goose',   'geese'],
-    ['tooth',   'teeth'],
-    ['quiz',    'quizzes'],
-    ['human',   'humans'],
-    ['proof',   'proofs'],
-    ['carve',   'carves'],
-    ['valve',   'valves'],
-    ['thief',   'thieves'],
-    ['genie',   'genies'],
-    ['groove',  'grooves'],
-    ['pickaxe', 'pickaxes'],
-    ['whiskey', 'whiskies']
-  ].forEach(function (rule) {
-    return pluralize.addIrregularRule(rule[0], rule[1]);
-  });
-
-  /**
-   * Pluralization rules.
-   */
-  [
-    [/s?$/i, 's'],
-    [/([^aeiou]ese)$/i, '$1'],
-    [/(ax|test)is$/i, '$1es'],
-    [/(alias|[^aou]us|tlas|gas|ris)$/i, '$1es'],
-    [/(e[mn]u)s?$/i, '$1s'],
-    [/([^l]ias|[aeiou]las|[emjzr]as|[iu]am)$/i, '$1'],
-    [/(alumn|syllab|octop|vir|radi|nucle|fung|cact|stimul|termin|bacill|foc|uter|loc|strat)(?:us|i)$/i, '$1i'],
-    [/(alumn|alg|vertebr)(?:a|ae)$/i, '$1ae'],
-    [/(seraph|cherub)(?:im)?$/i, '$1im'],
-    [/(her|at|gr)o$/i, '$1oes'],
-    [/(agend|addend|millenni|dat|extrem|bacteri|desiderat|strat|candelabr|errat|ov|symposi|curricul|automat|quor)(?:a|um)$/i, '$1a'],
-    [/(apheli|hyperbat|periheli|asyndet|noumen|phenomen|criteri|organ|prolegomen|\w+hedr)(?:a|on)$/i, '$1a'],
-    [/sis$/i, 'ses'],
-    [/(?:(i)fe|(ar|l|ea|eo|oa|hoo)f)$/i, '$1$2ves'],
-    [/([^aeiouy]|qu)y$/i, '$1ies'],
-    [/([^ch][ieo][ln])ey$/i, '$1ies'],
-    [/(x|ch|ss|sh|zz)$/i, '$1es'],
-    [/(matr|cod|mur|sil|vert|ind|append)(?:ix|ex)$/i, '$1ices'],
-    [/(m|l)(?:ice|ouse)$/i, '$1ice'],
-    [/(pe)(?:rson|ople)$/i, '$1ople'],
-    [/(child)(?:ren)?$/i, '$1ren'],
-    [/eaux$/i, '$0'],
-    [/m[ae]n$/i, 'men']
-  ].forEach(function (rule) {
-    return pluralize.addPluralRule(rule[0], rule[1]);
-  });
-
-  /**
-   * Singularization rules.
-   */
-  [
-    [/s$/i, ''],
-    [/(ss)$/i, '$1'],
-    [/((a)naly|(b)a|(d)iagno|(p)arenthe|(p)rogno|(s)ynop|(t)he)(?:sis|ses)$/i, '$1sis'],
-    [/(^analy)(?:sis|ses)$/i, '$1sis'],
-    [/([^aeflor])ves$/i, '$1fe'],
-    [/(hive|tive|dr?ive)s$/i, '$1'],
-    [/(ar|(?:wo|[ae])l|[eo][ao])ves$/i, '$1f'],
-    [/([^aeiouy]|qu)ies$/i, '$1y'],
-    [/(^[pl]|zomb|^(?:neck)?t|[aeo][lt]|cut)ies$/i, '$1ie'],
-    [/([^c][eor]n|smil)ies$/i, '$1ey'],
-    [/(m|l)ice$/i, '$1ouse'],
-    [/(seraph|cherub)im$/i, '$1'],
-    [/(x|ch|ss|sh|zz|tto|go|cho|alias|[^aou]us|tlas|gas|(?:her|at|gr)o|ris)(?:es)?$/i, '$1'],
-    [/(e[mn]u)s?$/i, '$1'],
-    [/(movie|twelve)s$/i, '$1'],
-    [/(cris|test|diagnos)(?:is|es)$/i, '$1is'],
-    [/(alumn|syllab|octop|vir|radi|nucle|fung|cact|stimul|termin|bacill|foc|uter|loc|strat)(?:us|i)$/i, '$1us'],
-    [/(agend|addend|millenni|dat|extrem|bacteri|desiderat|strat|candelabr|errat|ov|symposi|curricul|automat|quor)a$/i, '$1um'],
-    [/(apheli|hyperbat|periheli|asyndet|noumen|phenomen|criteri|organ|prolegomen|\w+hedr)a$/i, '$1on'],
-    [/(alumn|alg|vertebr)ae$/i, '$1a'],
-    [/(cod|mur|sil|vert|ind)ices$/i, '$1ex'],
-    [/(matr|append)ices$/i, '$1ix'],
-    [/(pe)(rson|ople)$/i, '$1rson'],
-    [/(child)ren$/i, '$1'],
-    [/(eau)x?$/i, '$1'],
-    [/men$/i, 'man']
-  ].forEach(function (rule) {
-    return pluralize.addSingularRule(rule[0], rule[1]);
-  });
-
-  /**
-   * Uncountable rules.
-   */
-  [
-    // Singular words with no plurals.
-    'advice',
-    'agenda',
-    'bison',
-    'bream',
-    'buffalo',
-    'carp',
-    'chassis',
-    'cod',
-    'cooperation',
-    'corps',
-    'digestion',
-    'debris',
-    'diabetes',
-    'energy',
-    'equipment',
-    'elk',
-    'excretion',
-    'expertise',
-    'flounder',
-    'gallows',
-    'graffiti',
-    'headquarters',
-    'health',
-    'herpes',
-    'highjinks',
-    'homework',
-    'information',
-    'jeans',
-    'justice',
-    'kudos',
-    'labour',
-    'machinery',
-    'mackerel',
-    'media',
-    'mews',
-    'moose',
-    'news',
-    'pike',
-    'plankton',
-    'pliers',
-    'pollution',
-    'premises',
-    'rain',
-    'rice',
-    'salmon',
-    'scissors',
-    'series',
-    'sewage',
-    'shambles',
-    'shrimp',
-    'species',
-    'staff',
-    'swine',
-    'trout',
-    'tuna',
-    'whiting',
-    'wildebeest',
-    'wildlife',
-    // Regexes.
-    /pox$/i, // "chickpox", "smallpox"
-    /ois$/i,
-    /deer$/i, // "deer", "reindeer"
-    /fish$/i, // "fish", "blowfish", "angelfish"
-    /sheep$/i,
-    /measles$/i,
-    /[^aeiou]ese$/i // "chinese", "japanese"
-  ].forEach(pluralize.addUncountableRule);
-
-  return pluralize;
-});
-
-},{}],309:[function(require,module,exports){
 /*!
  * typeahead.js 0.10.5
  * https://github.com/twitter/typeahead.js
@@ -66908,7 +66365,7 @@ return jQuery;
         };
     })();
 })(window.jQuery);
-},{}],310:[function(require,module,exports){
+},{}],309:[function(require,module,exports){
 //     Underscore.js 1.8.2
 //     http://underscorejs.org
 //     (c) 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
@@ -68446,7 +67903,7 @@ return jQuery;
   }
 }.call(this));
 
-},{}],311:[function(require,module,exports){
+},{}],310:[function(require,module,exports){
 /*
  * js_channel is a very lightweight abstraction on top of
  * postMessage which defines message formats and semantics
@@ -69087,6 +68544,432 @@ return jQuery;
   return Channel;
 }));
 
-},{}],312:[function(require,module,exports){
-arguments[4][308][0].apply(exports,arguments)
-},{"dup":308}]},{},[1]);
+},{}],311:[function(require,module,exports){
+(function (root, pluralize) {
+  /* istanbul ignore else */
+  if (typeof require === 'function' && typeof exports === 'object' && typeof module === 'object') {
+    // Node.
+    module.exports = pluralize();
+  } else if (typeof define === 'function' && define.amd) {
+    // AMD, registers as an anonymous module.
+    define(function () {
+      return pluralize();
+    });
+  } else {
+    // Browser global.
+    root.pluralize = pluralize();
+  }
+})(this, function () {
+  // Rule storage - pluralize and singularize need to be run sequentially,
+  // while other rules can be optimized using an object for instant lookups.
+  var pluralRules      = [];
+  var singularRules    = [];
+  var uncountables     = {};
+  var irregularPlurals = {};
+  var irregularSingles = {};
+
+  /**
+   * Title case a string.
+   *
+   * @param  {string} str
+   * @return {string}
+   */
+  function toTitleCase (str) {
+    return str.charAt(0).toUpperCase() + str.substr(1).toLowerCase();
+  }
+
+  /**
+   * Sanitize a pluralization rule to a usable regular expression.
+   *
+   * @param  {(RegExp|string)} rule
+   * @return {RegExp}
+   */
+  function sanitizeRule (rule) {
+    if (typeof rule === 'string') {
+      return new RegExp('^' + rule + '$', 'i');
+    }
+
+    return rule;
+  }
+
+  /**
+   * Pass in a word token to produce a function that can replicate the case on
+   * another word.
+   *
+   * @param  {string}   word
+   * @param  {string}   token
+   * @return {Function}
+   */
+  function restoreCase (word, token) {
+    // Upper cased words. E.g. "HELLO".
+    if (word === word.toUpperCase()) {
+      return token.toUpperCase();
+    }
+
+    // Title cased words. E.g. "Title".
+    if (word[0] === word[0].toUpperCase()) {
+      return toTitleCase(token);
+    }
+
+    // Lower cased words. E.g. "test".
+    return token.toLowerCase();
+  }
+
+  /**
+   * Interpolate a regexp string.
+   *
+   * @param  {[type]} str  [description]
+   * @param  {[type]} args [description]
+   * @return {[type]}      [description]
+   */
+  function interpolate (str, args) {
+    return str.replace(/\$(\d{1,2})/g, function (match, index) {
+      return args[index] || '';
+    });
+  }
+
+  /**
+   * Sanitize a word by passing in the word and sanitization rules.
+   *
+   * @param  {String}   word
+   * @param  {Array}    collection
+   * @return {String}
+   */
+  function sanitizeWord (word, collection) {
+    // Empty string or doesn't need fixing.
+    if (!word.length || uncountables.hasOwnProperty(word)) {
+      return word;
+    }
+
+    var len = collection.length;
+
+    // Iterate over the sanitization rules and use the first one to match.
+    while (len--) {
+      var rule = collection[len];
+
+      // If the rule passes, return the replacement.
+      if (rule[0].test(word)) {
+        return word.replace(rule[0], function (match, index, word) {
+          var result = interpolate(rule[1], arguments);
+
+          if (match === '') {
+            return restoreCase(word[index - 1], result);
+          }
+
+          return restoreCase(match, result);
+        });
+      }
+    }
+
+    return word;
+  }
+
+  /**
+   * Replace a word with the updated word.
+   *
+   * @param  {Object}   replaceMap
+   * @param  {Object}   keepMap
+   * @param  {Array}    rules
+   * @return {Function}
+   */
+  function replaceWord (replaceMap, keepMap, rules) {
+    return function (word) {
+      // Get the correct token and case restoration functions.
+      var token = word.toLowerCase();
+
+      // Check against the keep object map.
+      if (keepMap.hasOwnProperty(token)) {
+        return restoreCase(word, token);
+      }
+
+      // Check against the replacement map for a direct word replacement.
+      if (replaceMap.hasOwnProperty(token)) {
+        return restoreCase(word, replaceMap[token]);
+      }
+
+      // Run all the rules against the word.
+      return sanitizeWord(word, rules);
+    };
+  }
+
+  /**
+   * Pluralize or singularize a word based on the passed in count.
+   *
+   * @param  {String}  word
+   * @param  {Number}  count
+   * @param  {Boolean} inclusive
+   * @return {String}
+   */
+  function pluralize (word, count, inclusive) {
+    var pluralized = count === 1 ?
+      pluralize.singular(word) : pluralize.plural(word);
+
+    return (inclusive ? count + ' ' : '') + pluralized;
+  }
+
+  /**
+   * Pluralize a word.
+   *
+   * @type {Function}
+   */
+  pluralize.plural = replaceWord(
+    irregularSingles, irregularPlurals, pluralRules
+  );
+
+  /**
+   * Singularize a word.
+   *
+   * @type {Function}
+   */
+  pluralize.singular = replaceWord(
+    irregularPlurals, irregularSingles, singularRules
+  );
+
+  /**
+   * Add a pluralization rule to the collection.
+   *
+   * @param {(string|RegExp)} rule
+   * @param {string}          replacement
+   */
+  pluralize.addPluralRule = function (rule, replacement) {
+    pluralRules.push([sanitizeRule(rule), replacement]);
+  };
+
+  /**
+   * Add a singularization rule to the collection.
+   *
+   * @param {(string|RegExp)} rule
+   * @param {string}          replacement
+   */
+  pluralize.addSingularRule = function (rule, replacement) {
+    singularRules.push([sanitizeRule(rule), replacement]);
+  };
+
+  /**
+   * Add an uncountable word rule.
+   *
+   * @param {(string|RegExp)} word
+   */
+  pluralize.addUncountableRule = function (word) {
+    if (typeof word === 'string') {
+      return uncountables[word.toLowerCase()] = true;
+    }
+
+    // Set singular and plural references for the word.
+    pluralize.addPluralRule(word, '$0');
+    pluralize.addSingularRule(word, '$0');
+  };
+
+  /**
+   * Add an irregular word definition.
+   *
+   * @param {String} single
+   * @param {String} plural
+   */
+  pluralize.addIrregularRule = function (single, plural) {
+    plural = plural.toLowerCase();
+    single = single.toLowerCase();
+
+    irregularSingles[single] = plural;
+    irregularPlurals[plural] = single;
+  };
+
+  /**
+   * Irregular rules.
+   */
+  [
+    // Pronouns.
+    ['I',        'we'],
+    ['me',       'us'],
+    ['he',       'they'],
+    ['she',      'they'],
+    ['them',     'them'],
+    ['myself',   'ourselves'],
+    ['yourself', 'yourselves'],
+    ['itself',   'themselves'],
+    ['herself',  'themselves'],
+    ['himself',  'themselves'],
+    ['themself', 'themselves'],
+    ['this',     'these'],
+    ['that',     'those'],
+    // Words ending in with a consonant and `o`.
+    ['echo', 'echoes'],
+    ['dingo', 'dingoes'],
+    ['volcano', 'volcanoes'],
+    ['tornado', 'tornadoes'],
+    ['torpedo', 'torpedoes'],
+    // Ends with `us`.
+    ['genus',  'genera'],
+    ['viscus', 'viscera'],
+    // Ends with `ma`.
+    ['stigma',   'stigmata'],
+    ['stoma',    'stomata'],
+    ['dogma',    'dogmata'],
+    ['lemma',    'lemmata'],
+    ['schema',   'schemata'],
+    ['anathema', 'anathemata'],
+    // Other irregular rules.
+    ['ox',      'oxen'],
+    ['axe',     'axes'],
+    ['die',     'dice'],
+    ['yes',     'yeses'],
+    ['foot',    'feet'],
+    ['eave',    'eaves'],
+    ['goose',   'geese'],
+    ['tooth',   'teeth'],
+    ['quiz',    'quizzes'],
+    ['human',   'humans'],
+    ['proof',   'proofs'],
+    ['carve',   'carves'],
+    ['valve',   'valves'],
+    ['thief',   'thieves'],
+    ['genie',   'genies'],
+    ['groove',  'grooves'],
+    ['pickaxe', 'pickaxes'],
+    ['whiskey', 'whiskies']
+  ].forEach(function (rule) {
+    return pluralize.addIrregularRule(rule[0], rule[1]);
+  });
+
+  /**
+   * Pluralization rules.
+   */
+  [
+    [/s?$/i, 's'],
+    [/([^aeiou]ese)$/i, '$1'],
+    [/(ax|test)is$/i, '$1es'],
+    [/(alias|[^aou]us|tlas|gas|ris)$/i, '$1es'],
+    [/(e[mn]u)s?$/i, '$1s'],
+    [/([^l]ias|[aeiou]las|[emjzr]as|[iu]am)$/i, '$1'],
+    [/(alumn|syllab|octop|vir|radi|nucle|fung|cact|stimul|termin|bacill|foc|uter|loc|strat)(?:us|i)$/i, '$1i'],
+    [/(alumn|alg|vertebr)(?:a|ae)$/i, '$1ae'],
+    [/(seraph|cherub)(?:im)?$/i, '$1im'],
+    [/(her|at|gr)o$/i, '$1oes'],
+    [/(agend|addend|millenni|dat|extrem|bacteri|desiderat|strat|candelabr|errat|ov|symposi|curricul|automat|quor)(?:a|um)$/i, '$1a'],
+    [/(apheli|hyperbat|periheli|asyndet|noumen|phenomen|criteri|organ|prolegomen|\w+hedr)(?:a|on)$/i, '$1a'],
+    [/sis$/i, 'ses'],
+    [/(?:(i)fe|(ar|l|ea|eo|oa|hoo)f)$/i, '$1$2ves'],
+    [/([^aeiouy]|qu)y$/i, '$1ies'],
+    [/([^ch][ieo][ln])ey$/i, '$1ies'],
+    [/(x|ch|ss|sh|zz)$/i, '$1es'],
+    [/(matr|cod|mur|sil|vert|ind|append)(?:ix|ex)$/i, '$1ices'],
+    [/(m|l)(?:ice|ouse)$/i, '$1ice'],
+    [/(pe)(?:rson|ople)$/i, '$1ople'],
+    [/(child)(?:ren)?$/i, '$1ren'],
+    [/eaux$/i, '$0'],
+    [/m[ae]n$/i, 'men']
+  ].forEach(function (rule) {
+    return pluralize.addPluralRule(rule[0], rule[1]);
+  });
+
+  /**
+   * Singularization rules.
+   */
+  [
+    [/s$/i, ''],
+    [/(ss)$/i, '$1'],
+    [/((a)naly|(b)a|(d)iagno|(p)arenthe|(p)rogno|(s)ynop|(t)he)(?:sis|ses)$/i, '$1sis'],
+    [/(^analy)(?:sis|ses)$/i, '$1sis'],
+    [/([^aeflor])ves$/i, '$1fe'],
+    [/(hive|tive|dr?ive)s$/i, '$1'],
+    [/(ar|(?:wo|[ae])l|[eo][ao])ves$/i, '$1f'],
+    [/([^aeiouy]|qu)ies$/i, '$1y'],
+    [/(^[pl]|zomb|^(?:neck)?t|[aeo][lt]|cut)ies$/i, '$1ie'],
+    [/([^c][eor]n|smil)ies$/i, '$1ey'],
+    [/(m|l)ice$/i, '$1ouse'],
+    [/(seraph|cherub)im$/i, '$1'],
+    [/(x|ch|ss|sh|zz|tto|go|cho|alias|[^aou]us|tlas|gas|(?:her|at|gr)o|ris)(?:es)?$/i, '$1'],
+    [/(e[mn]u)s?$/i, '$1'],
+    [/(movie|twelve)s$/i, '$1'],
+    [/(cris|test|diagnos)(?:is|es)$/i, '$1is'],
+    [/(alumn|syllab|octop|vir|radi|nucle|fung|cact|stimul|termin|bacill|foc|uter|loc|strat)(?:us|i)$/i, '$1us'],
+    [/(agend|addend|millenni|dat|extrem|bacteri|desiderat|strat|candelabr|errat|ov|symposi|curricul|automat|quor)a$/i, '$1um'],
+    [/(apheli|hyperbat|periheli|asyndet|noumen|phenomen|criteri|organ|prolegomen|\w+hedr)a$/i, '$1on'],
+    [/(alumn|alg|vertebr)ae$/i, '$1a'],
+    [/(cod|mur|sil|vert|ind)ices$/i, '$1ex'],
+    [/(matr|append)ices$/i, '$1ix'],
+    [/(pe)(rson|ople)$/i, '$1rson'],
+    [/(child)ren$/i, '$1'],
+    [/(eau)x?$/i, '$1'],
+    [/men$/i, 'man']
+  ].forEach(function (rule) {
+    return pluralize.addSingularRule(rule[0], rule[1]);
+  });
+
+  /**
+   * Uncountable rules.
+   */
+  [
+    // Singular words with no plurals.
+    'advice',
+    'agenda',
+    'bison',
+    'bream',
+    'buffalo',
+    'carp',
+    'chassis',
+    'cod',
+    'cooperation',
+    'corps',
+    'digestion',
+    'debris',
+    'diabetes',
+    'energy',
+    'equipment',
+    'elk',
+    'excretion',
+    'expertise',
+    'flounder',
+    'gallows',
+    'graffiti',
+    'headquarters',
+    'health',
+    'herpes',
+    'highjinks',
+    'homework',
+    'information',
+    'jeans',
+    'justice',
+    'kudos',
+    'labour',
+    'machinery',
+    'mackerel',
+    'media',
+    'mews',
+    'moose',
+    'news',
+    'pike',
+    'plankton',
+    'pliers',
+    'pollution',
+    'premises',
+    'rain',
+    'rice',
+    'salmon',
+    'scissors',
+    'series',
+    'sewage',
+    'shambles',
+    'shrimp',
+    'species',
+    'staff',
+    'swine',
+    'trout',
+    'tuna',
+    'whiting',
+    'wildebeest',
+    'wildlife',
+    // Regexes.
+    /pox$/i, // "chickpox", "smallpox"
+    /ois$/i,
+    /deer$/i, // "deer", "reindeer"
+    /fish$/i, // "fish", "blowfish", "angelfish"
+    /sheep$/i,
+    /measles$/i,
+    /[^aeiou]ese$/i // "chinese", "japanese"
+  ].forEach(pluralize.addUncountableRule);
+
+  return pluralize;
+});
+
+},{}]},{},[1]);

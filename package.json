@@ -46,7 +46,7 @@
     "gulp": "^3.8.7",
     "gulp-rename": "^1.2.0",
     "gulp-watch": "^4.1.1",
-    "imtables": "2.0.0-beta-11",
+    "imtables": "2.0.0-beta-13",
     "jschannel": "alexkalderimis/jschannel",
     "pluralize": "^1.1.2",
     "vinyl-source-stream": "^1.0.0",

@@ -9853,19 +9853,19 @@ function hasOwnProperty(obj, prop) {
 
 },{"../core/collection":39,"../utils/build-headers":104,"./header":77}],73:[function(require,module,exports){
 (function() {
-  var ConstraintModel, LIST_OPS, LOOP_OPS, PathModel, TERNARY_OPS, constraintType, _, _ref,
+  var ConstraintModel, LIST_OPS, LOOP_OPS, PathModel, RANGE_OPS, TERNARY_OPS, constraintType, _, _ref,
     __indexOf = [].indexOf || function(item) { for (var i = 0, l = this.length; i < l; i++) { if (i in this && this[i] === item) return i; } return -1; },
     __hasProp = {}.hasOwnProperty,
     __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
 
   _ = require('underscore');
 
-  _ref = require('imjs').Query, LIST_OPS = _ref.LIST_OPS, LOOP_OPS = _ref.LOOP_OPS, TERNARY_OPS = _ref.TERNARY_OPS;
+  _ref = require('imjs').Query, LIST_OPS = _ref.LIST_OPS, LOOP_OPS = _ref.LOOP_OPS, TERNARY_OPS = _ref.TERNARY_OPS, RANGE_OPS = _ref.RANGE_OPS;
 
   PathModel = require('./path');
 
   constraintType = function(opts) {
-    var _ref1, _ref2, _ref3;
+    var _ref1, _ref2, _ref3, _ref4;
     if (opts.path.isAttribute()) {
       if (opts.values) {
         return 'MULTI_VALUE';
@@ -9878,17 +9878,20 @@ function hasOwnProperty(obj, prop) {
       if (opts.ids) {
         return 'IDS';
       }
-      if ((_ref1 = opts.op, __indexOf.call(TERNARY_OPS, _ref1) >= 0)) {
+      if (opts.values && (_ref1 = opts.op, __indexOf.call(RANGE_OPS, _ref1) >= 0)) {
+        return 'RANGE';
+      }
+      if ((_ref2 = opts.op, __indexOf.call(TERNARY_OPS, _ref2) >= 0)) {
         return 'LOOKUP';
       }
-      if ((_ref2 = opts.op, __indexOf.call(LIST_OPS, _ref2) >= 0)) {
+      if ((_ref3 = opts.op, __indexOf.call(LIST_OPS, _ref3) >= 0)) {
         return 'LIST';
       }
-      if ((_ref3 = opts.op, __indexOf.call(LOOP_OPS, _ref3) >= 0)) {
+      if ((_ref4 = opts.op, __indexOf.call(LOOP_OPS, _ref4) >= 0)) {
         return 'LOOP';
       }
     }
-    throw new Error("No idea what this is: " + opts.path + " " + opts.op);
+    throw new Error("Cannot determine constraint type: " + opts.path + " " + opts.op);
   };
 
   module.exports = ConstraintModel = (function(_super) {
@@ -14379,7 +14382,7 @@ exports.column_name_popover = "<% _.each(parts, function (part) { %>\n  <span cl
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 },{"../cdn":35,"es6-promise":279}],143:[function(require,module,exports){
-module.exports = '2.0.0-beta-14';
+module.exports = '2.0.0-beta-15';
 
 },{}],144:[function(require,module,exports){
 (function() {

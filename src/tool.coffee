@@ -1,6 +1,11 @@
 Channel = require 'jschannel'
 imtables = require 'imtables'
+clf = require 'imtables/build/formatters/genomic/location'
+
 pluralize = require 'pluralize'
+
+# Register the ChrLoc formatter.
+imtables.formatting.registerFormatter clf, 'genomic', clf.target, clf.replaces
 
 runAsChild = ->
 

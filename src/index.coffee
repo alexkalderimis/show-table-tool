@@ -9,6 +9,10 @@ window.onload = ->
   chan.call
     method: 'configure'
     params:
+      messages:
+        'columns.DialogueTitle': 'Spalten Bearbeiten'
+      CodeGen:
+        Default: 'rb'
       TableCell:
         IndicateOffHostLinks: false
     success: ->

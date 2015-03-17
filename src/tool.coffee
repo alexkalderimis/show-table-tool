@@ -27,7 +27,11 @@ runAsChild = ->
           query: state.query
 
   chan.bind 'configure', (trans, params) ->
-    imtables.configure params
+    if params
+      if params.messages?
+        imtables.setMessages params.messages
+      delete params.messages
+      imtables.configure params
     'ok'
 
   chan.bind 'style', (trans, params) ->

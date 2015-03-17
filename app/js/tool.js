@@ -37,7 +37,13 @@ runAsChild = function() {
     });
   };
   chan.bind('configure', function(trans, params) {
-    imtables.configure(params);
+    if (params) {
+      if (params.messages != null) {
+        imtables.setMessages(params.messages);
+      }
+      delete params.messages;
+      imtables.configure(params);
+    }
     return 'ok';
   });
   chan.bind('style', function(trans, params) {
